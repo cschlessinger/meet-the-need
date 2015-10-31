@@ -13,7 +13,4 @@ class Developer < ActiveRecord::Base
   # validates :email, uniqueness: true
   # validates :first_name, :last_name, :zipcode, presence: true
 
-  def self.find_whatever(project)
-    includes(:topics).where("topic.project_id" => project.topic_ids)
-  end
 end
