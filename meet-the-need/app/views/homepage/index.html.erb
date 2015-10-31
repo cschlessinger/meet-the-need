@@ -3,7 +3,10 @@
   <title>Homepage</title>
 </head>
 <body>
-<h1> Homepage </h1>
+  <header>
+    <h1 class="homepage_title"> Homepage </h1>
+
+  </header>
   <div class="left_homepage_div">
     <h2> Latest Projects </h2>
       <section>
@@ -13,15 +16,7 @@
   <div class="right_homepage_div">
     <h2> Developers </h2>
       <section>
-        <article>
-          [DEVELOPER PARTIAL #1]
-        </article>
-        <article>
-          [DEVELOPER PARTIAL #2]
-        </article>
-        <article>
-          [DEVELOPER PARTIAL #3]
-        </article>
+        <%= render "dev_partial" %>
       </section>
   </div>
 

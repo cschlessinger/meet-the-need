@@ -1,0 +1,26 @@
+<div class="image"><img src="./default-avatar.png"></div>
+  <div class="developer_details">
+    <% all_developers = Developer.all%>
+    <% reversed_developers = all_developers.reverse %>
+    <% latest_three = reversed_developers.slice!(0..2) %>
+    <% latest_three.each do |developer| %>
+      <article>
+        <%=  developer.first_name %>
+        <%=  developer.last_name %><br>
+        <% if developer.technologies.any? %>
+          Technologies:
+          <% developer.technologies.each do |technology| %>
+          <%= technology.name %>,
+          <% end %>
+        <% end %>
+        <% if developer.topics.any? %>
+          Topics:
+          <% developer.topics.each do |topic| %>
+          <%= topic.name %>,
+          <% end %>
+        <% end %>
+          Created at:
+        <%= developer.created_at.strftime("%m/%d/%Y") %>
+      </article>
+    <% end %>
+  </div>
