@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  devise_for :developers
+  devise_for :customers
   get 'homepage/index'
 
   resources :developers

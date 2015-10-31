@@ -8,6 +8,4 @@ class Project < ActiveRecord::Base
   belongs_to :developer
 
   validates :title, :body, :customer_id, presence: true
-
-
 end
