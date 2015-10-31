@@ -1,4 +1,5 @@
 class Developer < ActiveRecord::Base
+  include Finder
   has_many :projects
   has_many :developer_technologies
   has_many :technologies, through: :developer_technologies

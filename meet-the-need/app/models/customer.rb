@@ -1,4 +1,5 @@
 class Customer < ActiveRecord::Base
+  include Finder
   has_many :projects
 
   validates :email, uniqueness: true

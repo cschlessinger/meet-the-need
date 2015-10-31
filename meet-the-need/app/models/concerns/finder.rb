@@ -1,48 +1,16 @@
 module Finder
   extend ActiveSupport::Concern
-  def finder(matcher, type, matchee)
+  def finder(matcher, tag, matchee) #Matcher is instance of an object; tag is either technology or topic; matchee is class of what collection of results we want to get back
 
-    # our_matchee_ids = []
-    # our_matchees = []
-    # type_ids = type + "_ids"
-    # type_id = type + "_id"
-    # join_table = matchee + type.capitalize
+    tags_by_matcher = matcher.send(tag) #Returns tags associated with matcher
 
-    # # iterates through the ids of topics associated with the project the method is called on; returns an array of developer ids
-    # matcher.send(type_ids).each do |t_id|
-    #   our_matchee_ids << join_table.constantize.where(type_id: t_id)
-    #   p "We found some developer IDs"
-    #   p "*" * 100
-    #   p our_matchee_ids
-    # end
-
-    # # iterates through developer ids to return an array of developer objects
-    # our_matchee_ids.each do |matchee_id|
-    #   our_matchees << matchee.constantize.where(id: matchee_id)
-    #   p "We found some developer objects"
-    # end
-
-    # return our_matchees
-
-    topics_by_project = matcher.send(type) #Returns topics/technologies associated with project
-
-    p "#" * 100
-    p topics_by_project.to_a
-    p "#" * 100
-
-    topics_by_dev = []
+    tags_by_matchee = []
     temp = []
-    matchee.constantize.all.map {|obj| temp << obj.send(type) }
+    matchee.constantize.all.map {|obj| temp << obj.send(tag) } #Iterate through all matchees and calling the tag method, pushing result to temp array of active record tags associated with matchees (result is AR CollectionProxy object)
 
-    temp.first.map {|dev| topics_by_dev << dev }
+    temp.first.map {|dev| tags_by_matchee << dev } # Strips CollectionProxy and returns array of tags associated with the matchee
 
-    p "*" * 10
-    p topics_by_dev
-    p "*" * 10
-
-    p "%" * 80
-    p topics_by_project.to_a & topics_by_dev
-    p "%" * 80
+    tags_by_matchee.to_a & tags_by_matchee # Returns union of tags from the input matcher and result matchee
   end
 
 end
