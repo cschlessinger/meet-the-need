@@ -1,5 +1,7 @@
 class CustomersController < ApplicationController
   before_action :set_customer, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_customer!
+
 
   # GET /customers
   # GET /customers.json
