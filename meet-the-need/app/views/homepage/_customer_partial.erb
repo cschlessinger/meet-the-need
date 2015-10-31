@@ -1,10 +1,10 @@
-  <div class="image"><img src="./default-avatar.png"></div>
   <div class="project_details">
     <% all_projects = Project.all%>
     <% reversed_projects = all_projects.reverse %>
     <% latest_three = reversed_projects.slice!(0..2) %>
     <% latest_three.each do |project| %>
       <article>
+        <div class="image"><img src="./default-avatar.png"></div>
         <%=  project.title %>, by
         <%=  project.customer.first_name %>
         <%=  project.customer.last_name %><br>
@@ -22,6 +22,6 @@
         <% end %>
           Created at:
         <%= project.created_at.strftime("%m/%d/%Y") %>
-      </article>
+      </article><br>
     <% end %>
   </div>
