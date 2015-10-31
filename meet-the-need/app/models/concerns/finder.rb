@@ -32,7 +32,7 @@ module Finder
 
     topics_by_dev = []
     temp = []
-    matchee.constantize.all.map {|obj| temp << obj.topics }
+    matchee.constantize.all.map {|obj| temp << obj.send(type) }
 
     temp.first.map {|dev| topics_by_dev << dev }
 
