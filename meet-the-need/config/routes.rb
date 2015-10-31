@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  devise_for :developers
+  devise_for :customers
+  get 'homepage/index'
+
+  resources :developers
+  resources :customers
+  resources :projects
+  root 'homepage#index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
