@@ -1,5 +1,7 @@
 class Developer < ActiveRecord::Base
 
+  include Finder
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -13,4 +15,5 @@ class Developer < ActiveRecord::Base
 
   # validates :email, uniqueness: true
   # validates :first_name, :last_name, :zipcode, presence: true
+
 end
