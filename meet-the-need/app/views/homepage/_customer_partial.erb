@@ -1,0 +1,27 @@
+  <div class="image"><img src="./default-avatar.png"></div>
+  <div class="project_details">
+    <% all_projects = Project.all%>
+    <% reversed_projects = all_projects.reverse %>
+    <% latest_three = reversed_projects.slice!(0..2) %>
+    <% latest_three.each do |project| %>
+      <article>
+        <%=  project.title %>, by
+        <%=  project.customer.first_name %>
+        <%=  project.customer.last_name %><br>
+        <% if project.technologies.any? %>
+          Technologies:
+          <% project.technologies.each do |technology| %>
+          <%= technology.name %>,
+          <% end %>
+        <% end %>
+        <% if project.topics.any? %>
+          Topics:
+          <% project.topics.each do |topic| %>
+          <%= topic.name %>,
+          <% end %>
+        <% end %>
+          Created at:
+        <%= project.created_at %>
+      </article>
+    <% end %>
+  </div>
