@@ -6,10 +6,11 @@
   <header>
     <h1 class="homepage_title"> Homepage </h1>
     <%= form_tag("/search", method: "get") do %>
-    <%= label_tag(:search, "Search for:") %>
-    <%= text_field_tag(:search) %>
-    <%= submit_tag("Search") %>
-    <% end %><br>
+      <%= label_tag(:search, "Search for:") %>
+      <%= text_field_tag(:search) %>
+      <%= submit_tag("Search") %>
+    <% end %>
+    <br>
     <button>Advanced Search</button>
   </header>
   <div class="left_homepage_div">
@@ -24,6 +25,6 @@
       <%= render "dev_partial" %>
     </section>
   </div>
-
 </body>
 </html>
+
