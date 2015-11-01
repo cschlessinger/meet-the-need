@@ -70,6 +70,6 @@ class DevelopersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def developer_params
-      params[:developer]
+      params.require(:developer).permit(:first_name, :last_name, :tagline, :bio, :zipcode, :technologies => [], :topics => [])
     end
 end

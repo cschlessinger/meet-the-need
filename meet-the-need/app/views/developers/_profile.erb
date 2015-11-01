@@ -1,27 +1,30 @@
-<%= form_for(@developer) do |f| %>
-
-	<div class="form_field"><%= label_tag(:first_name, "First name") %>
-	<%= f.text_field :first_name, placeholder: current_developer.first_name %></div>
-	<div class="form_field"><%= label_tag(:last_name, "Last name") %>
-	<%= f.text_field :last_name, placeholder: current_developer.last_name %></div>
-	<div class="form_field"><%= label_tag(:tagline, "Tagline") %>
-	<%= f.text_field :tagline, placeholder: current_developer.tagline %></div>
-	<div class="form_field"><%= label_tag(:bio, "Bio") %>
-	<%= f.text_area :bio, placeholder: current_developer.bio %></div>
-	<div class="form_field"><%= label_tag(:zipcode, "Zipcode") %>
-	<%= f.text_field :zipcode, placeholder: current_developer.zipcode %></div>
-	<div class="form_field"><%= label_tag(:technologies, "Technologies") %>
-	<%= f.text_field :zipcode, placeholder: current_developer.zipcode %></div>
-	<%= f.check_box :technologies %>
-	<div class="form_field"><%= label_tag(:topics, "Topics") %>
-	<%= f.check_box :topics %></div>
-
-	<%= f.submit %>
-<% end %>
-
-
-
-
-<% current_developer.first_name %>
-<% current_developer.last_name %>
-<% current_developer.last_name %>
+<div>
+	<h1> My Profile </h1>
+	<!-- Profile Tab -->
+	<!-- @Todo: Add a profile image -->
+	<div class="show-field"><%= current_developer.first_name %> <%= current_developer.last_name %></div>
+	<div class="show-field"><%= current_developer.tagline %></div>
+	<div class="show-field"><%= current_developer.bio %></div>
+	<div class="show-field"><%= current_developer.zipcode %></div>
+	<% if current_developer.technologies.any? %>
+		<div class="show-field">
+			<h3>Technologies</h3>
+			<ul>
+				<% current_developer.technologies.each do |technology| %>
+					<li><%= technology.name %></li>
+				<% end %>
+			</ul>
+		</div>
+	<% end %>
+	<% if current_developer.topics.any? %>
+		<div class="show-field">
+			<h3>Topics</h3>
+			<ul>
+				<% current_developer.topics.each do |topic| %>
+						<li><%= topic.name %></li>
+				<% end %>
+			</ul>
+		</div>
+	<% end %>
+</div>
+<%= link_to 'Edit', edit_developer_path(@developer) %>
