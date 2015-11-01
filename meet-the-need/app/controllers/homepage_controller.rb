@@ -11,7 +11,7 @@ class HomepageController < ApplicationController
   end
 
   def search
-    p '*' * 40
-    p params
+    @search_results = Project.search(params[:search])
+    render "search_results/search_results"
   end
 end
