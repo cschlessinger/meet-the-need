@@ -12,10 +12,12 @@
 	<%= f.text_field :zipcode, placeholder: current_developer.zipcode %></div>
 	<div class="form_field"><%= label_tag(:technologies, "Technologies") %>
 	<%= f.text_field :zipcode, placeholder: current_developer.zipcode %></div>
-	<%#Technology.each do |technology| %>
-	
-	<%#end %>
-	<%= f.check_box :technologies %>
+
+	<!-- @TODO: display all technologies/topics in own checkboxes; add ability to edit with them filled out with current selections -->
+	<%Technology.all.each do |technology| %>
+		<%= f.check_box technology.name.to_sym %>
+	<%end %>
+	<!-- @TODO: display all technologies/topics in own checkboxes; add ability to edit with them filled out with current selections -->
 	<div class="form_field"><%= label_tag(:topics, "Topics") %>
 	<%= f.check_box :topics %></div>
 
