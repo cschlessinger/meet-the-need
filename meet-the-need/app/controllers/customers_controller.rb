@@ -12,6 +12,12 @@ class CustomersController < ApplicationController
   # GET /customers/1
   # GET /customers/1.json
   def show
+    all_projects = set_customer.projects
+    if all_projects.length <= 3
+      @unassigned_projects = all_projects
+    else
+      @unassigned_projects = all_projects.where(developer_id: nil).slice!(0..2)
+    end
   end
 
   # GET /customers/new
