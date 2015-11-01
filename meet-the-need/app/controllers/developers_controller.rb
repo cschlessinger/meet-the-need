@@ -62,6 +62,22 @@ class DevelopersController < ApplicationController
     end
   end
 
+  # def delete_technology
+  #   DeveloperTechnology.where(developer_id: :id, technology_id: :tech_id).first.destroy
+  # end
+
+  # def add_technology
+  #   DeveloperTechnology.create(developer_id: :id, technology_id: :tech_id)
+  # end
+
+  # def delete_topic
+  #   DeveloperTopic.where(developer_id: :id, topic_id: :topic_id).first.destroy
+  # end
+
+  # def add_topic
+  #   DeveloperTopic.create(developer_id: :id, topic_id: :topic_id)
+  # end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_developer
@@ -70,6 +86,6 @@ class DevelopersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def developer_params
-      params[:developer]
+      params.require(:developer).permit(:first_name, :last_name, :tagline, :bio, :zipcode, :technologies => [], :topics => [])
     end
 end

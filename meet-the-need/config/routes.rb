@@ -7,7 +7,15 @@ Rails.application.routes.draw do
   resources :developers
   resources :customers
   resources :projects
+  resources :developer_technologies
+  resources :developer_topics
+
   root 'homepage#index'
+
+  # delete '/delete_technology/:tech_id' => 'developers#delete_technology'
+  # patch '/add_technology/:tech_id' => 'developers#add_technology'
+  # delete '/delete_topic/:topic_id' => 'developers#delete_topic'
+  # patch '/add_topic/:topic_id' => 'developers#add_topic'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

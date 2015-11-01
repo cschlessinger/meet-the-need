@@ -6,6 +6,8 @@ class CreateDevelopers < ActiveRecord::Migration
       # t.string :email
       # t.string :password
       t.string :zipcode
+      t.string :tagline
+      t.text :bio
 
       t.timestamps null: false
     end

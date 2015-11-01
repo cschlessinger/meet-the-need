@@ -1,3 +1,16 @@
-
-<%= link_to 'Edit', edit_developer_path(@developer) %> |
-<%= link_to 'Back', developers_path %>
+<div id="tabs">
+  <ul>
+    <li><a href="#tabs-1">Current Projects</a></li>
+    <li><a href="#tabs-2">Completed Projects</a></li>
+    <li><a href="#tabs-3">Profile</a></li>
+  </ul>
+  <div id="tabs-1">
+   Current view
+  </div>
+  <div id="tabs-2">
+   Completed view
+  </div>
+  <div id="tabs-3">
+  <%= render "profile" %>
+  </div>
+</div>

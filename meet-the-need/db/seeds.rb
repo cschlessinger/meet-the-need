@@ -10,7 +10,7 @@
 Customer.create(first_name: "Bob", last_name: "Smith", email: "bobsmith@example.com", zipcode: "90210", password: "password")
 Developer.create(first_name: "Sally", last_name: "Jones", email: "sallyjones@example.com", zipcode: "81239", password: "password")
 Developer.create(first_name: "Frannie", last_name: "Frankie", email: "franniefrankie@example.com", zipcode: "81239", password: "password")
-Developer.create(first_name: "Shawn", last_name: "John", email: "shawnjohn@example.com", zipcode: "81239", password: "password")
+Developer.create(first_name: "Shawn", last_name: "John", email: "shawnjohn@example.com", zipcode: "81239", password: "password", tagline: "I am the bestest developer ever", bio: "That's all.")
 Project.create(title: "LGBT Chat Room", body: "This is a support chat room for LGBT youth", customer_id: 1)
 Project.create(title: "Bowling league", body: "BOWLING!!!!!!!!!!!!!!!", customer_id: 1)
 Project.create(title: "Bulletin board", body: "some shit", customer_id: 1)

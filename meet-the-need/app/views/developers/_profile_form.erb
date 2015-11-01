@@ -1,0 +1,49 @@
+<%= form_for(@developer) do |f| %>
+
+	<div class="form_field"><%= label_tag(:first_name, "First name") %>
+	<%= f.text_field :first_name, placeholder: current_developer.first_name %></div>
+	<div class="form_field"><%= label_tag(:last_name, "Last name") %>
+	<%= f.text_field :last_name, placeholder: current_developer.last_name %></div>
+	<div class="form_field"><%= label_tag(:tagline, "Tagline") %>
+	<%= f.text_field :tagline, placeholder: current_developer.tagline %></div>
+	<div class="form_field"><%= label_tag(:bio, "Bio") %>
+	<%= f.text_area :bio, placeholder: current_developer.bio %></div>
+	<div class="form_field"><%= label_tag(:zipcode, "Zipcode") %>
+	<%= f.text_field :zipcode, placeholder: current_developer.zipcode %></div>
+
+	<!-- @TODO: display all technologies/topics in own checkboxes; add ability to edit with them filled out with current selections -->
+	
+	<div class="form_field"><%= label_tag(:technologies, "Technologies") %>
+	<% Technology.all.each do |technology| %>
+		<div><%= technology.name %> | 
+
+			<% if DeveloperTechnology.where(developer_id: :id, technology_id: technology.id).empty? %>
+				<%= link_to "Add", new_developer_technology_path%>
+			<% else %>
+				<%= link_to "Delete", 'developer_technologies#destroy' %></div>
+			<% end %>
+	<% end %>
+
+	<!-- @TODO: display all technologies/topics in own checkboxes; add ability to edit with them filled out with current selections -->
+	<div class="form_field"><%= label_tag(:topics, "Topics") %>
+	<% Topic.all.each do |topic| %>
+		<div>
+		<%= topic.name %> | 
+		<% if DeveloperTopic.where(developer_id: :id, topic_id: topic.id).empty? %>
+			<%= link_to "Add", new_developer_topic_path%>
+		<% else %>
+			<%= link_to "Delete", 'developer_topics#destroy' %></div>
+		<% end %>
+
+		 </div>
+	<% end %>
+
+	<%= f.submit %>
+<% end %>
+
+
+
+
+<% current_developer.first_name %>
+<% current_developer.last_name %>
+<% current_developer.last_name %>
