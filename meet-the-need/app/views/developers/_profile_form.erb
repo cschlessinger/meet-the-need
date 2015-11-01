@@ -11,8 +11,8 @@
 	<div class="form_field"><%= label_tag(:zipcode, "Zipcode") %>
 	<%= f.text_field :zipcode, placeholder: current_developer.zipcode %></div>
 
-		<!-- @TODO: display all technologies/topics in own checkboxes; add ability to edit with them filled out with current selections -->
-		<!-- @TODO: fix routes for adding and deleting technologies -->
+	<!-- @TODO: display all technologies/topics in own checkboxes; add ability to edit with them filled out with current selections -->
+	<!-- @TODO: fix routes for adding and deleting technologies -->
 
 	<div class="form_field"><%= label_tag(:technologies, "Technologies") %>
 		<% Technology.all.each do |technology| %>
@@ -25,8 +25,8 @@
 		<% end %>
 	</div>
 
-		<!-- @TODO: display all technologies/topics in own checkboxes; add ability to edit with them filled out with current selections -->
-		<!-- @TODO: fix routes for adding and deleting topics -->
+	<!-- @TODO: display all technologies/topics in own checkboxes; add ability to edit with them filled out with current selections -->
+	<!-- @TODO: fix routes for adding and deleting topics -->
 
 	<div class="form_field"><%= label_tag(:topics, "Topics") %>
 		<% Topic.all.each do |topic| %>
