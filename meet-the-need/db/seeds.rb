@@ -14,7 +14,7 @@ Developer.create(first_name: "Shawn", last_name: "John", email: "shawnjohn@examp
 Project.create(title: "LGBT Chat Room", body: "This is a support chat room for LGBT youth", customer_id: 1)
 Project.create(title: "Bowling league", body: "BOWLING!!!!!!!!!!!!!!!", customer_id: 1)
 Project.create(title: "Bulletin board", body: "some shit", customer_id: 1)
-
+Project.create(title: "Environment", body: "This is a prevent global warming", customer_id: 1)
 Technology.create(name: "chat")
 Technology.create(name: "iOS")
 Topic.create(name: "LGBT")
