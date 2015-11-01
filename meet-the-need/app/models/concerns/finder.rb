@@ -2,6 +2,7 @@ module Finder
   extend ActiveSupport::Concern
   def finder(matcher, tag, matchee) #Matcher is instance of an object; tag is either technology or topic; matchee is class of what collection of results we want to get back
 
+
     #Returns tags associated with matcher (e.g. first project)
     tags_by_matcher = matcher.send(tag)
 
@@ -16,7 +17,7 @@ module Finder
 		    	results << matchee_singular
 		    end
 		  end
-  
+
 		end
 
     # Iterates through results array and creates hash with frequency for each result
@@ -28,7 +29,7 @@ module Finder
     		result_frequency_hash[result.id] += 1
     	end
     end
-    
+
     # Converts hash to array in order to sort it (ascending) and creates temp array
     temp = result_frequency_hash.to_a.reverse.sort_by {|pair| pair[1] }
 
@@ -45,6 +46,7 @@ module Finder
     	results_array[-5..-1].reverse
     end
 
+
   end
 
 end
@@ -53,3 +55,4 @@ end
 # DeveloperTopic.first.finder(Developer.first, "topics", "Project")
 # DeveloperTopic.first.finder(Project.first, "technologies", "Developer")
 # DeveloperTopic.first.finder(Developer.first, "technologies", "Project")
+

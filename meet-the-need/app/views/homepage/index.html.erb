@@ -1,2 +1,30 @@
-<h1>Homepage#index</h1>
-<p>Find me in app/views/homepage/index.html.erb</p>
+<html>
+<head>
+  <title>Homepage</title>
+</head>
+<body>
+  <header>
+    <h1 class="homepage_title"> Homepage </h1>
+    <%= form_tag("/search", method: "get") do %>
+      <%= label_tag(:search, "Search for:") %>
+      <%= text_field_tag(:search) %>
+      <%= submit_tag("Search") %>
+    <% end %>
+    <br>
+    <button>Advanced Search</button>
+  </header>
+  <div class="left_homepage_div">
+    <h2> Latest Projects </h2>
+    <section>
+      <%= render "customer_partial" %>
+    </section>
+  </div>
+  <div class="right_homepage_div">
+    <h2> Developers </h2>
+    <section>
+      <%= render "dev_partial" %>
+    </section>
+  </div>
+</body>
+</html>
+
