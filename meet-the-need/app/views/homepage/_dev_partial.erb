@@ -1,8 +1,5 @@
   <div class="developer_details">
-    <% all_developers = Developer.all%>
-    <% reversed_developers = all_developers.reverse %>
-    <% latest_three = reversed_developers.slice!(0..2) %>
-    <% latest_three.each do |developer| %>
+    <% @latest_three_developers.each do |developer| %>
       <article>
         <div class="image"><img src="./default-avatar.png"></div>
         <%=  developer.first_name %>

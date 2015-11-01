@@ -1,8 +1,5 @@
   <div class="project_details">
-    <% all_projects = Project.all%>
-    <% reversed_projects = all_projects.reverse %>
-    <% latest_three = reversed_projects.slice!(0..2) %>
-    <% latest_three.each do |project| %>
+    <% @latest_three_projects.each do |project| %>
       <article>
         <div class="image"><img src="./default-avatar.png"></div>
         <%=  project.title %>, by
