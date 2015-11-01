@@ -3,18 +3,18 @@
       <article>
         <div class="image"><img src="./default-avatar.png"></div>
         <%=  project.title %>, by
-        <%=  project.customer.first_name %>
-        <%=  project.customer.last_name %><br>
+        <%= project.customer.first_name %>
+        <%= project.customer.last_name %><br>
         <% if project.technologies.any? %>
           Technologies:
           <% project.technologies.each do |technology| %>
-          <%= technology.name %>,
+          <%= technology.name %>
           <% end %>
         <% end %>
         <% if project.topics.any? %>
           Topics:
           <% project.topics.each do |topic| %>
-          <%= topic.name %>,
+          <%= topic.name %>
           <% end %>
         <% end %>
           Created at:
