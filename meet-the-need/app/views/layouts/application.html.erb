@@ -15,12 +15,12 @@
     Logged in as <strong><%= current_developer.email %></strong>.
       <%= link_to 'Edit Account', edit_developer_registration_path, :class => 'navbar-link' %> |
       <%= link_to "Logout", destroy_developer_session_path, method: :delete, :class => 'navbar-link'  %> |
-      <%= link_to "Dashboard", @developer %>
+      <%= link_to "Dashboard", developer_path(current_developer.id) %>
     <% elsif customer_signed_in? %>
       Logged in as <strong><%= current_customer.email %></strong>.
       <%= link_to 'Edit Account', edit_customer_registration_path, :class => 'navbar-link' %> |
       <%= link_to "Logout", destroy_customer_session_path, method: :delete, :class => 'navbar-link'  %> |
-      <%= link_to "Dashboard", @customer %>
+      <%= link_to "Dashboard", customer_path(current_customer.id) %>
     <% else %>
     <%= link_to "Customer signup", new_customer_registration_path, :class => 'navbar-link'  %> |
     <%= link_to "Customer Login", new_customer_session_path, :class => 'navbar-link'  %> |
