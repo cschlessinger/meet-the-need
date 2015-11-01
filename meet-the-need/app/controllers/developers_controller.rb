@@ -12,6 +12,7 @@ class DevelopersController < ApplicationController
   # GET /developers/1.json
   def show
     authenticate_developer!
+    @projects = current_developer.projects
   end
 
   # GET /developers/new
