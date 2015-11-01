@@ -1,3 +1,20 @@
-
-<%= link_to 'Edit', edit_customer_path(@customer) %> |
-<%= link_to 'Back', customers_path %>
+<div>
+  <h1>Customer dashboard</h1>
+  <%= link_to "Create a project", new_project_path %>
+  <div id="tabs">
+    <ul>
+      <li><a href="#tabs-1">Unassigned</a></li>
+      <li><a href="#tabs-2">Current Projects</a></li>
+      <li><a href="#tabs-3">Completed</a></li>
+    </ul>
+    <div id="tabs-1">
+     <%= render "unassigned" %>
+    </div>
+    <div id="tabs-2">
+     Current Projects
+    </div>
+    <div id="tabs-3">
+      Completed
+    </div>
+  </div>
+</div>
