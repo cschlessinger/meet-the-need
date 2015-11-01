@@ -9,4 +9,9 @@ class HomepageController < ApplicationController
     @latest_three_developers = reversed_developers.slice!(0..2)
 
   end
+
+  def search
+    @search_results = Project.search(params[:search])
+    render "search_results/search_results"
+  end
 end
