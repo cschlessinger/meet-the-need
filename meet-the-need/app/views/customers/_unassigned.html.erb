@@ -1,7 +1,7 @@
 <div>
   <h1>My Unassigned Projects</h1>
   <% @unassigned_projects.each do |project| %>
-    <article>
+    <article class="float-left">
       <div class="image"><img src="./default-avatar.png"></div>
       <%=  project.title %>, by
       <%= project.customer.first_name %>
@@ -22,4 +22,8 @@
       <%= project.created_at.strftime("%m/%d/%Y") %>
     </article><br>
   <% end %>
+    <article class="float-right">
+    <h1> Matching Developers </h1>
+      <%= render "match_developers" %>
+    </article>
 </div>
