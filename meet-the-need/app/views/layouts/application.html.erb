@@ -13,17 +13,19 @@
   <header>
     <% if developer_signed_in? %>
     Logged in as <strong><%= current_developer.email %></strong>.
-    <%= link_to 'Edit Account', edit_developer_registration_path, :class => 'navbar-link' %> |
-    <%= link_to "Logout", destroy_developer_session_path, method: :delete, :class => 'navbar-link'  %> |
-    <%= link_to "Dashboard", @developer %>
+      <%= link_to 'Edit Account', edit_developer_registration_path, :class => 'navbar-link' %> |
+      <%= link_to "Logout", destroy_developer_session_path, method: :delete, :class => 'navbar-link'  %> |
+      <%= link_to "Dashboard", @developer %>
     <% elsif customer_signed_in? %>
-    Logged in as <strong><%= current_customer.email %></strong>.
-    <%= link_to 'Edit Account', edit_customer_registration_path, :class => 'navbar-link' %> |
-    <%= link_to "Logout", destroy_customer_session_path, method: :delete, :class => 'navbar-link'  %> |
-    <%= link_to "Dashboard", customer_path %>
+      Logged in as <strong><%= current_customer.email %></strong>.
+      <%= link_to 'Edit Account', edit_customer_registration_path, :class => 'navbar-link' %> |
+      <%= link_to "Logout", destroy_customer_session_path, method: :delete, :class => 'navbar-link'  %> |
+      <%= link_to "Dashboard", customer_path %>
     <% else %>
-    <%= link_to "Sign up", new_customer_registration_path, :class => 'navbar-link'  %> |
-    <%= link_to "Login", new_customer_session_path, :class => 'navbar-link'  %>
+    <%= link_to "Customer signup", new_customer_registration_path, :class => 'navbar-link'  %> |
+    <%= link_to "Customer Login", new_customer_session_path, :class => 'navbar-link'  %> | 
+    <%= link_to "Developer signup", new_developer_registration_path, :class => 'navbar-link'  %> |
+    <%= link_to "Developer login", new_developer_session_path, :class => 'navbar-link'  %>
     <% end %>
   </header>
   <p class="notice"><%= notice %></p>

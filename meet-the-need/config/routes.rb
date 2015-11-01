@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   devise_for :customers
   get 'homepage/index'
 
+  # get '/sign_up(.:format)' => 'devise/registrations#new'
+
   resources :developers
   resources :customers
   resources :projects
