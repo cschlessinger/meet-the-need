@@ -12,38 +12,35 @@
 	<%= f.text_field :zipcode, placeholder: current_developer.zipcode %></div>
 
 	<!-- @TODO: display all technologies/topics in own checkboxes; add ability to edit with them filled out with current selections -->
-	
-	<div class="form_field"><%= label_tag(:technologies, "Technologies") %>
-	<% Technology.all.each do |technology| %>
-		<div><%= technology.name %> | 
+	<!-- @TODO: fix routes for adding and deleting technologies -->
 
-			<% if DeveloperTechnology.where(developer_id: :id, technology_id: technology.id).empty? %>
-				<%= link_to "Add", new_developer_technology_path%>
+	<div class="form_field"><%= label_tag(:technologies, "Technologies") %>
+		<% Technology.all.each do |technology| %>
+			<div><%= technology.name %> | 
+			<% if current_developer.technologies.include?(Technology.find(technology.id)) %>
+				<%= link_to "Delete", 'developer_technologies#destroy' %>
 			<% else %>
-				<%= link_to "Delete", 'developer_technologies#destroy' %></div>
+				<%= link_to "Add", new_developer_technology_path%>
 			<% end %>
-	<% end %>
+		<% end %>
+	</div>
 
 	<!-- @TODO: display all technologies/topics in own checkboxes; add ability to edit with them filled out with current selections -->
-	<div class="form_field"><%= label_tag(:topics, "Topics") %>
-	<% Topic.all.each do |topic| %>
-		<div>
-		<%= topic.name %> | 
-		<% if DeveloperTopic.where(developer_id: :id, topic_id: topic.id).empty? %>
-			<%= link_to "Add", new_developer_topic_path%>
-		<% else %>
-			<%= link_to "Delete", 'developer_topics#destroy' %></div>
-		<% end %>
+	<!-- @TODO: fix routes for adding and deleting topics -->
 
-		 </div>
-	<% end %>
+	<div class="form_field"><%= label_tag(:topics, "Topics") %>
+		<% Topic.all.each do |topic| %>
+		<div>
+			<%= topic.name %> | 
+			<% if current_developer.topics.include?(Topic.find(topic.id)) %>
+				<%= link_to "Delete", 'developer_topics#destroy' %>
+			<% else %>
+				<%= link_to "Add", new_developer_topic_path%>
+			<% end %>
+		</div>
+
+		<% end %>
+	</div>
 
 	<%= f.submit %>
 <% end %>
-
-
-
-
-<% current_developer.first_name %>
-<% current_developer.last_name %>
-<% current_developer.last_name %>

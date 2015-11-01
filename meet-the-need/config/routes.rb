@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   get 'homepage/index'
   get 'homepage/search' => 'homepage#search'
 
+  # get '/sign_up(.:format)' => 'devise/registrations#new'
+
   resources :developers
   resources :customers
   resources :projects
