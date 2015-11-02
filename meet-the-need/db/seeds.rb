@@ -8,20 +8,25 @@
 
 
 Customer.create(first_name: "Bob", last_name: "Smith", email: "bobsmith@example.com", zipcode: "90210", password: "password")
+
 Developer.create(first_name: "Sally", last_name: "Jones", email: "sallyjones@example.com", zipcode: "81239", password: "password")
 Developer.create(first_name: "Frannie", last_name: "Frankie", email: "franniefrankie@example.com", zipcode: "81239", password: "password")
 Developer.create(first_name: "Shawn", last_name: "John", email: "shawnjohn@example.com", zipcode: "81239", password: "password", tagline: "I am the bestest developer ever", bio: "That's all.")
+
 Project.create(title: "LGBT Chat Room", body: "This is a support chat room for LGBT youth", customer_id: 1)
-Project.create(title: "Bowling league", body: "BOWLING!!!!!!!!!!!!!!!", customer_id: 1)
-Project.create(title: "Bulletin board", body: "some shit", customer_id: 1)
-Project.create(title: "Environment", body: "This is a prevent global warming", customer_id: 1)
+Project.create(title: "Bowling league", body: "Virtual bowling app", customer_id: 1)
+Project.create(title: "Healthcare websites", body: "This will disrupt the healthcare industry", customer_id: 1, developer_id: 4)
+Project.create(title: "Environment", body: "This app will singlehandedly end global warming", customer_id: 1, developer_id: 4)
+
 Technology.create(name: "chat")
 Technology.create(name: "iOS")
+
 Topic.create(name: "LGBT")
 Topic.create(name: "Youth")
 Topic.create(name: "Finance")
 Topic.create(name: "Healthcare")
 Topic.create(name: "Government")
+
 DeveloperTechnology.create(developer_id: 1, technology_id: 1)
 DeveloperTechnology.create(developer_id: 1, technology_id: 2)
 
