@@ -1,5 +1,5 @@
 class ReviewRequestsController < ApplicationController
-
+# developer sends a review request to customer
    def create
     customer = Project.find(params[:format]).customer
     @review_request = ReviewRequest.create(developer_id: current_developer.id, project_id: params[:format], customer_id: customer.id)

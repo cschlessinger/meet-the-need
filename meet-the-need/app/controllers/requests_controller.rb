@@ -1,5 +1,5 @@
 class RequestsController < ApplicationController
-
+# customer sends a request to developer to work on a project
 	def new
 		@request = Request.new
 
