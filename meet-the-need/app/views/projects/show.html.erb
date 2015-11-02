@@ -1,3 +1,10 @@
+<h1><%= @project.title %></h1>
+
+<div>
+<%=@project.body%>
+<%=@project.cost%>
+</div>
+<button_to 'Request', 'requests#create'>
 
 <%= link_to 'Edit', edit_project_path(@project) %> |
 <%= link_to 'Back', projects_path %>
