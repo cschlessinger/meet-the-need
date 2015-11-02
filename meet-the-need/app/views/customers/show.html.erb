@@ -3,18 +3,18 @@
   <%= link_to "Create a project", new_project_path %>
   <div id="tabs" class="<%= current_customer.id %>">
     <ul>
-      <li><a href="#tabs-1">Unassigned</a></li>
-      <li><a href="#tabs-2">Current Projects</a></li>
-      <li><a href="#tabs-3">Completed</a></li>
+      <li><a href="#unassigned">Unassigned</a></li>
+      <li><a href="#current">Current Projects</a></li>
+      <li><a href="#completed">Completed</a></li>
     </ul>
-    <div id="tabs-1">
+    <div id="unassigned">
      <%= render "unassigned" %>
     </div>
-    <div id="tabs-2">
-     Current Projects
+    <div id="current">
+      <%= render 'current' %>
     </div>
-    <div id="tabs-3">
-      Completed
+    <div id="completed">
+      <%= render "completed" %>
     </div>
   </div>
 </div>

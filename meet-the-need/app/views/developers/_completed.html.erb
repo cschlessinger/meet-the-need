@@ -4,7 +4,6 @@
 	<% if @completed_projects.any? %>
 		<% @completed_projects.each do |project| %>
 			<div class='project'>
-				<!-- @TODO: add developer assigned date column to project model -->
 				<!-- @TODO: add functionality to assign a developer to a project (and update assigned_at column) -->
 				<div class='project-title'><%= project.title %></div>
 				<div class='project-date'><%#= project.assigned_at.strftime("%m/%d/%Y") %></div>
