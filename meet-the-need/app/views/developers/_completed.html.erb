@@ -1,16 +1,15 @@
 <div>
-	<h1>My Current Projects</h1>
+	<h1>My Completed Projects</h1>
 	<div id='project-area'></div>
-	<% if @projects.any? %>
-		<% @projects.each do |project| %>
+	<% if @completed_projects.any? %>
+		<% @completed_projects.each do |project| %>
 			<div class='project'>
-				<!-- @TODO: add current or closed column to project model  -->
-				<!-- @TODO: add cost column to project model  -->
 				<!-- @TODO: add developer assigned date column to project model -->
+				<!-- @TODO: add functionality to assign a developer to a project (and update assigned_at column) -->
 				<div class='project-title'><%= project.title %></div>
-				<div class='project-date'><%= project.updated_at.strftime("%m/%d/%Y") %></div>
+				<div class='project-date'><%#= project.assigned_at.strftime("%m/%d/%Y") %></div>
 				<div class='project-customer'><%= project.customer.first_name %></div>
-				<div class='cost'></div>
+				<div class='cost'>$<%= project.cost %></div>
 			</div>
 		<% end %>
 	<% end %>

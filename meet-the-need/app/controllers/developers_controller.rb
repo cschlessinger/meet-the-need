@@ -12,7 +12,9 @@ class DevelopersController < ApplicationController
   # GET /developers/1.json
   def show
     authenticate_developer!
-    @projects = current_developer.projects
+    @current_projects = current_developer.projects.where(is_completed: false)
+    @completed_projects = current_developer.projects.where(is_completed: true)
+    @requests = Request.where(developer_id: @developer.id)
   end
 
   # GET /developers/new

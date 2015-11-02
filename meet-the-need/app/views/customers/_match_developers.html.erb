@@ -1,0 +1,27 @@
+  <div class="developer_details">
+    <% if @top_unique_matching_three.any? %>
+        <% @top_unique_matching_three.each do |developer| %>
+          <article>
+            <div class="image"><img src="./default-avatar.png"></div>
+            <%=  developer.first_name %>
+            <%=  developer.last_name %><br>
+            <% if developer.technologies.any? %>
+              Technologies:
+              <% developer.technologies.each do |technology| %>
+              <%= technology.name %>,
+              <% end %>
+            <% end %>
+            <% if developer.topics.any? %>
+              Topics:
+              <% developer.topics.each do |topic| %>
+              <%= topic.name %>,
+              <% end %>
+            <% end %>
+              Created at:
+            <%= developer.created_at.strftime("%m/%d/%Y") %>
+          </article><br>
+        <% end %>
+    <% else %>
+      No matching developers. We are waiting for matching developers to sign up!
+    <% end %>
+  </div>
