@@ -10,7 +10,11 @@ Rails.application.routes.draw do
 
   # get '/sign_up(.:format)' => 'devise/registrations#new'
 
-  resources :developers
+  resources :developers do
+    member do
+      get 'profile'
+    end
+  end
   resources :customers
   resources :projects
   resources :requests

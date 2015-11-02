@@ -8,7 +8,9 @@
         <!-- @TODO: link here to developer profile -->
         <div class='project-title'><%= project.title %></div>
         <div class='project-date'><%= project.assigned_date.strftime("%m/%d/%Y") %></div>
-        <div class='project-developer'><%= project.developer.first_name %> <%= project.developer.last_name %></div>
+        <%= link_to profile_developer_path(project.developer) do %>
+          <div class='project-developer'><%= project.developer.first_name %> <%= project.developer.last_name %></div>
+        <% end %>
         <div class='cost'>$<%= project.cost %></div>
       </div>
     <% end %>

@@ -1,7 +1,8 @@
 class DevelopersController < ApplicationController
-  before_action :set_developer, only: [:index, :show, :edit, :update, :destroy]
+  before_action :set_developer, only: [:index, :show, :profile, :edit, :update, :destroy]
 
-  before_action :authenticate_developer!
+  before_action :authenticate_developer!, except: [:profile]
+
   # GET /developers
   # GET /developers.json
   def index
@@ -14,6 +15,11 @@ class DevelopersController < ApplicationController
     @current_projects = current_developer.projects.where(is_completed: false)
     @completed_projects = current_developer.projects.where(is_completed: true)
     @requests = Request.where(developer_id: @developer.id)
+  end
+
+  # This is the view for customers to see a developer's profile
+  def profile
+    render 'profile'
   end
 
   # GET /developers/new
