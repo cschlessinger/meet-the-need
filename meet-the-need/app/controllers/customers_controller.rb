@@ -13,13 +13,12 @@ class CustomersController < ApplicationController
   # GET /customers/1
   # GET /customers/1.json
   def show
-    customer_project_matcher(0)
+
     if request.xhr?
-      p "#" * 100
-      p params
-      p "#" * 100
-      p response
-      p "@" * 100
+      customer_project_matcher(params[:order_id])
+      render "/customers/match_developers"
+    else
+      customer_project_matcher(0)
     end
   end
 
