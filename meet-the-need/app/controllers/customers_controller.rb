@@ -19,6 +19,11 @@ class CustomersController < ApplicationController
       @customer_project_requests << project.requests
     end
 
+    @customer_project_review_requests = []
+    customer_projects.each do |project|
+      @customer_project_review_requests << project.review_requests
+    end
+
     @current_projects = @customer.projects.where(is_completed: false)
     @completed_projects = @customer.projects.where(is_completed: true)
     @requests = Request.where(customer_id: @customer.id)

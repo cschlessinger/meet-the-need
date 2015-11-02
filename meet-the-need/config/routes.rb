@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   resources :customers
   resources :projects
   resources :requests
+  resources :review_requests
   resources :developer_technologies
   resources :developer_topics
 
