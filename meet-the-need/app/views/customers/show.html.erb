@@ -1,7 +1,7 @@
 <div>
   <h1>Customer dashboard</h1>
   <%= link_to "Create a project", new_project_path %>
-  <div id="tabs">
+  <div id="tabs" class="<%= current_customer.id %>">
     <ul>
       <li><a href="#tabs-1">Unassigned</a></li>
       <li><a href="#tabs-2">Current Projects</a></li>
