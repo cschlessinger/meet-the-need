@@ -13,6 +13,12 @@ class CustomersController < ApplicationController
   # GET /customers/1
   # GET /customers/1.json
   def show
+    customer_projects = current_customer.projects
+    @customer_project_requests = []
+    customer_projects.each do |project|
+      @customer_project_requests << project.requests
+    end
+
     @current_projects = @customer.projects.where(is_completed: false)
     @completed_projects = @customer.projects.where(is_completed: true)
     @requests = Request.where(customer_id: @customer.id)
