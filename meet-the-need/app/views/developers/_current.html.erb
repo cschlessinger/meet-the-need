@@ -8,6 +8,7 @@
 				<div class='project-date'><%= project.assigned_date.strftime("%m/%d/%Y") %></div>
 				<div class='project-customer'><%= project.customer.first_name %></div>
 				<div class='cost'>$<%= project.cost %></div>
+				<%= link_to 'Request Review', review_requests_path(project.id), method: :post %>
 			</div>
 		<% end %>
 	<% end %>
