@@ -10,7 +10,9 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
 </head>
 <body>
+  <div id="page-title"><%= link_to "Meet the Need", root_path %></div>
   <header>
+
     <% if developer_signed_in? %>
     Logged in as <strong><%= current_developer.email %></strong>.
       <%= link_to 'Edit Account', edit_developer_registration_path, :class => 'navbar-link' %> |

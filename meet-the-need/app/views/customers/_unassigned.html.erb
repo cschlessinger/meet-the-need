@@ -2,6 +2,7 @@
   <h1>My Unassigned Projects</h1>
   <% i = 0 %>
   <% @unassigned_projects.each do |project| %>
+    <%= link_to(project) do %>
     <article class="<%= i %> unassigned_projects">
       <div class="image"><img src="./default-avatar.png"></div>
       <%=  project.title %>, by
@@ -23,6 +24,7 @@
       <%= project.created_at.strftime("%m/%d/%Y") %>
     </article><br>
     <% i += 1 %>
+  <% end %>
   <% end %>
     <article class="float-right">
     <h1> Matching Developers </h1>

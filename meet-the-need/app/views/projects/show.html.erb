@@ -1,10 +1,10 @@
 <h1><%= @project.title %></h1>
 
 <div>
-<%=@project.body%>
-<%=@project.cost%>
+<div class="project-body"><%=@project.body%></div>
+<div class="project-cost">$<%=@project.cost%></div>
+<%= button_to 'Request', requests_path(:method => :create, :project => @project)%>
 </div>
-<button_to 'Request', 'requests#create'>
 
 <%= link_to 'Edit', edit_project_path(@project) %> |
 <%= link_to 'Back', projects_path %>

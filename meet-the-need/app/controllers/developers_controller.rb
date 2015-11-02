@@ -14,6 +14,7 @@ class DevelopersController < ApplicationController
     authenticate_developer!
     @current_projects = current_developer.projects.where(is_completed: false)
     @completed_projects = current_developer.projects.where(is_completed: true)
+    @requests = Request.where(developer_id: @developer.id)
   end
 
   # GET /developers/new
