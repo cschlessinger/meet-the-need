@@ -1,6 +1,7 @@
 <div>
   <h1>My Project Requests</h1>
   <% if @customer_project_requests.any? %>
+    <h2>Project Developer Requests</h2>
     <% @customer_project_requests.each do |requests| %>
       <% requests.each do |request| %>
         <article class="unassigned_request">
@@ -12,9 +13,21 @@
         </article><br>
      <% end %>
     <% end %>
+    <% if @customer_project_review_requests.any? %>
+      <h2>Project Review Requests</h2>
+      <% @customer_project_review_requests.each do |review_requests| %>
+        <% review_requests.each do |review_request| %>
+          <article class="unassigned_request">
+            <%= review_request.project.title %>, review requested by
+            <%= review_request.developer.first_name %>
+            <%= review_request.developer.last_name %><br>
+            <%= link_to "Accept Review Request", review_request_path(review_request.id), method: :patch %> |
+            <%= link_to "Reject Review Request", review_request_path(review_request.id), method: :delete %>
+          </article><br>
+       <% end %>
+      <% end %>
+    <% end %>
   <% else %>
-    You have no pending project requests.
+    You have no pending requests.
   <% end %>
 </div>
-
-
