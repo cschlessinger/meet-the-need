@@ -15,8 +15,17 @@ class RequestsController < ApplicationController
 		redirect_to root_path
 	end
 
+	def update
+		request = Request.find(params[:id])
+		project = Project.find(request.project_id)
+		project.update(developer_id: request.developer_id)
+		request.destroy
+		redirect_to customer_path
+
+	end
+
 	def destroy
-		
+
 		Request.find(params[:id]).destroy
 	end
 
