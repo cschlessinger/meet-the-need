@@ -2,8 +2,10 @@
     <% @latest_three_developers.each do |developer| %>
       <article>
         <%= image_tag "default-avatar.png" %>
+        <%= link_to profile_developer_path(developer) do %>
         <%=  developer.first_name %>
         <%=  developer.last_name %><br>
+        <% end %>
         <% if developer.technologies.any? %>
           Technologies:
           <% developer.technologies.each do |technology| %>
