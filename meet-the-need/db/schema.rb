@@ -11,9 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
 ActiveRecord::Schema.define(version: 20151102005125) do
-ccc38dc6422f03bad1d56d939a42c19791c5561c
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -100,11 +98,6 @@ ccc38dc6422f03bad1d56d939a42c19791c5561c
     t.integer  "developer_id"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
-<<<<<<< HEAD
-    t.string   "cost"
-    t.boolean  "status"
-    t.datetime "assigned_date"
-=======
   end
 
   create_table "requests", force: :cascade do |t|
@@ -113,7 +106,6 @@ ccc38dc6422f03bad1d56d939a42c19791c5561c
     t.integer  "customer_id"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
->>>>>>> ccc38dc6422f03bad1d56d939a42c19791c5561c
   end
 
   create_table "technologies", force: :cascade do |t|
