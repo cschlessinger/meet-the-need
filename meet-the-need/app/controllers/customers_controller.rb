@@ -13,10 +13,11 @@ class CustomersController < ApplicationController
   # GET /customers/1
   # GET /customers/1.json
   def show
-
+    # find the top three developers associated with the project
     if request.xhr?
-      customer_project_matcher(params[:order_id])
-      render "/customers/match_developers"
+      order_id = params[:order_id].split(' ')[0].to_i
+      customer_project_matcher(order_id)
+      render "match_developers", layout: false
     else
       customer_project_matcher(0)
     end

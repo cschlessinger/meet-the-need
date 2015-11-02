@@ -39,6 +39,7 @@ DeveloperTopic.create(developer_id: 2, topic_id: 5)
 DeveloperTopic.create(developer_id: 1, topic_id: 1)
 DeveloperTopic.create(developer_id: 1, topic_id: 2)
 DeveloperTopic.create(developer_id: 1, topic_id: 3)
+DeveloperTopic.create(developer_id: 4, topic_id: 5)
 
 DeveloperTopic.create(developer_id: 3, topic_id: 1)
 
@@ -50,4 +51,5 @@ ProjectTopic.create(project_id: 1, topic_id: 2)
 ProjectTopic.create(project_id: 1, topic_id: 3)
 ProjectTopic.create(project_id: 1, topic_id: 4)
 ProjectTopic.create(project_id: 1, topic_id: 5)
+ProjectTopic.create(project_id: 4, topic_id: 5)
 
