@@ -45,12 +45,11 @@
             <article>
               <div class="image"><img src="./default-avatar.png"></div>
               <div>
-                <%=  developer.first_name %>
-                <%=  developer.last_name %>
+                <h3><%=  developer.first_name %> <%=  developer.last_name %></h3>
               </div>
               <div>
                 <% if developer.technologies.any? %>
-                  Technologies:
+                  <h4>Technologies:</h4>
                   <% developer.technologies.each do |technology| %>
                     <%= technology.name %>,
                   <% end %>
@@ -58,15 +57,14 @@
               </div>
               <div>
                 <% if developer.topics.any? %>
-                  Topics:
+                  <h4>Topics:</h4>
                   <% developer.topics.each do |topic| %>
                     <%= topic.name %>,
                   <% end %>
                 <% end %>
               </div>
               <div>
-                Created at:
-                <%= developer.created_at.strftime("%m/%d/%Y") %>
+                <p>Created at: <%= developer.created_at.strftime("%m/%d/%Y") %></p>
               </div>
             </article>
           <% end %>
