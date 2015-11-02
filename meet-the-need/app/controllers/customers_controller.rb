@@ -13,6 +13,9 @@ class CustomersController < ApplicationController
   # GET /customers/1
   # GET /customers/1.json
   def show
+    @current_projects = @customer.projects.where(is_completed: false)
+    @completed_projects = @customer.projects.where(is_completed: true)
+    @requests = Request.where(customer_id: @customer.id)
     # find the top three developers associated with the project
     if request.xhr?
       order_id = params[:order_id].split(' ')[0].to_i
