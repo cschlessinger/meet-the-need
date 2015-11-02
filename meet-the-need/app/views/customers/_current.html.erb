@@ -1,0 +1,16 @@
+<div>
+  <h1>My Current Projects</h1>
+  <div id='project-area'></div>
+  <% if @current_projects.any? %>
+    <% @current_projects.each do |project| %>
+      <div class='project'>
+        <!-- @TODO: Build out profile page using partial -->
+        <!-- @TODO: link here to developer profile -->
+        <div class='project-title'><%= project.title %></div>
+        <div class='project-date'><%= project.assigned_date.strftime("%m/%d/%Y") %></div>
+        <div class='project-developer'><%= project.developer.first_name %> <%= project.developer.last_name %></div>
+        <div class='cost'>$<%= project.cost %></div>
+      </div>
+    <% end %>
+  <% end %>
+</div>

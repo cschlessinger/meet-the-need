@@ -8,7 +8,7 @@ class Project < ActiveRecord::Base
   belongs_to :customer
   belongs_to :developer
 
-  validates :title, :body, :customer_id, presence: true
+  validates :title, :body, presence: true
 
   def self.search(search)
     result_by_title = where("lower(title) LIKE (?)", "%#{search.downcase}%")

@@ -10,8 +10,35 @@
       </ul>
     </div>
   <% end %>
+ <% end %>
 
+<%= form_for @project, url: {action: "create"} do |f| %>
+  <div>
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </div>
+  <div>
+    <%= f.label :description %>
+    <%= f.text_area :body %>
+  </div>
+  <div>
+    <%= f.label :cost %>
+    <%= f.text_field :cost %>
+  </div>
+  <div>
+    <%= f.fields_for :topics do |topic_form| %>
+      <%= f.label :topics %>
+      <%= topic_form.text_field :name %>
+    <% end %>
+  </div>
+  <div>
+    <%= f.fields_for :technologies do |technology_form| %>
+      <%= f.label :technologies %>
+      <%= technology_form.text_field :name %>
+    <% end %>
+  </div>
   <div class="actions">
     <%= f.submit %>
   </div>
 <% end %>
+

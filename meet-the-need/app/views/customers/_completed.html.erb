@@ -1,0 +1,15 @@
+<div>
+  <h1>My Completed Projects</h1>
+  <div id='project-area'></div>
+  <% if @completed_projects.any? %>
+    <% @completed_projects.each do |project| %>
+      <div class='project'>
+        <!-- @TODO: add functionality to assign a developer to a project (and update assigned_at column) -->
+        <div class='project-title'><%= project.title %></div>
+        <div class='project-date'><%#= project.assigned_at.strftime("%m/%d/%Y") %></div>
+        <div class='project-developer'><%= project.developer.first_name %> <%= project.developer.last_name %></div>
+        <div class='cost'>$<%= project.cost %></div><br>
+      </div>
+    <% end %>
+  <% end %>
+</div>
