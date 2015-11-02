@@ -1,0 +1,33 @@
+<div>
+
+	<!-- Profile Tab -->
+	<!-- @Todo: Add a profile image -->
+	<div class="show-field"><strong><%= @developer.first_name %> <%= @developer.last_name %></strong></div>
+	<div class="show-field"><%= @developer.tagline %></div>
+	<div class="show-field"><%= @developer.bio %></div>
+	<div class="show-field"><%= @developer.zipcode %></div>
+	<!-- @TODO: Make UI nicer - group things into plus/minus sections with ajax -->
+	<% if @developer.technologies.any? %>
+		<div class="show-field">
+			<h3>Technologies</h3>
+			<ul>
+				<% @developer.technologies.each do |technology| %>
+					<li><%= technology.name %></li>
+				<% end %>
+			</ul>
+		</div>
+	<% end %>
+	<% if @developer.topics.any? %>
+		<div class="show-field">
+			<h3>Topics</h3>
+			<ul>
+				<% @developer.topics.each do |topic| %>
+						<li><%= topic.name %></li>
+				<% end %>
+			</ul>
+		</div>
+	<% end %>
+</div>
+<% if @developer == current_developer %>
+	<%= link_to 'Edit', edit_developer_path(@developer) %>
+<% end %>

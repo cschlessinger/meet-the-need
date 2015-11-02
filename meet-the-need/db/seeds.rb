@@ -13,10 +13,12 @@ Developer.create(first_name: "Sally", last_name: "Jones", email: "sallyjones@exa
 Developer.create(first_name: "Frannie", last_name: "Frankie", email: "franniefrankie@example.com", zipcode: "81239", password: "password")
 Developer.create(first_name: "Shawn", last_name: "John", email: "shawnjohn@example.com", zipcode: "81239", password: "password", tagline: "I am the bestest developer ever", bio: "That's all.")
 
-Project.create(title: "LGBT Chat Room", body: "This is a support chat room for LGBT youth", customer_id: 1, cost: 350)
-Project.create(title: "Bowling league", body: "Virtual bowling app", customer_id: 1, developer_id: 3, cost: 950, is_completed: true)
-Project.create(title: "Healthcare websites", body: "This will disrupt the healthcare industry", customer_id: 1, developer_id: 3, cost: 525, is_completed: false)
-Project.create(title: "Environment", body: "This app will singlehandedly end global warming", customer_id: 1, developer_id: 3, cost: 400, is_completed: true)
+Project.create(title: "LGBT Chat Room", body: "This is a support chat room for LGBT youth", customer_id: 1, cost: 350, assigned_date: '2015-11-01')
+Project.create(title: "Animal Protection", body: "This is to protect animals", customer_id: 1, cost: 350)
+Project.create(title: "Finance", body: "This is better manage my finance", customer_id: 1, cost: 350)
+Project.create(title: "Bowling league", body: "Virtual bowling app", customer_id: 1, cost: 950)
+Project.create(title: "Healthcare websites", body: "This will disrupt the healthcare industry", customer_id: 1, cost: 525, assigned_date: '2015-11-01', developer_id: 3, is_completed: false)
+Project.create(title: "Environment", body: "This app will singlehandedly end global warming", customer_id: 1, assigned_date: '2015-11-01', developer_id: 3, cost: 400, is_completed: true)
 
 Technology.create(name: "chat")
 Technology.create(name: "iOS")
