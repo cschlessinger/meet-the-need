@@ -3,7 +3,9 @@
 <div>
 <div class="project-body"><%=@project.body%></div>
 <div class="project-cost">$<%=@project.cost%></div>
-<%= button_to 'Request', requests_path(:method => :create, :project => @project)%>
+<% if current_developer %>
+  <%= button_to 'Request', requests_path(:method => :create, :project => @project)%>
+<% end %>
 </div>
 
 <%= link_to 'Edit', edit_project_path(@project) %> |

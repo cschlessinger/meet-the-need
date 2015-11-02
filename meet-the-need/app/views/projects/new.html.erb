@@ -1,21 +1,3 @@
 <h1>Add your project</h1>
 
-<%= form_for @project, url: {action: "create"} do |f| %>
-  <%= f.label :title %>
-  <%= f.text_field :title %><br>
-  <%= f.label :description %>
-  <%= f.text_area :body %><br>
-  <%= f.fields_for :topics do |topic_form| %>
-    <%= f.label :topics %>
-    <%= topic_form.text_field :name %>
-  <% end %><br>
-  <%= f.fields_for :technologies do |technology_form| %>
-    <%= f.label :technologies %>
-    <%= technology_form.text_field :name %>
-  <% end %><br>
-
-  <%= f.submit "Create" %>
-<% end %>
-
-
 <%= render 'form' %>
