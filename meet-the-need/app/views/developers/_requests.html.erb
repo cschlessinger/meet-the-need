@@ -1,0 +1,5 @@
+<% @requests.each do |request| %>
+	<div>
+		<div>You requested <%= Project.find(request.project_id).title %> from <%= Customer.find(request.customer_id).first_name%> <%= Customer.find(request.customer_id).last_name%> on <%= request.created_at.strftime("%m/%d/%Y") %></div>
+	</div>
+<% end %>
