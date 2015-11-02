@@ -8,7 +8,7 @@ class CreateProjects < ActiveRecord::Migration
       t.datetime :assigned_date
 
       t.references :customer
-      t.references :developer
+      t.string :developer_id, default: nil
 
       t.timestamps null: false
     end

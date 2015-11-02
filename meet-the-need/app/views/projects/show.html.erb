@@ -3,7 +3,7 @@
 <div>
 <div class="project-body"><%=@project.body%></div>
 <div class="project-cost">$<%=@project.cost%></div>
-<% if current_developer %>
+<% if current_developer && @project.developer_id == nil %>
   <%= button_to 'Request', requests_path(:method => :create, :project => @project)%>
 <% end %>
 </div>
