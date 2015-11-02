@@ -1,7 +1,6 @@
   <div class="project_details">
     <% @latest_three_projects.each do |project| %>
       <article>
-        <div class="image"><img src="./default-avatar.png"></div>
         <%=  project.title %>, by
         <%= project.customer.first_name %>
         <%= project.customer.last_name %><br>

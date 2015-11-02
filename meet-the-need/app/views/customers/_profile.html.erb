@@ -1,0 +1,13 @@
+<div>
+
+  <!-- Profile Tab -->
+  <!-- @Todo: Add a profile image -->
+  <%= image_tag "default-avatar.png" %>
+  <div class="show-field"><strong><%= @customer.first_name %> <%= @customer.last_name %></strong></div>
+  <!-- @TODO: add bio field -->
+  <div class="show-field"><%= @customer.bio %></div>
+  <div class="show-field"><%= @customer.zipcode %></div>
+</div>
+<% if @customer == current_customer %>
+  <%= link_to 'Edit', edit_customer_path(@customer) %>
+<% end %>

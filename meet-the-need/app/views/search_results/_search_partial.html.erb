@@ -3,7 +3,6 @@
       <% @search_results.each do |project| %>
         <%= link_to(project) do %>
         <article>
-          <div class="image"><img src="./default-avatar.png"></div>
           <%= project.title %>, by
           <%= project.customer.first_name %>
           <%= project.customer.last_name %><br>
@@ -22,7 +21,7 @@
             Created at:
           <%= project.created_at.strftime("%m/%d/%Y") %>
         </article><br>
-      <% end %>
+        <% end %>
       <% end %>
     <% else %>
       No results!
