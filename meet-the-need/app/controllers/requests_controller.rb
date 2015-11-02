@@ -19,14 +19,15 @@ class RequestsController < ApplicationController
 		request = Request.find(params[:id])
 		project = Project.find(request.project_id)
 		project.update(developer_id: request.developer_id)
+		project.update(assigned_date: Time.now)
+		project.update(is_completed: false)
 		request.destroy
-		redirect_to customer_path
-
+		redirect_to customer_path(current_customer)
 	end
 
 	def destroy
-
 		Request.find(params[:id]).destroy
+		redirect_to customer_path(current_customer)
 	end
 
 end
