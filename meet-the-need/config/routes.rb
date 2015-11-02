@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   resources :developers
   resources :customers
   resources :projects
+  resources :requests
   resources :developer_technologies
   resources :developer_topics
 
