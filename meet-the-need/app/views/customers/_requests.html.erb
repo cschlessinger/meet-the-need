@@ -1,0 +1,19 @@
+<div>
+  <h1>My Project Requests</h1>
+  <% if @customer_project_requests.any? %>
+    <% @customer_project_requests.each do |requests| %>
+      <% requests.each do |request| %>
+        <article class="unassigned_request">
+          <%= request.project.title %>, requested by
+          <%= request.developer.first_name %>
+          <%= request.developer.last_name %><br>
+          <%= link_to "Accept Request", request_path, method: :patch %>
+        </article><br>
+     <% end %>
+    <% end %>
+  <% else %>
+    You have no pending project requests.
+  <% end %>
+</div>
+
+

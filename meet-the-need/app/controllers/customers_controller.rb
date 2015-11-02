@@ -13,6 +13,11 @@ class CustomersController < ApplicationController
   # GET /customers/1
   # GET /customers/1.json
   def show
+    customer_projects = current_customer.projects
+    @customer_project_requests = []
+    customer_projects.each do |project|
+      @customer_project_requests << project.requests
+    end
     # find the top three developers associated with the project
     if request.xhr?
       order_id = params[:order_id].split(' ')[0].to_i

@@ -4,6 +4,7 @@ class Project < ActiveRecord::Base
   has_many   :topics, through: :project_topics
   has_many   :project_technologies
   has_many   :technologies, through: :project_technologies
+  has_many   :requests
   belongs_to :customer
   belongs_to :developer
 
