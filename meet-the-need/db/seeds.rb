@@ -13,10 +13,10 @@ Developer.create(first_name: "Sally", last_name: "Jones", email: "sallyjones@exa
 Developer.create(first_name: "Frannie", last_name: "Frankie", email: "franniefrankie@example.com", zipcode: "81239", password: "password")
 Developer.create(first_name: "Shawn", last_name: "John", email: "shawnjohn@example.com", zipcode: "81239", password: "password", tagline: "I am the bestest developer ever", bio: "That's all.")
 
-Project.create(title: "LGBT Chat Room", body: "This is a support chat room for LGBT youth", customer_id: 1, cost: 400)
-Project.create(title: "Bowling league", body: "BOWLING!!!!!!!!!!!!!!!", customer_id: 1, cost: 950, is)
-Project.create(title: "Bulletin board", body: "some shit", customer_id: 1, cost: 325)
-Project.create(title: "Environment", body: "This is a prevent global warming", customer_id: 1,  is_complete: true)
+Project.create(title: "LGBT Chat Room", body: "This is a support chat room for LGBT youth", customer_id: 1)
+Project.create(title: "Bowling league", body: "Virtual bowling app", customer_id: 1)
+Project.create(title: "Healthcare websites", body: "This will disrupt the healthcare industry", customer_id: 1, developer_id: 4)
+Project.create(title: "Environment", body: "This app will singlehandedly end global warming", customer_id: 1, developer_id: 4)
 
 Technology.create(name: "chat")
 Technology.create(name: "iOS")
