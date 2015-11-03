@@ -3,8 +3,8 @@ class HomepageController < ApplicationController
   def index
     projects = Project.all
     developers = Developer.all
-    @latest_three_projects = list_latest(projects, 3)
-    @latest_three_developers = list_latest(developers, 3)
+    @latest_three_projects = list_latest(projects, 4)
+    @latest_three_developers = list_latest(developers, 4)
   end
 
   def search

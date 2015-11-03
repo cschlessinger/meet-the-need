@@ -3,28 +3,26 @@
   <title>Homepage</title>
 </head>
 <body>
+  <!-- @TODO: add our avatars for devs and Julian + Masha for customers -->
   <header>
-    <h1 class="homepage_title"> Homepage </h1>
     <%= form_tag("homepage/search", method: "get") do %>
-      <%= label_tag(:search, "Search for:") %>
-      <%= text_field_tag(:search) %>
+      <%= text_field_tag(:search, nil, placeholder: "Enter your search" ) %>
       <%= submit_tag("Search") %>
     <% end %>
-    <br>
     <button>Advanced Search</button>
   </header>
-  <div class="left_homepage_div">
-    <h2> Latest Projects </h2>
-    <section>
+  <main>
+    <div class="left-column">
+      <h2> Latest Projects </h2>
       <%= render "customer_partial" %>
-    </section>
-  </div>
-  <div class="right_homepage_div">
-    <h2> Developers </h2>
-    <section>
+      <p class="see-all"><%= link_to "See all projects", projects_path %></p>
+    </div>
+    <div class="right-column">
+      <h2> Developers </h2>
       <%= render "dev_partial" %>
-    </section>
-  </div>
+      <p class="see-all"><%= link_to "See all developers", developers_path %></p>
+    </div>
+  </main>
 </body>
 </html>
 
