@@ -8,7 +8,8 @@ class HomepageController < ApplicationController
   end
 
   def search
-    @search_results = Project.search(params[:search])
+    @project_search_results = Project.search(params[:search])
+    @developer_search_results = Developer.search(params[:search])
     render "search_results/search_results"
   end
 end

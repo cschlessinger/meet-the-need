@@ -5,7 +5,7 @@ class Developer < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable
+  :recoverable, :rememberable, :trackable, :validatable
 
   has_many :projects
   has_many :developer_technologies
@@ -15,5 +15,21 @@ class Developer < ActiveRecord::Base
 
   # validates :email, uniqueness: true
   # validates :first_name, :last_name, :zipcode, presence: true
-
+  def self.search(search)
+    developer_results = []
+    all_developers = Developer.all
+    all_developers.each do |developer|
+      developer.topics.each do |topic|
+        if topic.name.downcase.include?(search.downcase)
+          developer_results << developer
+        end
+      end
+      developer.technologies.each do |technology|
+        if technology.name.downcase.include?(search.downcase)
+          developer_results << developer
+        end
+      end
+    end
+    developer_results.flatten.uniq.compact
+  end
 end
