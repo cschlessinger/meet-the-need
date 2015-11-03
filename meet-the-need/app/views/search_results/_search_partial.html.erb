@@ -1,30 +1,40 @@
   <div class="project_details">
-    <% if @search_results.any? %>
-      <% @search_results.each do |project| %>
-        <%= link_to(project) do %>
-        <article>
-          <div class="image"><img src="./default-avatar.png"></div>
-          <%=  project.title %>, by
-          <%= project.customer.first_name %>
-          <%= project.customer.last_name %><br>
-          <% if project.technologies.any? %>
-            Technologies:
-            <% project.technologies.each do |technology| %>
-            <%= technology.name %>
+    <% if @project_search_results.any? %>
+      <h1>Project Search Results</h1>
+        <% @project_search_results.each do |project| %>
+          <%= link_to(project) do %>
+          <article>
+            <div class="image"><img src="./default-avatar.png"></div>
+            <%= project.title %>, by
+            <%= project.customer.first_name %>
+            <%= project.customer.last_name %><br>
+            <% if project.technologies.any? %>
+              Technologies:
+              <% project.technologies.each do |technology| %>
+              <%= technology.name %>
+              <% end %>
             <% end %>
-          <% end %>
-          <% if project.topics.any? %>
-            Topics:
-            <% project.topics.each do |topic| %>
-            <%= topic.name %>
+            <% if project.topics.any? %>
+              Topics:
+              <% project.topics.each do |topic| %>
+              <%= topic.name %>
+              <% end %>
             <% end %>
-          <% end %>
-            Created at:
-          <%= project.created_at.strftime("%m/%d/%Y") %>
-        </article><br>
-      <% end %>
+              Created at:
+            <%= project.created_at.strftime("%m/%d/%Y") %>
+          </article><br>
+        <% end %>
       <% end %>
     <% else %>
       No results!
+    <% end %>
+    <% if @developer_search_results.any? %>
+    <h1>Developer Search Results</h1>
+      <% @developer_search_results.each do |developer| %>
+        <article>
+          <div class="image"><img src="./default-avatar.png"></div>
+          <%= developer.first_name %>
+          <%= developer.last_name %><br>
+      <% end %>
     <% end %>
   </div>
