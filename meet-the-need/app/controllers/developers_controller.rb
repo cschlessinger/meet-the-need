@@ -1,7 +1,7 @@
 class DevelopersController < ApplicationController
-  before_action :set_developer, only: [:index, :show, :profile, :edit, :update, :destroy]
+  before_action :set_developer, only: [:show, :profile, :edit, :update, :destroy]
 
-  before_action :authenticate_developer!, except: [:profile]
+  before_action :authenticate_developer!, except: [:index, :profile]
 
   # GET /developers
   # GET /developers.json
