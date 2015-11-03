@@ -1,24 +1,23 @@
-  <div class="developer_details">
-    <% @latest_three_developers.each do |developer| %>
-      <%= link_to profile_developer_path(developer) do %>
-        <article>
-        <%= image_tag "default-avatar.png" %>
-        <p class='name'><%=  developer.first_name %> <%=  developer.last_name %></p>
-        <% if developer.technologies.any? %>
-          <span>Technologies:</span>
-          <% developer.technologies.each do |technology| %>
-            <figure class='tag'><%= technology.name %></figure>
-          <% end %>
-        <% end %>
-        <% if developer.topics.any? %>
-          <span>Topics:</span>
-          <% developer.topics.each do |topic| %>
-            <figure class='tag'><%= topic.name %></figure>
-          <% end %>
-        <% end %>
-        <p class='date'>Member since: <%= developer.created_at.strftime("%m/%d/%Y") %></p>
-        </article>
+<section class='cards'>
+<% @latest_three_developers.each do |developer| %>
+  <article>
+  <%= link_to profile_developer_path(developer) do %>
+    <%= image_tag "default-avatar.png" %>
+    <p class='name'><%=  developer.first_name %> <%=  developer.last_name %></p>
+    <% if developer.technologies.any? %>
+      <span>Technologies:</span>
+      <% developer.technologies.each do |technology| %>
+        <figure class='tag'><%= technology.name %></figure>
       <% end %>
     <% end %>
-    <%= link_to "See all developers", developers_path %>
-  </div>
+    <% if developer.topics.any? %>
+      <span>Topics:</span>
+      <% developer.topics.each do |topic| %>
+        <figure class='tag'><%= topic.name %></figure>
+      <% end %>
+    <% end %>
+    <p class='date'>Member since: <%= developer.created_at.strftime("%m/%d/%Y") %></p>
+  <% end %>
+  </article>
+<% end %>
+</section>

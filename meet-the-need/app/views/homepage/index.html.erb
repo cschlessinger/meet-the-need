@@ -14,15 +14,13 @@
   <main>
     <div class="left-column">
       <h2> Latest Projects </h2>
-      <section>
-        <%= render "customer_partial" %>
-      </section>
+      <%= render "customer_partial" %>
+      <p class="see-all"><%= link_to "See all projects", projects_path %></p>
     </div>
     <div class="right-column">
       <h2> Developers </h2>
-      <section>
-        <%= render "dev_partial" %>
-      </section>
+      <%= render "dev_partial" %>
+      <p class="see-all"><%= link_to "See all developers", developers_path %></p>
     </div>
   </main>
 </body>

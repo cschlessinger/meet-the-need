@@ -2,22 +2,23 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+$orange: #F85E28;
+
 main {
   padding-top: 3em;
   vertical-align: top;
   clear: both;
+  display: block;
 }
 
 .left-column {
   width: 49%;
-  box-sizing: border-box;
   float: left;
 }
 
 .right-column {
   width: 49%;
-  box-sizing: border-box;
-  float: left;
+  float: right;
 }
 
 form {
@@ -58,8 +59,20 @@ article {
   padding: .7em;
   border: 1px solid black;
   border-radius: 10px;
-  width: 45%;
+  width: 46%;
   height: 15em;
   float: left;
-  display: inline-block
+  display: inline-block;
+}
+
+.see-all a {
+  text-align: center;
+
+  margin: 2em 0;
+  background-color: $orange;
+}
+
+.cards {
+  margin-bottom: 2em;
+  display: block;
 }
