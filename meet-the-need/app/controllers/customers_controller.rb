@@ -1,7 +1,7 @@
 class CustomersController < ApplicationController
   include CustomerProjectMatcherHelper
-  before_action :set_customer, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_customer!
+  before_action :set_customer, only: [:show, :profile, :edit, :update, :destroy]
+  before_action :authenticate_customer!, except: [:profile]
 
 
   # GET /customers
@@ -35,6 +35,10 @@ class CustomersController < ApplicationController
     else
       customer_project_matcher(0)
     end
+  end
+
+  def profile
+    render 'profile'
   end
 
   # GET /customers/new
@@ -94,6 +98,6 @@ class CustomersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def customer_params
-      params[:customer]
+      params.require(:customer).permit(:first_name, :last_name, :zipcode, :bio)
     end
 end

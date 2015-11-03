@@ -1,11 +1,14 @@
 <h1><%= @project.title %></h1>
 
 <div>
-<div class="project-body"><%=@project.body%></div>
-<div class="project-cost">$<%=@project.cost%></div>
-<% if current_developer && @project.developer_id == nil %>
-  <%= button_to 'Request', requests_path(:method => :create, :project => @project)%>
-<% end %>
+  <%= link_to profile_customer_path(@project.customer) do %>
+    <div class='project-customer'><%=@project.customer.first_name%> <%=@project.customer.last_name%></div>
+  <% end %>
+  <div class="project-body"><%=@project.body%></div>
+  <div class="project-cost">$<%=@project.cost%></div>
+  <% if current_developer && @project.developer_id == nil %>
+    <%= button_to 'Request', requests_path(:method => :create, :project => @project)%>
+  <% end %>
 </div>
 
 <%= link_to 'Edit', edit_project_path(@project) %> |

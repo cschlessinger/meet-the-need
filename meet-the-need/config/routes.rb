@@ -15,7 +15,11 @@ Rails.application.routes.draw do
       get 'profile'
     end
   end
-  resources :customers
+  resources :customers do
+    member do
+      get 'profile'
+    end
+  end
   resources :projects
   resources :requests
   resources :review_requests
