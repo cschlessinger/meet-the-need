@@ -1,25 +1,22 @@
   <div class="project_details">
     <% @latest_three_projects.each do |project| %>
-      <article>
-        <%= link_to project_path(project) do %>
-        <%= project.title %>, by
-        <%= project.customer.first_name %>
-        <%= project.customer.last_name %><br>
+      <%= link_to project_path(project) do %>
+        <article>
+        <p class='title'><%= project.title %>, by <%= project.customer.first_name %> <%= project.customer.last_name %></p>
         <% if project.technologies.any? %>
-          Technologies:
+          <span>Technologies:</span>
           <% project.technologies.each do |technology| %>
-          <%= technology.name %>
+            <figure class='tag'><%= technology.name %></figure>
           <% end %>
         <% end %>
         <% if project.topics.any? %>
-          Topics:
+          <span>Topics:</span>
           <% project.topics.each do |topic| %>
-          <%= topic.name %>
+            <figure class='tag'><%= topic.name %></figure>
           <% end %>
         <% end %>
-          Created at:
-        <%= project.created_at.strftime("%m/%d/%Y") %>
-      </article><br>
-    <% end %>
+          <p class='date'>Created at: <%= project.created_at.strftime("%m/%d/%Y") %></p>
+      <% end %>
+    </article>
     <% end %>
   </div>

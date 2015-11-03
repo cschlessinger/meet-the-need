@@ -1,25 +1,23 @@
   <div class="developer_details">
     <% @latest_three_developers.each do |developer| %>
-      <article>
+      <%= link_to profile_developer_path(developer) do %>
+        <article>
         <%= image_tag "default-avatar.png" %>
-        <%= link_to profile_developer_path(developer) do %>
-        <%=  developer.first_name %>
-        <%=  developer.last_name %><br>
-        <% end %>
+        <p class='name'><%=  developer.first_name %> <%=  developer.last_name %></p>
         <% if developer.technologies.any? %>
-          Technologies:
+          <span>Technologies:</span>
           <% developer.technologies.each do |technology| %>
-          <%= technology.name %>,
+            <figure class='tag'><%= technology.name %></figure>
           <% end %>
         <% end %>
         <% if developer.topics.any? %>
-          Topics:
+          <span>Topics:</span>
           <% developer.topics.each do |topic| %>
-          <%= topic.name %>,
+            <figure class='tag'><%= topic.name %></figure>
           <% end %>
         <% end %>
-          Member since:
-        <%= developer.created_at.strftime("%m/%d/%Y") %>
-      </article><br>
+        <p class='date'>Member since: <%= developer.created_at.strftime("%m/%d/%Y") %></p>
+        </article>
+      <% end %>
     <% end %>
   </div>
