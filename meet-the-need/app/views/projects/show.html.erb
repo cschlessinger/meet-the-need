@@ -10,6 +10,7 @@
     <%= button_to 'Request', requests_path(:method => :create, :project => @project)%>
   <% end %>
 </div>
-
-<%= link_to 'Edit', edit_project_path(@project) %> |
+<% if @project.customer == current_customer %>
+  <%= link_to 'Edit', edit_project_path(@project) %> |
+<% end %>
 <%= link_to 'Back', projects_path %>

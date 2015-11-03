@@ -1,23 +1,31 @@
-<h1>Listing Projects</h1>
+<h1>All Projects</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<% @projects.each do |project| %>
+  <div>
+    <h3><%= project.title %></h3>
 
-  <tbody>
-    <% @projects.each do |project| %>
-      <tr>
-        <td><%= link_to 'Show', project %></td>
-        <td><%= link_to 'Edit', edit_project_path(project) %></td>
-        <td><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+    <div>
+      <% if project.topics.any? %>
+        <h4>Topics:</h4>
+        <% project.topics.each do |topic| %>
+          <%= topic.name %>,
+        <% end %>
+      <% end %>
+    </div>
 
-<br>
+    <div>
+      <% if project.technologies.any? %>
+        <h4>Technologies:</h4>
+        <% project.technologies.each do |technology| %>
+          <%= technology.name %>,
+        <% end %>
+      <% end %>
+    </div>
 
-<%= link_to 'New Project', new_project_path %>
+    <div>
+      Posted on <%= project.created_at.strftime("%m/%d/%Y") %>
+    </div>
+
+    <%= link_to 'See more details', project_path(project) %>
+  </div>
+<% end %>
