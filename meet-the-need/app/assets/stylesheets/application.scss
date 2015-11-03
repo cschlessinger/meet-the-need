@@ -29,6 +29,7 @@ body {
   display: inline-block;
 }
 
+a:visited,
 a:focus,
 a:hover {
   background-color: inherit;
@@ -45,11 +46,6 @@ a:hover {
 .notice,
 .alert {
   display: inline;
-}
-
-img {
-  width: 4em;
-  height: 4em;
 }
 
 nav {

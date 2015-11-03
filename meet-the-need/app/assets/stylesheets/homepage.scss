@@ -6,22 +6,18 @@ $orange: #F85E28;
 
 main {
   padding-top: 3em;
+  padding-bottom: 3em;
   vertical-align: top;
   clear: both;
   display: block;
 }
 
-.left-column {
-  width: 49%;
-  float: left;
+.logo {
+  width: 2.2em;
+  height: 1em;
 }
 
-.right-column {
-  width: 49%;
-  float: right;
-}
-
-form {
+.search {
   right: 5em;
   display: inline-block;
   float: right;
@@ -50,34 +46,48 @@ button {
   display: inline-block;
 }
 
-.title {
-  font-size: 1.2em;
-}
-
-article {
-  margin: 2em 2em 0 0;
-  padding: .7em;
-  border: 1px solid black;
-  border-radius: 10px;
-  width: 46%;
-  height: 15em;
-  float: left;
-  display: inline-block;
-}
-
-.see-all a {
+.see-all {
   text-align: center;
-
-  margin: 2em 0;
   background-color: $orange;
+  width: 20%;
+  height: 3em;
+  margin: 2em auto;
+  line-height: 3em;
 }
 
 .cards {
   margin-bottom: 2em;
   display: block;
+  width: 100%;
 }
 
-.logo {
-  width: 2.2em;
-  height: 1em;
+.card {
+  width: 45%;
+  height: 20em;
+  border: 1px solid black;
+  margin: 1em;
+  padding: 1.5em;
+  box-sizing: border-box;
+  overflow: hidden;
+  font-size: .8em
+}
+
+img {
+  width: 15.5%;
+  display: inline-block;
+  float: left;
+  margin-bottom: .4em;
+}
+
+.title {
+  font-size: 2em;
+  width: 80%;
+  float: right;
+  display: inline;
+}
+
+.text {
+  margin-top: .3em;
+  width: 80%;
+  clear: both;
 }
