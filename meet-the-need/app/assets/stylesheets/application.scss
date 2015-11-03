@@ -29,8 +29,9 @@ body {
   display: inline-block;
 }
 
+a:focus,
 a:hover {
-  background-color: transparent;
+  background-color: inherit;
   color: #333;
   text-decoration: none;
 }
