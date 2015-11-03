@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151102005125) do
+ActiveRecord::Schema.define(version: 20151102223100) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -32,6 +32,7 @@ ActiveRecord::Schema.define(version: 20151102005125) do
     t.datetime "last_sign_in_at"
     t.inet     "current_sign_in_ip"
     t.inet     "last_sign_in_ip"
+    t.text     "bio"
   end
 
   add_index "customers", ["email"], name: "index_customers_on_email", unique: true, using: :btree
@@ -95,7 +96,7 @@ ActiveRecord::Schema.define(version: 20151102005125) do
     t.boolean  "is_completed"
     t.datetime "assigned_date"
     t.integer  "customer_id"
-    t.integer  "developer_id"
+    t.string   "developer_id"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
   end
@@ -104,6 +105,14 @@ ActiveRecord::Schema.define(version: 20151102005125) do
     t.integer  "developer_id"
     t.integer  "project_id"
     t.integer  "customer_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  create_table "review_requests", force: :cascade do |t|
+    t.integer  "project_id"
+    t.integer  "customer_id"
+    t.integer  "developer_id"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
   end

@@ -4,7 +4,6 @@
     <% i = 0 %>
     <% @unassigned_projects.each do |project| %>
       <article class="<%= i %> unassigned_projects">
-        <div class="image"><img src="./default-avatar.png"></div>
         <div>
           <%=  project.title %>
         </div>
@@ -43,7 +42,7 @@
         <% if @top_unique_matching_three.any? %>
           <% @top_unique_matching_three.each do |developer| %>
             <article>
-              <div class="image"><img src="./default-avatar.png"></div>
+              <%= image_tag "default-avatar.png" %>
               <div>
                 <h3><%=  developer.first_name %> <%=  developer.last_name %></h3>
               </div>

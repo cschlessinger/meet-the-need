@@ -1,6 +1,6 @@
   <div class="project_details">
+    <h1>Project Search Results</h1>
     <% if @project_search_results.any? %>
-      <h1>Project Search Results</h1>
         <% @project_search_results.each do |project| %>
           <%= link_to(project) do %>
           <article>
@@ -23,18 +23,19 @@
               Created at:
             <%= project.created_at.strftime("%m/%d/%Y") %>
           </article><br>
+          <% end %>
         <% end %>
-      <% end %>
     <% else %>
       No results!
     <% end %>
-    <% if @developer_search_results.any? %>
     <h1>Developer Search Results</h1>
+    <% if @developer_search_results.any? %>
       <% @developer_search_results.each do |developer| %>
         <article>
           <div class="image"><img src="./default-avatar.png"></div>
           <%= developer.first_name %>
           <%= developer.last_name %><br>
+        </article>
       <% end %>
     <% end %>
   </div>

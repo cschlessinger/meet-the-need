@@ -1,13 +1,10 @@
 class HomepageController < ApplicationController
+  include LatestList
   def index
     projects = Project.all
-    reversed_projects = projects.reverse
-    @latest_three_projects = reversed_projects.slice!(0..2)
-
     developers = Developer.all
-    reversed_developers = developers.reverse
-    @latest_three_developers = reversed_developers.slice!(0..2)
-
+    @latest_three_projects = list_latest(projects, 3)
+    @latest_three_developers = list_latest(developers, 3)
   end
 
   def search

@@ -1,8 +1,8 @@
   <div class="project_details">
     <% @latest_three_projects.each do |project| %>
       <article>
-        <div class="image"><img src="./default-avatar.png"></div>
-        <%=  project.title %>, by
+        <%= link_to project_path(project) do %>
+        <%= project.title %>, by
         <%= project.customer.first_name %>
         <%= project.customer.last_name %><br>
         <% if project.technologies.any? %>
@@ -20,5 +20,6 @@
           Created at:
         <%= project.created_at.strftime("%m/%d/%Y") %>
       </article><br>
+    <% end %>
     <% end %>
   </div>
