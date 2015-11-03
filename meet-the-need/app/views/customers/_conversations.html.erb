@@ -1,0 +1,18 @@
+<p>this is a chat room for customers</p>
+
+
+<% Conversation.where(customer_id: current_customer.id).each do |conversation| %>
+  <div class="conversation">
+    <% if conversation.initiated_by == "Customer" %>
+      <h4><%= conversation.customer.first_name %> <%= conversation.customer.last_name %></h4>
+      <p><%= conversation.body %></p>
+      <p><%= conversation.created_at.strftime("%m/%d/%Y") %></p>
+    <% else %>
+      <h4><%= conversation.developer.first_name %> <%= conversation.developer.last_name %></h4>
+      <p><%= conversation.body %></p>
+      <p><%= conversation.created_at.strftime("%m/%d/%Y") %></p>
+    <% end %>
+  </div>
+<% end %>
+
+
