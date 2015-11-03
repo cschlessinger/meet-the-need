@@ -1,3 +1,6 @@
+<div class="col-md-6">
+    <h1> Matching Developers </h1>
+    <div class="developer_details">
       <% if @top_unique_matching_three.any? %>
         <% @top_unique_matching_three.each do |developer| %>
           <div class='col-md-6 card'>
@@ -29,3 +32,5 @@
       <% else %>
         <p>No matching developers. We are waiting for matching developers to sign up!</p>
       <% end %>
+    </div>
+  </div>

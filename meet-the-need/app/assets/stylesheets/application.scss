@@ -77,6 +77,7 @@ nav li:last-child {
 
 .tags {
   height: 2.5em;
+
 }
 
 .card {
@@ -87,7 +88,8 @@ nav li:last-child {
   padding: 1.5em;
   box-sizing: border-box;
   overflow: hidden;
-  font-size: .8em
+  font-size: .8em;
+  position: relative;
 }
 
 
@@ -109,6 +111,10 @@ img {
   display: inline;
 }
 
+span {
+  font-size: 1.2em;
+}
+
 #unassigned .title {
   width: 100%;
   float: none;
@@ -118,4 +124,21 @@ img {
   margin-top: .3em;
   width: 80%;
   clear: both;
+  font-size: 1.2em;
+}
+
+.button_to input {
+  background-color: $green;
+  color: #FFFFFF;
+  border: none;
+  text-align: center;
+  width: 12em;
+  height: 3.1em;
+  margin: 2em auto;
+  line-height: 3em;
+  font-size: 1.2em;
+  vertical-align: middle;
+  margin: 0;
+  position: absolute;
+  bottom: 1em;
 }

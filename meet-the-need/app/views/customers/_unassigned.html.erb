@@ -4,7 +4,7 @@
     <% if @unassigned_projects.any? %>
       <% i = 0 %>
       <% @unassigned_projects.each do |project| %>
-        <div class="<%= i %> unassigned_projects card">
+        <div class="card">
           <p class='title'><%=  project.title %>
           <div class='text'>
             <% if project.technologies.any? %>
@@ -25,7 +25,7 @@
             <% end %>
             <p class='date'>Created at: <%= project.created_at.strftime("%m/%d/%Y") %></p>
             <p class='cost'>Cost: $ <%= project.cost %></p>
-            <%= button_to "More details", project_path(project), method: :get %>
+            <a href="#"><div class= "<%= i %> get-developers">Match developers</div></a>
           </div>
         </div>
       <% i += 1 %>
@@ -40,31 +40,31 @@
     <div class="developer_details">
       <% if @top_unique_matching_three.any? %>
         <% @top_unique_matching_three.each do |developer| %>
-          <article>
+          <div class='col-md-6 card'>
             <%= image_tag "default-avatar.png" %>
-            <div>
-              <h3><%=  developer.first_name %> <%=  developer.last_name %></h3>
-            </div>
-            <div>
+            <p class='title'><%=  developer.first_name %> <%=  developer.last_name %></p>
+            <div class='text'>
+              <p class='tagline'><%= developer.tagline %></p>
               <% if developer.technologies.any? %>
-                <h4>Technologies:</h4>
-                <% developer.technologies.each do |technology| %>
-                  <%= technology.name %>,
-                <% end %>
+                <div class='tags'>
+                  <span>Technologies:</span>
+                  <% developer.technologies.each do |technology| %>
+                    <figure class='tech tag'><%= technology.name %></figure>
+                  <% end %>
+                </div>
               <% end %>
-            </div>
-            <div>
+              </div>
               <% if developer.topics.any? %>
-                <h4>Topics:</h4>
-                <% developer.topics.each do |topic| %>
-                  <%= topic.name %>,
-                <% end %>
+                <div class='tags'>
+                  <span>Topics:</span>
+                  <% developer.topics.each do |topic| %>
+                    <figure class='topic tag'><%= topic.name %></figure>
+                  <% end %>
+                </div>
               <% end %>
+              <p class='date'>Created at: <%= developer.created_at.strftime("%m/%d/%Y") %></p>
             </div>
-            <div>
-              <p>Created at: <%= developer.created_at.strftime("%m/%d/%Y") %></p>
-            </div>
-          </article>
+          </div>
         <% end %>
       <% else %>
         <p>No matching developers. We are waiting for matching developers to sign up!</p>

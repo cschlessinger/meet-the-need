@@ -1,3 +1,21 @@
 // Place all the styles related to the Customers controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+$green: #3E6C61;
+
+.get-developers {
+	background-color: $green;
+  color: #FFFFFF;
+  border: none;
+  text-align: center;
+  width: 12em;
+  height: 3.1em;
+  margin: 2em auto;
+  line-height: 3em;
+  font-size: 1.2em;
+  vertical-align: middle;
+  margin: 0;
+  position: absolute;
+  bottom: 1em;
+}
