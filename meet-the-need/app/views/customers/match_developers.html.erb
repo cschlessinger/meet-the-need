@@ -1,6 +1,7 @@
       <% if @top_unique_matching_three.any? %>
         <% @top_unique_matching_three.each do |developer| %>
-          <div class='col-md-6 card'>
+        <%= link_to profile_developer_path(developer) do %>
+          <div class='card'>
             <%= image_tag "default-avatar.png" %>
             <p class='title'><%=  developer.first_name %> <%=  developer.last_name %></p>
             <div class='text'>
@@ -21,6 +22,7 @@
                     <figure class='topic tag'><%= topic.name %></figure>
                   <% end %>
                 </div>
+              <% end %>
               <% end %>
               <p class='date'>Created at: <%= developer.created_at.strftime("%m/%d/%Y") %></p>
             </div>

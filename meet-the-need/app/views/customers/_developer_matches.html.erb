@@ -3,7 +3,7 @@
     <div class="developer_details">
       <% if @top_unique_matching_three.any? %>
         <% @top_unique_matching_three.each do |developer| %>
-          <div class='col-md-6 card'>
+          <div class='card'>
             <%= image_tag "default-avatar.png" %>
             <p class='title'><%=  developer.first_name %> <%=  developer.last_name %></p>
             <div class='text'>

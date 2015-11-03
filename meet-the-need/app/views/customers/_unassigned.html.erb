@@ -1,6 +1,6 @@
 <div id='unassigned'>
   <div class='col-md-6'>
-    <h1>My Unassigned Projects</h1>
+    <h1 class='thingy'>My Unassigned Projects</h1>
     <% if @unassigned_projects.any? %>
       <% i = 0 %>
       <% @unassigned_projects.each do |project| %>
@@ -36,11 +36,11 @@
   </div>
 
   <div class="col-md-6">
-    <h1> Matching Developers </h1>
+    <h1 class='thingy'> Matching Developers </h1>
     <div class="developer_details">
       <% if @top_unique_matching_three.any? %>
         <% @top_unique_matching_three.each do |developer| %>
-          <div class='col-md-6 card'>
+          <div class='card'>
             <%= image_tag "default-avatar.png" %>
             <p class='title'><%=  developer.first_name %> <%=  developer.last_name %></p>
             <div class='text'>

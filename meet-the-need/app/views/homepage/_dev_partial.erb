@@ -1,6 +1,6 @@
 <section class='cards'>
 <% @latest_three_developers.each do |developer| %>
-  <article class='col-md-6 card flip'>
+  <div class='col-md-6 card flip'>
   <%= link_to profile_developer_path(developer) do %>
     <div class='front'>
       <%= image_tag "default-avatar.png" %>
@@ -30,6 +30,6 @@
       <%= developer.bio %>
     </div>
   <% end %>
-  </article>
+  </div>
 <% end %>
 </section>
