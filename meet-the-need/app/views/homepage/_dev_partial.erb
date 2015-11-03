@@ -7,13 +7,13 @@
     <% if developer.technologies.any? %>
       <span>Technologies:</span>
       <% developer.technologies.each do |technology| %>
-        <figure class='tag'><%= technology.name %></figure>
+        <figure class='tech tag'><%= technology.name %></figure>
       <% end %>
     <% end %>
     <% if developer.topics.any? %>
       <span>Topics:</span>
       <% developer.topics.each do |topic| %>
-        <figure class='tag'><%= topic.name %></figure>
+        <figure class='topic tag'><%= topic.name %></figure>
       <% end %>
     <% end %>
     <p class='date'>Member since: <%= developer.created_at.strftime("%m/%d/%Y") %></p>
