@@ -1,5 +1,6 @@
 <div>
-  <h1>Customer dashboard</h1>
+  <h1>Welcome, <%= current_customer.first_name %></h1>
+</div>
   <%= link_to "Create a project", new_project_path %>
   <div id="tabs" class="<%= current_customer.id %>">
     <ul>
