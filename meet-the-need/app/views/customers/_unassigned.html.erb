@@ -1,78 +1,74 @@
-<div>
-  <h1>My Unassigned Projects</h1>
-  <% if @unassigned_projects.any? %>
-    <% i = 0 %>
-    <% @unassigned_projects.each do |project| %>
-      <article class="<%= i %> unassigned_projects">
-        <div>
-          <%=  project.title %>
-        </div>
-        <div>
-          <% if project.technologies.any? %>
-            Technologies:
-            <% project.technologies.each do |technology| %>
-              <%= technology.name %>
+<div id='unassigned'>
+  <div class='col-md-6'>
+    <h1>My Unassigned Projects</h1>
+    <% if @unassigned_projects.any? %>
+      <% i = 0 %>
+      <% @unassigned_projects.each do |project| %>
+        <div class="<%= i %> unassigned_projects card">
+          <p class='title'><%=  project.title %>
+          <div class='text'>
+            <% if project.technologies.any? %>
+              <div class='tags'>
+                <span>Technologies:</span>
+                <% project.technologies.each do |technology| %>
+                  <figure class='tech tag'><%= technology.name %></figure>
+                <% end %>
+              </div>
             <% end %>
-          <% end %>
-        </div>
-        <div>
-          <% if project.topics.any? %>
-            Topics:
-            <% project.topics.each do |topic| %>
-              <%= topic.name %>
+            <% if project.topics.any? %>
+              <div class='tags'>
+                <span>Topics:</span>
+                <% project.topics.each do |topic| %>
+                  <figure class='topic tag'><%= topic.name %></figure>
+                <% end %>
+              </div>
             <% end %>
-          <% end %>
+            <p class='date'>Created at: <%= project.created_at.strftime("%m/%d/%Y") %></p>
+            <p class='cost'>Cost: $ <%= project.cost %></p>
+            <%= button_to "More details", project_path(project), method: :get %>
+          </div>
         </div>
-        <div>
-          Cost:
-          $ <%= project.cost %>
-        </div>
-        <div>
-          Created at:
-          <%= project.created_at.strftime("%m/%d/%Y") %>
-        </div>
-        <!-- @TODO: convert this to a button -->
-        <%= link_to "More details", project_path(project) %>
-      </article><br>
-    <% i += 1 %>
+      <% i += 1 %>
+      <% end %>
+    <% else %>
+      <p>You have no unassigned projects!</p>
     <% end %>
-    <article class="float-right">
-      <h1> Matching Developers </h1>
-      <div class="developer_details">
-        <% if @top_unique_matching_three.any? %>
-          <% @top_unique_matching_three.each do |developer| %>
-            <article>
-              <%= image_tag "default-avatar.png" %>
-              <div>
-                <h3><%=  developer.first_name %> <%=  developer.last_name %></h3>
-              </div>
-              <div>
-                <% if developer.technologies.any? %>
-                  <h4>Technologies:</h4>
-                  <% developer.technologies.each do |technology| %>
-                    <%= technology.name %>,
-                  <% end %>
+  </div>
+
+  <div class="col-md-6">
+    <h1> Matching Developers </h1>
+    <div class="developer_details">
+      <% if @top_unique_matching_three.any? %>
+        <% @top_unique_matching_three.each do |developer| %>
+          <article>
+            <%= image_tag "default-avatar.png" %>
+            <div>
+              <h3><%=  developer.first_name %> <%=  developer.last_name %></h3>
+            </div>
+            <div>
+              <% if developer.technologies.any? %>
+                <h4>Technologies:</h4>
+                <% developer.technologies.each do |technology| %>
+                  <%= technology.name %>,
                 <% end %>
-              </div>
-              <div>
-                <% if developer.topics.any? %>
-                  <h4>Topics:</h4>
-                  <% developer.topics.each do |topic| %>
-                    <%= topic.name %>,
-                  <% end %>
+              <% end %>
+            </div>
+            <div>
+              <% if developer.topics.any? %>
+                <h4>Topics:</h4>
+                <% developer.topics.each do |topic| %>
+                  <%= topic.name %>,
                 <% end %>
-              </div>
-              <div>
-                <p>Created at: <%= developer.created_at.strftime("%m/%d/%Y") %></p>
-              </div>
-            </article>
-          <% end %>
-        <% else %>
-          <p>No matching developers. We are waiting for matching developers to sign up!</p>
+              <% end %>
+            </div>
+            <div>
+              <p>Created at: <%= developer.created_at.strftime("%m/%d/%Y") %></p>
+            </div>
+          </article>
         <% end %>
-      </div>
-    </article>
-  <% else %>
-    <p>You have no unassigned projects!</p>
-  <% end %>
+      <% else %>
+        <p>No matching developers. We are waiting for matching developers to sign up!</p>
+      <% end %>
+    </div>
+  </div>
 </div>

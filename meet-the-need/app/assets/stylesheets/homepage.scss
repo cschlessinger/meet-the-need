@@ -60,34 +60,3 @@ button {
   display: block;
   width: 100%;
 }
-
-.card {
-  width: 45%;
-  height: 20em;
-  border: 1px solid black;
-  margin: 1em;
-  padding: 1.5em;
-  box-sizing: border-box;
-  overflow: hidden;
-  font-size: .8em
-}
-
-img {
-  width: 15.5%;
-  display: inline-block;
-  float: left;
-  margin-bottom: .4em;
-}
-
-.title {
-  font-size: 2em;
-  width: 80%;
-  float: right;
-  display: inline;
-}
-
-.text {
-  margin-top: .3em;
-  width: 80%;
-  clear: both;
-}

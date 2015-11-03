@@ -1,6 +1,6 @@
 <section class='cards'>
 <% @latest_three_projects.each do |project| %>
-  <article class='col-md-6 card'>
+  <article class='col-md-6 card flip'>
     <%= link_to project_path(project) do %>
       <div class='front'>
         <%= image_tag "default-avatar.png" %>

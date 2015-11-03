@@ -63,7 +63,6 @@ nav li:last-child {
 
 .tag {
   display: inline-block;
-
   color: white;
   padding: .2em;
 }
@@ -74,4 +73,49 @@ nav li:last-child {
 
 .tech {
   background-color: $orange;
+}
+
+.tags {
+  height: 2.5em;
+}
+
+.card {
+  height: 20em;
+  width: 45%;
+  border: 1px solid black;
+  margin: 1em;
+  padding: 1.5em;
+  box-sizing: border-box;
+  overflow: hidden;
+  font-size: .8em
+}
+
+
+#unassigned .card {
+  width: 100%;
+}
+
+img {
+  width: 15.5%;
+  display: inline-block;
+  float: left;
+  margin-bottom: .4em;
+}
+
+.title {
+  font-size: 2em;
+  width: 80%;
+  float: right;
+  display: inline;
+}
+
+#unassigned .title {
+  width: 100%;
+  float: none;
+}
+
+.text {
+  margin-top: .3em;
+  width: 80%;
+  clear: both;
 }

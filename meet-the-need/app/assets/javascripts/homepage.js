@@ -1,6 +1,6 @@
 $(document).ready(function() {
 // on click of latest project, flip the card to show detailed project info
-  $('.card').flip({
+  $('.flip').flip({
     axis:'y',
     trigger: 'hover'});
 
