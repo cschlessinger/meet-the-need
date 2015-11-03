@@ -67,7 +67,15 @@ nav li:last-child {
 
 .tag {
   display: inline-block;
-  background-color: $teal;
+
   color: white;
   padding: .2em;
+}
+
+.topic {
+  background-color: $teal;
+}
+
+.tech {
+  background-color: $orange;
 }

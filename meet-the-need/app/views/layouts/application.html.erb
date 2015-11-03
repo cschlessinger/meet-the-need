@@ -10,7 +10,11 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <div id="page-title"><%= link_to "Meet the Need", root_path %></div>
+  <div id="page-title">
+     <%= link_to root_path do %>
+      <%= image_tag "logo.png", class: "logo" %>
+    <% end %>
+    <%= link_to "Meet the Need", root_path %></div>
   <nav id="account">
 
     <% if developer_signed_in? %>
