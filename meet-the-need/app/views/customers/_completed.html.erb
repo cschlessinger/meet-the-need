@@ -4,7 +4,6 @@
   <% if @completed_projects.any? %>
     <% @completed_projects.each do |project| %>
       <div class='card'>
-        <!-- @TODO: add functionality to assign a developer to a project (and update assigned_at column) -->
         <p class='no-image-title'><%= project.title %></p>
         <p class='project-date'>Completed on <%= project.completed_date.strftime("%m/%d/%Y") %></p>
         <%= link_to profile_developer_path(project.developer) do %>

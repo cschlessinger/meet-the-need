@@ -10,7 +10,8 @@ $(document).ready(function() {
   });
   $('.msg-history').click(function(e) {
     e.preventDefault();
-    $(this).parent().siblings('.message-thread')
+    var msg_thread = $(this).parent().siblings('.message-thread').children().not(':last');
+    msg_thread.toggle("slow");
     // $('.conversation').toggle("slow");
   });
 })

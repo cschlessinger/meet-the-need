@@ -41,6 +41,9 @@ class CustomersController < ApplicationController
     else
       customer_project_matcher(0)
     end
+
+    @conversation = Conversation.new
+
   end
 
   def profile
