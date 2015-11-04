@@ -3,17 +3,19 @@
   <title>Meet The Need</title>
 </head>
 <body>
-  <div class='col-md-12'>
-    <div id="messaging">
-      <p>Meet the Need connects junior developers and people with dreams. A mutually beneficial relationship, developers gain experience and customers see their projects realized at a more affordable cost.</p>
+  <% if current_customer == nil && current_developer == nil %>
+    <div class='col-md-12'>
+      <div id="messaging">
+        <p>Meet the Need connects junior developers and people with dreams. A mutually beneficial relationship, developers gain experience and customers see their projects realized at a more affordable cost.</p>
+      </div>
     </div>
-  </div>
+  <% end %>
   <header>
     <%= form_tag("homepage/search", method: "get", class: "search") do %>
       <%= text_field_tag(:search, nil, placeholder: "Enter your search" ) %>
       <%= image_submit_tag("magnifying_glass.svg") %>
     <% end %>
-    <button id="advanced">Advanced Search</button>
+    <!-- <button id="advanced">Advanced Search</button> -->
   </header>
   <main>
     <div class='col-md-12 latest'>

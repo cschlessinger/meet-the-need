@@ -7,7 +7,9 @@
           <p class='title'><%= project.title %></p>
         <% end %>
         <div class='text'>
-          <p class='name'>By <%= project.customer.first_name %> <%= project.customer.last_name %></p>
+          <%= link_to profile_customer_path(project.customer) do %>
+            <p class='name'>By <%= project.customer.first_name %> <%= project.customer.last_name %></p>
+          <% end %>
           <p class='date'>Created on <%= project.created_at.strftime("%m/%d/%Y") %></p>
           <% if project.technologies.any? %>
             <div class='tags'>
