@@ -7,13 +7,13 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 
-Customer.create(first_name: "Masha", last_name: "Lifshin", email: "masha@example.com", zipcode: "90210", password: "password", bio: "I do art and wear cool leggings. Yeah technology!", avatar_url: "masha.jpg")
-Customer.create(first_name: "Julian", last_name: "Bouma", email: "julian@example.com", zipcode: "90210", password: "password", bio: "That's Mr. Bouma to you.", avatar_url: "julian.jpg")
+Customer.create(first_name: "Masha", last_name: "Lifshin", email: "masha@example.com", password: "password", bio: "I do art and wear cool leggings. Yeah technology!", avatar_url: "masha.jpg")
+Customer.create(first_name: "Julian", last_name: "Bouma", email: "julian@example.com", password: "password", bio: "That's Mr. Bouma to you.", avatar_url: "julian.jpg")
 
-Developer.create(first_name: "Sasha", last_name: "Goldenson", email: "sasha@example.com", zipcode: "81239", password: "password", tagline: "Everything I learned, I learned at DBC", bio: "Developer for hire.", avatar_url: "sasha.jpg")
-Developer.create(first_name: "Claire", last_name: "Schlessinger", email: "claire@example.com", zipcode: "81239", password: "password", tagline: "I am the bestest developer ever", bio: "I like pugs and chocolate.", avatar_url: "claire.jpg")
-Developer.create(first_name: "Katie", last_name: "Ok", email: "katie@example.com", zipcode: "81239", password: "password", tagline: "Animal lover", bio: "I want to travel the world!", avatar_url: "katie.jpg")
-Developer.create(first_name: "Andrew", last_name: "Dowd", email: "andrew@example.com", zipcode: "81239", password: "password", tagline: "I eat bugs", bio: "That's all.", avatar_url: "andrew.jpg")
+Developer.create(first_name: "Sasha", last_name: "Goldenson", email: "sasha@example.com", password: "password", tagline: "Everything I learned, I learned at DBC", bio: "Developer for hire.", avatar_url: "sasha.jpg")
+Developer.create(first_name: "Claire", last_name: "Schlessinger", email: "claire@example.com", password: "password", tagline: "I am the bestest developer ever", bio: "I like pugs and chocolate.", avatar_url: "claire.jpg")
+Developer.create(first_name: "Katie", last_name: "Ok", email: "katie@example.com", password: "password", tagline: "Animal lover", bio: "I want to travel the world!", avatar_url: "katie.jpg")
+Developer.create(first_name: "Andrew", last_name: "Dowd", email: "andrew@example.com", password: "password", tagline: "I eat bugs", bio: "That's all.", avatar_url: "andrew.jpg")
 
 Project.create(title: "LGBT Chat Room App", body: "This is a support chat room for LGBT youth", customer_id: 1, developer_id: 2, cost: 350, assigned_date: '2015-11-01')
 Project.create(title: "Animal Protection App", body: "This is to protect animals", customer_id: 2, cost: 350)

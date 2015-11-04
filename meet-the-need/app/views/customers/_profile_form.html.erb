@@ -6,8 +6,6 @@
   <%= f.text_field :last_name, placeholder: @customer.last_name %></div>
   <div class="form-field"><%= label_tag(:bio, "Tell us about yourself!") %></div>
   <div class='form-field'><%= f.text_area :bio, placeholder: @customer.bio %></div>
-  <div class="form-field"><%= label_tag(:zipcode, "Zipcode") %>
-  <%= f.text_field :zipcode, placeholder: @customer.zipcode %></div>
 
   <%= f.submit "Update profile", class: "green-button" %>
 <% end %>
