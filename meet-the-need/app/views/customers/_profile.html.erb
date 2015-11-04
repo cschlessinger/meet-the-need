@@ -1,8 +1,7 @@
+<!-- Profile Tab -->
 <div class='profile'>
-  <!-- Profile Tab -->
   <%= image_tag @customer.avatar_url %>
 </div>
-
   <div class="show-field"><strong><%= @customer.first_name %> <%= @customer.last_name %></strong>
     <% if current_developer %>
      <%= link_to "message me", new_conversation_path, class: "message-button", remote: true %>
@@ -11,7 +10,7 @@
   </div>
   <p class="profile-bio"><%= @customer.bio %></p>
   <p class="profile-zipcode"><%= @customer.zipcode %></p>
+	<% if @customer == current_customer %>
+	  <%= button_to 'Edit me herelkj ', edit_customer_path(@customer), method: :get, class: "button-shape green-button" %>
+	<% end %>
 </div>
-<% if @customer == current_customer %>
-  <%= button_to 'Edit', edit_customer_path(@customer), method: :get, class: "button-shape green-button" %>
-<% end %>
