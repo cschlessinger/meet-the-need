@@ -32,7 +32,7 @@ body {
 a:visited,
 a:focus,
 a:hover {
-  background-color: inherit;
+  background-color: inherit !important;
   color: #333;
   text-decoration: none;
 }
@@ -126,34 +126,53 @@ img {
   font-size: 1.4em;
 }
 
-.see-all {
-  background-color: $green;
-  color: #FFFFFF;
-  text-align: center;
-  width: 20%;
-  height: 3em;
-  margin: 2em auto;
-  line-height: 3em;
-}
-
 .see-all a {
   color: white;
 }
 
-.get-developers {
+.green-button {
   background-color: $green;
   color: #ffffff;
   border: none;
   text-align: center;
   width: 12em;
-  height: 3.1em;
-  margin: 2em auto;
+  height: 3em;
   line-height: 3em;
+  margin: 2em auto;
   font-size: 1.2em;
   vertical-align: middle;
-  margin: 0;
+}
+
+.red-button {
+  background-color: $red;
+  display: inline-block;
+}
+input[type=submit] {
+  font-size: 1.2em;
+  height: 3em;
+}
+
+.button-shape {
+  color: #ffffff;
+  border: none;
+  text-align: center;
+  width: 12em;
+  height: 3em;
+  line-height: 3em;
+  margin: 2em auto;
+  font-size: 1.2em;
+  vertical-align: middle;
+  display: inline-block;
+}
+
+.see-all {
+  width: 30%;
+}
+
+.get-developers {
+  height: 3.1em;
   position: absolute;
-  bottom: 1em;
+  bottom: -1em;
 }
 
 #tabs {

@@ -1,7 +1,7 @@
 <div>
   <h1>Welcome, <%= current_customer.first_name %></h1>
 </div>
-  <%= button_to "Create a project", new_project_path, method: :get, class: "create-project" %>
+  <%= button_to "Create a project", new_project_path, method: :get, class: "green-button create-project" %>
   <div id="tabs" class="<%= current_customer.id %>">
     <ul>
       <li><a href="#unassigned">Unassigned</a></li>

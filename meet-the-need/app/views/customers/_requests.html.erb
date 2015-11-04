@@ -8,8 +8,7 @@
           <%= request.project.title %>, requested by
           <%= request.developer.first_name %>
           <%= request.developer.last_name %><br>
-          <%= link_to "Accept Request", request_path(request.id), method: :patch %> |
-          <%= link_to "Reject Request", request_path(request.id), method: :delete %>
+          <%= link_to "Accept Request", request_path(request.id), method: :patch, class: "button-shape green-button" %>     <%= link_to "Reject Request", request_path(request.id), method: :delete, class: "button-shape red-button" %>
         </div>
       <% end %>
     <% end %>
@@ -25,8 +24,7 @@
           <%= review_request.project.title %>, review requested by
           <%= review_request.developer.first_name %>
           <%= review_request.developer.last_name %><br>
-          <%= link_to "Accept Review Request", review_request_path(review_request.id), method: :patch %> |
-          <%= link_to "Reject Review Request", review_request_path(review_request.id), method: :delete %>
+          <%= link_to "Accept Review Request", review_request_path(review_request.id), method: :patch, class: "button-shape green-button" %>     <%= link_to "Reject Review Request", review_request_path(review_request.id), method: :delete, class: "button-shape red-button" %>
         </div><br>
      <% end %>
     <% end %>

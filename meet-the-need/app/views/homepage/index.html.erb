@@ -5,6 +5,7 @@
 <body>
   <!-- @TODO: add our avatars for devs and Julian + Masha for customers -->
   <header>
+  <!-- @TODO: make this text line height/vertical align right -->
     <%= form_tag("homepage/search", method: "get", class: "search") do %>
       <%= text_field_tag(:search, nil, placeholder: "Enter your search" ) %>
       <%= submit_tag("Search") %>
@@ -24,10 +25,10 @@
     </div>
     <div class='col-md-12'>
       <div class='col-md-6'>
-        <p class='see-all'><%= link_to "See all projects", projects_path %></p>
+        <p class='green-button see-all'><%= link_to "See all projects", projects_path %></p>
       </div>
       <div class='col-md-6'>
-        <p class='see-all'><%= link_to "See all developers", developers_path %></p>
+        <p class='green-button see-all'><%= link_to "See all developers", developers_path %></p>
       </div> 
     </div>
   </main>
