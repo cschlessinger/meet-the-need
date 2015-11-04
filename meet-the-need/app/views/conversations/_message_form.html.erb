@@ -1,0 +1,21 @@
+<% if current_customer %>
+  <div class="new-conversation">
+    <%= form_for @conversation, method: "create", class: "message-box" do |f| %>
+      <%= f.text_area :body %>
+      <%= f.hidden_field :developer_id, value: @developer.id %>
+      <%= f.hidden_field :initiated_by, value: "Customer" %>
+      <%= f.hidden_field :customer_id, value: current_customer.id %>
+      <%= f.submit "Create message"%>
+    <% end %>
+  </div>
+<% else %>
+  <div class="new-conversation">
+    <%= form_for @conversation, method: "create", class: "message-box" do |f| %>
+      <%= f.text_area :body %>
+      <%= f.hidden_field :developer_id, value: current_developer.id %>
+      <%= f.hidden_field :initiated_by, value: "Customer" %>
+      <%= f.hidden_field :customer_id, value: @customer.id %>
+      <%= f.submit "Create message"%>
+    <% end %>
+  </div>
+<% end %>

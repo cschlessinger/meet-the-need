@@ -8,6 +8,7 @@
 
 
 Customer.create(first_name: "Bob", last_name: "Smith", email: "bobsmith@example.com", zipcode: "90210", password: "password")
+Customer.create(first_name: "Jane", last_name: "Murphy", email: "janemurphy@example.com", zipcode: "10210", password: "password")
 
 Developer.create(first_name: "Sally", last_name: "Jones", email: "sallyjones@example.com", zipcode: "81239", password: "password")
 Developer.create(first_name: "Frannie", last_name: "Frankie", email: "franniefrankie@example.com", zipcode: "81239", password: "password")
@@ -58,4 +59,9 @@ ProjectTopic.create(project_id: 4, topic_id: 3)
 ProjectTopic.create(project_id: 4, topic_id: 4)
 ProjectTopic.create(project_id: 6, topic_id: 5)
 ProjectTopic.create(project_id: 4, topic_id: 5)
+
+Conversation.create(developer_id: 1, customer_id: 1, initiated_by: "Customer", body: "im customer talking to dev")
+Conversation.create(developer_id: 1, customer_id: 1, initiated_by: "Developer", body: "im dev talking to customer")
+Conversation.create(developer_id: 2, customer_id: 1, initiated_by: "Customer", body: "im customer talking to dev 222")
+
 

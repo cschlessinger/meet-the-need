@@ -1,0 +1,22 @@
+<!-- conv with a particular dev -->
+<!-- i am a customer -->
+<!-- I want to render thread per developer -->
+<!-- 1. find all developers you have existing conversation with -->
+<!-- 2. Developer.find(id).conversations -->
+
+<% find_msg_developers.each do |developer| %>
+  <% @conversations_with_one_developer = Developer.find(developer.id).conversations %>
+  <h3>Your messaging History with <%= developer.first_name %></h3>
+  <%= render partial: "conversation_thread", locals: { conversations_with_one_developer: @conversations_with_one_developer } %>
+  <div class="new-conversation">
+    <%= form_for @conversation, method: "create" do |f| %>
+      <%= f.text_area :body %>
+      <%= f.hidden_field :developer_id, value: developer.id %>
+      <%= f.hidden_field :initiated_by, value: "Customer" %>
+      <%= f.hidden_field :customer_id, value: current_customer.id %>
+      <%= f.submit "Create message"%>
+    <% end %>
+  </div>
+<% end %>
+
+

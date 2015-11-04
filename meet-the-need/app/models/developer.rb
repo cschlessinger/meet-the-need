@@ -12,6 +12,9 @@ class Developer < ActiveRecord::Base
   has_many :technologies, through: :developer_technologies
   has_many :developer_topics
   has_many :topics, through: :developer_topics
+  has_many :conversations
+  has_many :customers, through: :conversations
+
 
   # validates :email, uniqueness: true
   # validates :first_name, :last_name, :zipcode, presence: true
