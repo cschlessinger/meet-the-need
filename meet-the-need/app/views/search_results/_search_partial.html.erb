@@ -2,28 +2,28 @@
     <h1>Project Search Results</h1>
     <% if @project_search_results.any? %>
         <% @project_search_results.each do |project| %>
-          <%= link_to(project) do %>
-          <article>
-            <div class="image"><img src="./default-avatar.png"></div>
-            <%= project.title %>, by
-            <%= project.customer.first_name %>
-            <%= project.customer.last_name %><br>
-            <% if project.technologies.any? %>
-              Technologies:
-              <% project.technologies.each do |technology| %>
-              <%= technology.name %>
-              <% end %>
+          <div class='col-md-12 card'>
+            <%= link_to(project) do %>
+              <%= image_tag project.customer.avatar_url %>
+              <p class='title'><%= project.title %></p>
+                <p class='name'><%= project.customer.first_name %> <%= project.customer.last_name %></p>
+                <% if project.technologies.any? %>
+                  <div class='tags'>
+                  <% project.technologies.each do |technology| %>
+                    <figure class='tech tag'><%= technology.name %></figure>
+                  <% end %>
+                  </div>
+                <% end %>
+                <% if project.topics.any? %>
+                <div class='tags'>
+                  <% project.topics.each do |topic| %>
+                    <figure class='topic tag'><%= topic.name %></figure>
+                  <% end %>
+                </div>
+                <% end %>
+                <p class='date'>Created at: <%= project.created_at.strftime("%m/%d/%Y") %></p>
             <% end %>
-            <% if project.topics.any? %>
-              Topics:
-              <% project.topics.each do |topic| %>
-              <%= topic.name %>
-              <% end %>
-            <% end %>
-              Created at:
-            <%= project.created_at.strftime("%m/%d/%Y") %>
-          </article><br>
-          <% end %>
+          </div>
         <% end %>
     <% else %>
       No results!
@@ -31,11 +31,28 @@
     <h1>Developer Search Results</h1>
     <% if @developer_search_results.any? %>
       <% @developer_search_results.each do |developer| %>
-        <article>
-          <div class="image"><img src="./default-avatar.png"></div>
-          <%= developer.first_name %>
-          <%= developer.last_name %><br>
-        </article>
+        <div class='col-md-12 card'>
+        <%= link_to profile_developer_path(developer) do %>
+          <%= image_tag developer.avatar_url %>
+          <p class='dev-title'><%= developer.first_name %> <%= developer.last_name %></p><br><br><br>
+          <p class='tagline'><span><%= developer.tagline %></span></p>
+          <% if developer.technologies.any? %>
+            <div class='tags'>
+              <% developer.technologies.each do |technology| %>
+                <figure class='tech tag'><%= technology.name %></figure>
+              <% end %>
+            </div>
+          <% end %>
+          <% if developer.topics.any? %>
+            <div class='tags'>
+              <% developer.topics.each do |topic| %>
+                <figure class='topic tag'><%= topic.name %></figure>
+              <% end %>
+            </div>
+          <% end %>
+          <p class='date'>Member since: <%= developer.created_at.strftime("%m/%d/%Y") %></p>
+        <% end %>
+        </div>
       <% end %>
     <% end %>
   </div>
