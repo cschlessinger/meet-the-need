@@ -17,7 +17,7 @@ class Developer < ActiveRecord::Base
 
 
   # validates :email, uniqueness: true
-  # validates :first_name, :last_name, :zipcode, presence: true
+  # validates :first_name, :last_name, presence: true
   def self.search(search)
     developer_results = []
     all_developers = Developer.all

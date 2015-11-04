@@ -9,8 +9,8 @@
   <% end %>
 </div>
 <p class="profile-bio"><%= @customer.bio %></p>
-<p class="profile-zipcode"><%= @customer.zipcode %></p>
 <% if @customer == current_customer %>
   <%= button_to 'Edit profile', edit_customer_path(@customer), method: :get, class: "button-shape green-button" %>
 <% end %>
+
 
