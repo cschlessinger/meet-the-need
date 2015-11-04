@@ -32,10 +32,13 @@
     <% end %>
   </div>
   <div>
-    <%= f.fields_for :technologies do |technology_form| %>
-      <%= f.label :technologies %>
-      <%= technology_form.text_field :name %>
-    <% end %>
+    <% @unselected_topics.each do |topic| %>
+                <p><figure class='topic tag'><%= topic.name %></figure>
+                <%= link_to developer_topics_path(:developer_id => current_developer.id, :topic_id => topic.id), method: :post do %>
+                  <%= image_tag 'plus.ico', class: "plus-minus" %></p>
+                <% end %>
+              <% end %>
+            <% else %>
   </div>
   <div class="actions">
     <%= f.submit "Create project", class: "green-button" %>
