@@ -9,7 +9,6 @@ class ConversationsController < ApplicationController
   end
 
   def create
-    p params
     @conversation = Conversation.new(set_conversation)
     if @conversation.save
       redirect_to :back
