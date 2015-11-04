@@ -15,6 +15,7 @@
 	<section class='col-md-6'> <!-- Sets right-column for adding/deleting tags -->
 		<section class='col-md-12'> <!-- Sets container for currently selected -->
 			<% if @developer.technologies.any? %>
+			<!-- Remove technologies -->
 				<section class='selected-technologies col-md-6'>
 					<h3>My technologies</h3>
 					<% @developer.technologies.each do |technology| %>
@@ -24,9 +25,11 @@
 						<% end %>
 					<% end %>
 				</section>
+			<!-- Remove technologies -->
 			<% end %>
 
 			<% if @developer.topics.any? %>
+			<!-- Remove topics -->
 				<section class='selected-topics col-md-6'>
 					<h3>My topics</h3>
 					<% @developer.topics.each do |topic| %>
@@ -37,29 +40,40 @@
 					<% end %>
 				</section>
 			<% end %>
+			<!-- Remove topics -->
 		</section>
+
 		<section class='col-md-12'>
 			<section class='col-md-6'>
+			<!-- Add technologies -->
 				<h3>Add technologies</h3>
 				<% if @unselected_tech.any? %>
 					<% @unselected_tech.each do |tech| %>
-					<p><figure class='tech tag'><%= tech.name %></figure>
-					<%= image_tag 'plus.ico', class: "plus-minus", class: "plus-minus" %></p>
+						<p><figure class='tech tag'><%= tech.name %></figure>
+						<%= link_to developer_technologies_path(:developer_id => current_developer.id, :technology_id => tech.id), method: :post do %>
+							<%= image_tag 'plus.ico', class: "plus-minus", class: "plus-minus" %></p>
+						<% end %>
 					<% end %>
 				<% else %>
 					<p>Oops! All available technologies selected.</p>
 				<% end %>
+			<!-- Add technologies -->
 			</section>
+
 			<section class='col-md-6'>
-			<h3>Add topics</h3>
-			<% if @unselected_topics.any? %>
-				<% @unselected_topics.each do |topic| %>
-				<p><figure class='topic tag'><%= topic.name %></figure>
-				<%= image_tag 'plus.ico', class: "plus-minus" %></p>
+			<!-- Add topics -->
+				<h3>Add topics</h3>
+				<% if @unselected_topics.any? %>
+					<% @unselected_topics.each do |topic| %>
+						<p><figure class='topic tag'><%= topic.name %></figure>
+						<%= link_to developer_topics_path(:developer_id => current_developer.id, :topic_id => topic.id), method: :post do %>
+							<%= image_tag 'plus.ico', class: "plus-minus" %></p>
+						<% end %>
+					<% end %>
+				<% else %>
+					<p>Oops! All available technologies selected.</p>
 				<% end %>
-			<% else %>
-				<p>Oops! All available technologies selected.</p>
-			<% end %>
+			<!-- Add topics -->
 			</section>
 		</section>
 	</section>

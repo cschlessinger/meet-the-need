@@ -6,11 +6,10 @@ class DeveloperTechnologiesController < ApplicationController
 
 	def create
 		@developer_technology = DeveloperTechnology.new(strong_params)
-
 		respond_to do |format|
 			if @developer_technology.save
-				format.html { redirect_to 'developers#show', notice: 'Developer_technology was successfully created.' }
-				format.json { render :show, status: :created, location: @developer_technology }
+				format.html { redirect_to edit_developer_path(current_developer.id), notice: 'Developer_technology was successfully created.' }
+				format.json { redirect_to edit_developer_path(current_developer.id), status: :created, location: @developer_technology }
 			else
 				format.html { render :new }
 				format.json { render json: @developer_technology.errors, status: :unprocessable_entity }
@@ -34,7 +33,7 @@ class DeveloperTechnologiesController < ApplicationController
 	end
 
 	def strong_params
-		params.require(:developer_technology).permit(:developer_id, :technology_id)
+		params.permit(:developer_id, :technology_id)
 	end
 
 end
