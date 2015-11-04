@@ -1,15 +1,17 @@
-<div>
+<div class='profile'>
   <!-- Profile Tab -->
-  <%= image_tag "default-avatar.png" %>
+  <%= image_tag @customer.avatar_url %>
+</div>
+
   <div class="show-field"><strong><%= @customer.first_name %> <%= @customer.last_name %></strong>
     <% if current_developer %>
      <%= link_to "message me", new_conversation_path, class: "message-button", remote: true %>
      <%= render "conversations/message_form" %>
     <% end %>
   </div>
-  <div class="show-field"><%= @customer.bio %></div>
-  <div class="show-field"><%= @customer.zipcode %></div>
+  <p class="profile-bio"><%= @customer.bio %></p>
+  <p class="profile-zipcode"><%= @customer.zipcode %></p>
 </div>
 <% if @customer == current_customer %>
-  <%= link_to 'Edit', edit_customer_path(@customer) %>
+  <%= button_to 'Edit', edit_customer_path(@customer), method: :get, class: "button-shape green-button" %>
 <% end %>
