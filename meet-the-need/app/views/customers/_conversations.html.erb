@@ -8,7 +8,7 @@
   <% @conversations_with_one_developer = Developer.find(developer.id).conversations %>
   <h3>Your messaging History with <%= developer.first_name %></h3>
   <%= render partial: "conversation_thread", locals: { conversations_with_one_developer: @conversations_with_one_developer } %>
-  <div class="new-conversation">
+  <div class="new-conversation-inside-inbox">
     <%= form_for @conversation, method: "create" do |f| %>
       <%= f.text_area :body %>
       <%= f.hidden_field :developer_id, value: developer.id %>
