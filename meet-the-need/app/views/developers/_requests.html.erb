@@ -1,5 +1,17 @@
-<% @requests.each do |request| %>
-	<div>
-		<div>You requested <%= Project.find(request.project_id).title %> from <%= Customer.find(request.customer_id).first_name%> <%= Customer.find(request.customer_id).last_name%> on <%= request.created_at.strftime("%m/%d/%Y") %></div>
-	</div>
-<% end %>
+<div>
+	<h1>My Requested Projects</h1>
+	<div id='project-area'></div>
+	<% if @requests.any? %>
+		<% @requests.each do |request| %>
+			<div class='card col-md-6'>
+        <div class='no-image-title'><%= request.project.title %></div>
+        <div class='text'>
+          <%= link_to profile_customer_path(request.project.customer_id) do %>
+          <p class='project-customer'>Requested from <span class='name'><%= request.customer.first_name %> <%= request.customer.last_name %></span></p>
+          <% end %>
+        	<p>on <%= request.created_at.strftime("%m/%d/%Y") %> </p>
+        </div>
+      </div>
+    <% end %>
+	<% end %>
+</div>
