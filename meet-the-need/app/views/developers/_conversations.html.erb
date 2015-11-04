@@ -1,7 +1,8 @@
 <% find_msg_customers.each do |customer| %>
   <% @conversations_with_one_customer = Customer.find(customer.id).conversations %>
   <div>
-    <h3>Your messaging History with <%= customer.first_name %></h3> <p><%= link_to "see history", developers_path, :class => "msg-history" %></p>
+    <h3>Your messaging History with <%= customer.first_name %></h3>
+    <p><%= link_to "see history", developers_path, :class => "msg-history" %></p>
     <div class="message-thread">
       <%= render partial: "conversation_thread", locals: { conversations_with_one_customer: @conversations_with_one_customer } %>
       <div class="new-conversation-inside-inbox">
