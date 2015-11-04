@@ -12,5 +12,5 @@ class Customer < ActiveRecord::Base
   has_many :developers, through: :conversations
 
   # validates :email, uniqueness: true
-  # validates :first_name, :last_name, :zipcode, presence: true
+  # validates :first_name, :last_name, presence: true
 end
