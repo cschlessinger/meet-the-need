@@ -7,6 +7,7 @@
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= javascript_include_tag 'application' %>
   <%= javascript_include_tag "https://code.jquery.com/ui/1.11.4/jquery-ui.min.js" %>
+  <%= javascript_include_tag "https://cdn.rawgit.com/nnattawat/flip/v1.0.16/dist/jquery.flip.min.js" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
@@ -14,7 +15,7 @@
      <%= link_to root_path do %>
       <%= image_tag "logo.png", class: "logo" %>
     <% end %>
-    <%= link_to "Meet the Need", root_path %></div>
+  </div>
   <nav id="account">
 
     <% if developer_signed_in? %>
@@ -28,10 +29,10 @@
       <li><%= link_to "Logout", destroy_customer_session_path, method: :delete, :class => 'navbar-link'  %> |</li>
       <li>Logged in as <strong><%= current_customer.email %></strong>.</li>
     <% else %>
-    <%= link_to "Customer signup", new_customer_registration_path, :class => 'navbar-link'  %> |
-    <%= link_to "Customer Login", new_customer_session_path, :class => 'navbar-link'  %> |
-    <%= link_to "Developer signup", new_developer_registration_path, :class => 'navbar-link'  %> |
-    <%= link_to "Developer login", new_developer_session_path, :class => 'navbar-link'  %>
+      <%= link_to "Customer signup", new_customer_registration_path, :class => 'navbar-link'  %> |
+      <%= link_to "Customer Login", new_customer_session_path, :class => 'navbar-link'  %> |
+      <%= link_to "Developer signup", new_developer_registration_path, :class => 'navbar-link'  %> |
+      <%= link_to "Developer login", new_developer_session_path, :class => 'navbar-link'  %>
     <% end %>
   </nav>
   <!-- <p class="notice"><%#= notice %></p> -->

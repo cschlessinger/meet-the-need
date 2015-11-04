@@ -16,9 +16,9 @@
 
 $red: #E1321d;
 $orange: #F85E28;
-$blue: #CDFBEE;
 $teal: #7DD1B9;
 $green: #3E6C61;
+$purple: #413151;
 
 body {
   padding: 2%;
@@ -29,6 +29,7 @@ body {
   display: inline-block;
 }
 
+a:visited,
 a:focus,
 a:hover {
   background-color: inherit;
@@ -47,11 +48,6 @@ a:hover {
   display: inline;
 }
 
-img {
-  width: 4em;
-  height: 4em;
-}
-
 nav {
   text-align: right;
 }
@@ -67,9 +63,8 @@ nav li:last-child {
 
 .tag {
   display: inline-block;
-
   color: white;
-  padding: .2em;
+  padding: .1em .6em;
 }
 
 .topic {
@@ -78,4 +73,100 @@ nav li:last-child {
 
 .tech {
   background-color: $orange;
+}
+
+.tags {
+  height: 2em;
+}
+
+
+#unassigned .card {
+  width: 100%;
+}
+
+.card {
+  height: 20em;
+  width: 45%;
+  border: 1px solid black;
+  margin: 1em;
+  padding: 1.5em;
+  box-sizing: border-box;
+  overflow: hidden;
+  font-size: .8em;
+  position: relative;
+}
+
+img {
+  width: 15.5%;
+  display: inline-block;
+  float: left;
+  margin-bottom: .4em;
+}
+
+.title {
+  font-size: 2.5em;
+  width: 80%;
+  float: right;
+  display: inline;
+  margin-bottom: .7em;
+}
+
+.no-image-title {
+  width: 100%;
+  float: none;
+  font-size: 2.5em;
+  display: inline;
+  margin-bottom: 10em;
+}
+
+.text p {
+  margin-top: .3em;
+  width: 80%;
+  clear: both;
+  font-size: 1.4em;
+}
+
+.see-all {
+  background-color: $green;
+  color: #FFFFFF;
+  text-align: center;
+  width: 20%;
+  height: 3em;
+  margin: 2em auto;
+  line-height: 3em;
+}
+
+.see-all a {
+  color: white;
+}
+
+.get-developers {
+  background-color: $green;
+  color: #ffffff;
+  border: none;
+  text-align: center;
+  width: 12em;
+  height: 3.1em;
+  margin: 2em auto;
+  line-height: 3em;
+  font-size: 1.2em;
+  vertical-align: middle;
+  margin: 0;
+  position: absolute;
+  bottom: 1em;
+}
+
+#tabs {
+  position: absolute;
+  width: 95%;
+}
+
+.ui-widget-header {
+  background-color: white;
+  border: 1px solid $red;
+}
+
+.name {
+  color: $purple;
+  text-decoration: underline;
 }
