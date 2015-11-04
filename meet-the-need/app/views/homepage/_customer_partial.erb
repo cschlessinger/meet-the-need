@@ -9,7 +9,6 @@
           <p class='name'>By <%= project.customer.first_name %> <%= project.customer.last_name %></p>
           <% if project.technologies.any? %>
             <div class='tags'>
-              <span>Technologies:</span>
               <% project.technologies.each do |technology| %>
                 <figure class='tech tag'><%= technology.name %></figure>
               <% end %>
@@ -17,7 +16,6 @@
           <% end %>
           <% if project.topics.any? %>
             <div class='tags'>
-              <span>Topics:</span>
               <% project.topics.each do |topic| %>
                 <figure class='topic tag'><%= topic.name %></figure>
               <% end %>

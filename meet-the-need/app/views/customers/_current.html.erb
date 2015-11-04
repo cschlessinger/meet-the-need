@@ -3,15 +3,29 @@
   <div id='project-area'></div>
   <% if @current_projects.any? %>
     <% @current_projects.each do |project| %>
-      <div class='project'>
-        <!-- @TODO: Build out profile page using partial -->
-        <!-- @TODO: link here to developer profile -->
-        <div class='project-title'><%= project.title %></div>
-        <div class='project-date'><%= project.assigned_date.strftime("%m/%d/%Y") %></div>
-        <%= link_to profile_developer_path(project.developer) do %>
-          <div class='project-developer'><%= project.developer.first_name %> <%= project.developer.last_name %></div>
-        <% end %>
-        <div class='cost'>$<%= project.cost %></div>
+      <div class='card col-md-6'>
+        <div class='no-image-title'><%= project.title %></div>
+        <div class='text'>
+          <div class='project-date'>Assigned on <%= project.assigned_date.strftime("%m/%d/%Y") %></div>
+          <%= link_to profile_developer_path(project.developer) do %>
+            <div class='project-developer'>Assigned to <%= project.developer.first_name %> <%= project.developer.last_name %></div>
+          <% end %>
+          <div class='cost'>Cost: $<%= project.cost %></div>
+          <% if project.technologies.any? %>
+            <div class='tags'>
+              <% project.technologies.each do |technology| %>
+                <figure class='tech tag'><%= technology.name %></figure>
+              <% end %>
+            </div>
+          <% end %>
+          <% if project.topics.any? %>
+            <div class='tags'>
+              <% project.topics.each do |topic| %>
+                <figure class='topic tag'><%= topic.name %></figure>
+              <% end %>
+            </div>
+          <% end %>
+        </div>
       </div>
     <% end %>
   <% end %>

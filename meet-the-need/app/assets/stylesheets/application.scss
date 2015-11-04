@@ -80,6 +80,11 @@ nav li:last-child {
 
 }
 
+
+#unassigned .card {
+  width: 100%;
+}
+
 .card {
   height: 20em;
   width: 45%;
@@ -90,10 +95,6 @@ nav li:last-child {
   overflow: hidden;
   font-size: .8em;
   position: relative;
-}
-
-#unassigned .card {
-  width: 100%;
 }
 
 img {
@@ -114,9 +115,11 @@ span {
   font-size: 1.2em;
 }
 
-#unassigned .title {
+.no-image-title {
   width: 100%;
   float: none;
+  font-size: 2em;
+  display: inline;
 }
 
 .text {

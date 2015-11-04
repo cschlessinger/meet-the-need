@@ -1,15 +1,14 @@
 <div id='unassigned'>
   <div class='col-md-6'>
-    <h1 class='thingy'>My Unassigned Projects</h1>
+    <h1>My Unassigned Projects</h1>
     <% if @unassigned_projects.any? %>
       <% i = 0 %>
       <% @unassigned_projects.each do |project| %>
         <div class="card">
-          <p class='title'><%=  project.title %>
+          <p class='no-image-title'><%=  project.title %>
           <div class='text'>
             <% if project.technologies.any? %>
               <div class='tags'>
-                <span>Technologies:</span>
                 <% project.technologies.each do |technology| %>
                   <figure class='tech tag'><%= technology.name %></figure>
                 <% end %>
@@ -17,7 +16,6 @@
             <% end %>
             <% if project.topics.any? %>
               <div class='tags'>
-                <span>Topics:</span>
                 <% project.topics.each do |topic| %>
                   <figure class='topic tag'><%= topic.name %></figure>
                 <% end %>
@@ -36,7 +34,7 @@
   </div>
 
   <div class="col-md-6">
-    <h1 class='thingy'> Matching Developers </h1>
+    <h1> Matching Developers </h1>
     <div class="developer_details">
       <% if @top_unique_matching_three.any? %>
         <% @top_unique_matching_three.each do |developer| %>
@@ -47,7 +45,6 @@
               <p class='tagline'><%= developer.tagline %></p>
               <% if developer.technologies.any? %>
                 <div class='tags'>
-                  <span>Technologies:</span>
                   <% developer.technologies.each do |technology| %>
                     <figure class='tech tag'><%= technology.name %></figure>
                   <% end %>
@@ -56,7 +53,6 @@
               </div>
               <% if developer.topics.any? %>
                 <div class='tags'>
-                  <span>Topics:</span>
                   <% developer.topics.each do |topic| %>
                     <figure class='topic tag'><%= topic.name %></figure>
                   <% end %>

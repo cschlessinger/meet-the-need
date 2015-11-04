@@ -9,7 +9,7 @@ class ReviewRequestsController < ApplicationController
   def update
     review_request = ReviewRequest.find(params[:id])
     project = Project.find(review_request.project_id)
-    project.update(is_completed: true)
+    project.update(is_completed: true, completed_date: Time.now)
     review_request.destroy
     redirect_to customer_path(current_customer)
   end

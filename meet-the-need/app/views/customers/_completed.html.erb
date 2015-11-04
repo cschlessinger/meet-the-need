@@ -3,12 +3,14 @@
   <div id='project-area'></div>
   <% if @completed_projects.any? %>
     <% @completed_projects.each do |project| %>
-      <div class='project'>
+      <div class='card'>
         <!-- @TODO: add functionality to assign a developer to a project (and update assigned_at column) -->
-        <div class='project-title'><%= project.title %></div>
-        <div class='project-date'><%#= project.assigned_at.strftime("%m/%d/%Y") %></div>
-        <div class='project-developer'><%= project.developer.first_name %> <%= project.developer.last_name %></div>
-        <div class='cost'>$<%= project.cost %></div><br>
+        <div class='no-image-title'><%= project.title %></div>
+        <div class='project-date'>Completed on <%= project.completed_date.strftime("%m/%d/%Y") %></div>
+        <%= link_to profile_developer_path(project.developer) do %>
+          <div class='project-developer'>Developer: <%= project.developer.first_name %> <%= project.developer.last_name %></div>
+        <% end %>
+        <div class='cost'>Cost: $<%= project.cost %></div><br>
       </div>
     <% end %>
   <% end %>

@@ -8,7 +8,6 @@
               <p class='tagline'><%= developer.tagline %></p>
               <% if developer.technologies.any? %>
                 <div class='tags'>
-                  <span>Technologies:</span>
                   <% developer.technologies.each do |technology| %>
                     <figure class='tech tag'><%= technology.name %></figure>
                   <% end %>
@@ -17,7 +16,6 @@
               </div>
               <% if developer.topics.any? %>
                 <div class='tags'>
-                  <span>Topics:</span>
                   <% developer.topics.each do |topic| %>
                     <figure class='topic tag'><%= topic.name %></figure>
                   <% end %>
