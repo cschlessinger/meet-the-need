@@ -5,6 +5,7 @@ class CreateProjects < ActiveRecord::Migration
       t.text :body
       t.integer :cost
       t.boolean :is_completed
+      t.datetime :completed_date
       t.datetime :assigned_date
 
       t.references :customer

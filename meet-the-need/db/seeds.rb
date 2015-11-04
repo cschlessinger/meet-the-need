@@ -8,17 +8,18 @@
 
 
 Customer.create(first_name: "Bob", last_name: "Smith", email: "bobsmith@example.com", zipcode: "90210", password: "password")
+Customer.create(first_name: "Jane", last_name: "Murphy", email: "janemurphy@example.com", zipcode: "10210", password: "password")
 
 Developer.create(first_name: "Sally", last_name: "Jones", email: "sallyjones@example.com", zipcode: "81239", password: "password")
 Developer.create(first_name: "Frannie", last_name: "Frankie", email: "franniefrankie@example.com", zipcode: "81239", password: "password")
 Developer.create(first_name: "Shawn", last_name: "John", email: "shawnjohn@example.com", zipcode: "81239", password: "password", tagline: "I am the bestest developer ever", bio: "That's all.")
 
-Project.create(title: "LGBT Chat Room", body: "This is a support chat room for LGBT youth", customer_id: 1, cost: 350, assigned_date: '2015-11-01')
+Project.create(title: "LGBT Chat Room", body: "This is a support chat room for LGBT youth", customer_id: 1, developer_id: 2, cost: 350, assigned_date: '2015-11-01')
 Project.create(title: "Animal Protection", body: "This is to protect animals", customer_id: 1, cost: 350)
 Project.create(title: "Finance", body: "This is better manage my finance", customer_id: 1, cost: 350)
 Project.create(title: "Bowling league", body: "Virtual bowling app", customer_id: 1, cost: 950)
 Project.create(title: "Healthcare websites", body: "This will disrupt the healthcare industry", customer_id: 1, cost: 525, assigned_date: '2015-11-01', developer_id: 3, is_completed: false)
-Project.create(title: "Environment", body: "This app will singlehandedly end global warming", customer_id: 1, assigned_date: '2015-11-01', developer_id: 3, cost: 400, is_completed: true)
+Project.create(title: "Environment", body: "This app will singlehandedly end global warming", customer_id: 1, assigned_date: '2015-11-01', developer_id: 3, cost: 400, is_completed: true, completed_date: '2015-11-02')
 
 Technology.create(name: "chat")
 Technology.create(name: "iOS")
@@ -45,13 +46,22 @@ DeveloperTopic.create(developer_id: 4, topic_id: 5)
 
 DeveloperTopic.create(developer_id: 3, topic_id: 1)
 
-ProjectTechnology.create(project_id: 1, technology_id: 1)
-ProjectTechnology.create(project_id: 1, technology_id: 2)
+ProjectTechnology.create(project_id: 6, technology_id: 1)
+ProjectTechnology.create(project_id: 5, technology_id: 2)
+ProjectTechnology.create(project_id: 4, technology_id: 1)
+ProjectTechnology.create(project_id: 3, technology_id: 2)
+ProjectTechnology.create(project_id: 5, technology_id: 1)
+ProjectTechnology.create(project_id: 6, technology_id: 2)
 
-ProjectTopic.create(project_id: 1, topic_id: 1)
-ProjectTopic.create(project_id: 1, topic_id: 2)
-ProjectTopic.create(project_id: 1, topic_id: 3)
-ProjectTopic.create(project_id: 1, topic_id: 4)
-ProjectTopic.create(project_id: 1, topic_id: 5)
+ProjectTopic.create(project_id: 5, topic_id: 1)
+ProjectTopic.create(project_id: 5, topic_id: 2)
+ProjectTopic.create(project_id: 4, topic_id: 3)
+ProjectTopic.create(project_id: 4, topic_id: 4)
+ProjectTopic.create(project_id: 6, topic_id: 5)
 ProjectTopic.create(project_id: 4, topic_id: 5)
+
+Conversation.create(developer_id: 1, customer_id: 1, initiated_by: "Customer", body: "im customer talking to dev")
+Conversation.create(developer_id: 1, customer_id: 1, initiated_by: "Developer", body: "im dev talking to customer")
+Conversation.create(developer_id: 2, customer_id: 1, initiated_by: "Customer", body: "im customer talking to dev 222")
+
 

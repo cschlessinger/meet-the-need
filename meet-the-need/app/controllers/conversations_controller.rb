@@ -4,8 +4,17 @@ class ConversationsController < ApplicationController
     @conversations = Conversation.all
   end
 
+  def show
+
+  end
+
   def new
-    @conversation = Conversation.new
+    @customer = Customer.new
+    if request.xhr?
+      render 'message_form'
+    else
+      render 'message_form'
+    end
   end
 
   def create

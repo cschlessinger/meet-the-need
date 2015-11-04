@@ -6,6 +6,7 @@
 
 <% find_msg_developers.each do |developer| %>
   <% @conversations_with_one_developer = Developer.find(developer.id).conversations %>
+  <h3>Your messaging History with <%= developer.first_name %></h3>
   <%= render partial: "conversation_thread", locals: { conversations_with_one_developer: @conversations_with_one_developer } %>
   <div class="new-conversation">
     <%= form_for @conversation, method: "create" do |f| %>

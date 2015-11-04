@@ -4,30 +4,33 @@
     <h2>Project Developer Requests</h2>
     <% @customer_project_requests.each do |requests| %>
       <% requests.each do |request| %>
-        <article class="unassigned_request">
+        <div class="unassigned_request">
           <%= request.project.title %>, requested by
           <%= request.developer.first_name %>
           <%= request.developer.last_name %><br>
           <%= link_to "Accept Request", request_path(request.id), method: :patch %> |
           <%= link_to "Reject Request", request_path(request.id), method: :delete %>
-        </article><br>
-     <% end %>
-    <% end %>
-    <% if @customer_project_review_requests.any? %>
-      <h2>Project Review Requests</h2>
-      <% @customer_project_review_requests.each do |review_requests| %>
-        <% review_requests.each do |review_request| %>
-          <article class="unassigned_request">
-            <%= review_request.project.title %>, review requested by
-            <%= review_request.developer.first_name %>
-            <%= review_request.developer.last_name %><br>
-            <%= link_to "Accept Review Request", review_request_path(review_request.id), method: :patch %> |
-            <%= link_to "Reject Review Request", review_request_path(review_request.id), method: :delete %>
-          </article><br>
-       <% end %>
+        </div>
       <% end %>
     <% end %>
   <% else %>
-    You have no pending requests.
+    <p>No project requests!</p>
+  <% end %>
+
+  <% if @customer_project_review_requests.any? %>
+    <h2>Project Review Requests</h2>
+    <% @customer_project_review_requests.each do |review_requests| %>
+      <% review_requests.each do |review_request| %>
+        <div class="unassigned_request">
+          <%= review_request.project.title %>, review requested by
+          <%= review_request.developer.first_name %>
+          <%= review_request.developer.last_name %><br>
+          <%= link_to "Accept Review Request", review_request_path(review_request.id), method: :patch %> |
+          <%= link_to "Reject Review Request", review_request_path(review_request.id), method: :delete %>
+        </div><br>
+     <% end %>
+    <% end %>
+  <% else %>
+    <p>No project review requests!</p>
   <% end %>
 </div>

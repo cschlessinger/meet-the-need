@@ -105,11 +105,12 @@ ActiveRecord::Schema.define(version: 20151103190635) do
     t.text     "body"
     t.integer  "cost"
     t.boolean  "is_completed"
+    t.datetime "completed_date"
     t.datetime "assigned_date"
     t.integer  "customer_id"
     t.string   "developer_id"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
   end
 
   create_table "requests", force: :cascade do |t|

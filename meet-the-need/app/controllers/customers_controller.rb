@@ -14,15 +14,20 @@ class CustomersController < ApplicationController
   # GET /customers/1
   # GET /customers/1.json
   def show
+    @conversation = Conversation.new
     customer_projects = current_customer.projects
     @customer_project_requests = []
     customer_projects.each do |project|
-      @customer_project_requests << project.requests
+      if project.requests.any?
+        @customer_project_requests << project.requests
+      end
     end
 
     @customer_project_review_requests = []
     customer_projects.each do |project|
-      @customer_project_review_requests << project.review_requests
+      if project.review_requests.any?
+        @customer_project_review_requests << project.review_requests
+      end
     end
 
     @current_projects = @customer.projects.where(is_completed: false)
@@ -42,6 +47,7 @@ class CustomersController < ApplicationController
   end
 
   def profile
+    @conversation = Conversation.new
     render 'profile'
   end
 

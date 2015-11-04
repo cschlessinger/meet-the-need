@@ -10,10 +10,7 @@ class ProjectsController < ApplicationController
   # GET /projects/1
   # GET /projects/1.json
   def show
-    p params
-    p "%" * 10
     if request.xhr?
-      p "hi" * 80
       render :show, layout: false
     else
       render :show
