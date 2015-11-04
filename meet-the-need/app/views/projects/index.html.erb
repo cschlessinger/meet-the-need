@@ -4,8 +4,7 @@
     <%= link_to project_path(project) do %>
       <%= image_tag project.customer.avatar_url %>
       <p class='title'><%= project.title %></p>
-      <div class='text'>
-        <p class='name'>By <%= project.customer.first_name %> <%= project.customer.last_name %></p>
+        <p class='name'><%= project.customer.first_name %> <%= project.customer.last_name %></p>
         <p class='date'>Created at: <%= project.created_at.strftime("%m/%d/%Y") %></p>
         <% if project.technologies.any? %>
           <div class='tags'>
@@ -21,7 +20,6 @@
             <% end %>
           </div>
         <% end %>
-      </div>
     <% end %>
   </div>
 <% end %>
