@@ -253,6 +253,10 @@ input[type=submit] {
   top: -40px;
 }
 
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default {
+  background: #D0D0D0;
+}
+
 .name {
   color: $purple;
   text-decoration: underline;
