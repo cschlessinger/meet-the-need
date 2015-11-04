@@ -1,31 +1,27 @@
 <h1>All Projects</h1>
-
 <% @projects.each do |project| %>
-  <div>
-    <h3><%= project.title %></h3>
-
-    <div>
-      <% if project.topics.any? %>
-        <h4>Topics:</h4>
-        <% project.topics.each do |topic| %>
-          <%= topic.name %>,
+  <div class='col-md-3 card'>
+    <%= link_to project_path(project) do %>
+      <%= image_tag project.customer.avatar_url %>
+      <p class='title'><%= project.title %></h3>
+      <div class='text'>
+        <p class='name'>By <%= project.customer.first_name %> <%= project.customer.last_name %></p>
+        <p class='date'>Created at: <%= project.created_at.strftime("%m/%d/%Y") %></p>
+        <% if project.technologies.any? %>
+          <div class='tags'>
+            <% project.technologies.each do |technology| %>
+              <figure class='technology tag'><%= technology.name %></figure>
+            <% end %>
+          </div>
         <% end %>
-      <% end %>
-    </div>
-
-    <div>
-      <% if project.technologies.any? %>
-        <h4>Technologies:</h4>
-        <% project.technologies.each do |technology| %>
-          <%= technology.name %>,
+        <% if project.topics.any? %>
+          <div class='tags'>
+            <% project.topics.each do |topic| %>
+              <figure class='topic tag'><%= topic.name %></figure>
+            <% end %>
+          </div>
         <% end %>
-      <% end %>
-    </div>
-
-    <div>
-      Posted on <%= project.created_at.strftime("%m/%d/%Y") %>
-    </div>
-
-    <%= link_to 'See more details', project_path(project) %>
+      </div>
+    <% end %>
   </div>
 <% end %>
