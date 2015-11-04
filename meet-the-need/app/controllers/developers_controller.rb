@@ -30,6 +30,15 @@ class DevelopersController < ApplicationController
 
   # GET /developers/1/edit
   def edit
+    all_tech = Technology.all
+    my_tech = @developer.technologies
+    @unselected_tech = all_tech - my_tech
+
+    all_topics = Topic.all
+    my_topics = @developer.topics
+    @unselected_topics = all_topics - my_topics
+
+
   end
 
   # POST /developers
@@ -98,4 +107,5 @@ class DevelopersController < ApplicationController
     def developer_params
       params.require(:developer).permit(:first_name, :last_name, :tagline, :bio, :zipcode, :technologies => [], :topics => [])
     end
+
 end
