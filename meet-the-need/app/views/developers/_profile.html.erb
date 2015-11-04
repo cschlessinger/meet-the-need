@@ -1,7 +1,6 @@
-<div>
-
-	<!-- Profile Tab -->
-	<%= image_tag "default-avatar.png" %>
+<!-- Profile Tab -->
+<div class='profile'>
+	<%= image_tag @developer.avatar_url %>
 	<div class="show-field"><strong><%= @developer.first_name %> <%= @developer.last_name %></strong>
 	<% if current_customer %>
 		 <%= link_to "Message me", new_conversation_path, class: "message-button", remote: true %>

@@ -6,7 +6,7 @@ class CreateDevelopers < ActiveRecord::Migration
       t.string :zipcode
       t.string :tagline
       t.text :bio
-      t.string :avatar_url
+      t.string :avatar_url, default: 'default-avatar.png'
 
       t.timestamps null: false
     end
