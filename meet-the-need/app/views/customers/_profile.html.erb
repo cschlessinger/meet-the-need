@@ -1,7 +1,14 @@
 <div class='profile'>
   <!-- Profile Tab -->
-  <%= image_tag "default-avatar.png" %>
-  <p class="profile-name"><%= @customer.first_name %> <%= @customer.last_name %></p>
+  <%= image_tag @customer.avatar_url %>
+</div>
+
+  <div class="show-field"><strong><%= @customer.first_name %> <%= @customer.last_name %></strong>
+    <% if current_developer %>
+     <%= link_to "message me", new_conversation_path, class: "message-button", remote: true %>
+     <%= render "conversations/message_form" %>
+    <% end %>
+  </div>
   <p class="profile-bio"><%= @customer.bio %></p>
   <p class="profile-zipcode"><%= @customer.zipcode %></p>
 </div>

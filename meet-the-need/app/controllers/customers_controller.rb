@@ -1,5 +1,6 @@
 class CustomersController < ApplicationController
   include CustomerProjectMatcherHelper
+
   before_action :set_customer, only: [:show, :profile, :edit, :update, :destroy]
   before_action :authenticate_customer!, except: [:profile]
 
@@ -13,6 +14,7 @@ class CustomersController < ApplicationController
   # GET /customers/1
   # GET /customers/1.json
   def show
+    @conversation = Conversation.new
     customer_projects = current_customer.projects
     @customer_project_requests = []
     customer_projects.each do |project|
@@ -39,9 +41,13 @@ class CustomersController < ApplicationController
     else
       customer_project_matcher(0)
     end
+
+    @conversation = Conversation.new
+
   end
 
   def profile
+    @conversation = Conversation.new
     render 'profile'
   end
 

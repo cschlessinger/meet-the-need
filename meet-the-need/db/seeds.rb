@@ -22,6 +22,7 @@ Project.create(title: "Bowling league App", body: "Virtual bowling app", custome
 Project.create(title: "Healthcare websites App", body: "This will disrupt the healthcare industry", customer_id: 2, cost: 525, assigned_date: '2015-11-01', developer_id: 3, is_completed: false)
 Project.create(title: "Environment Protection App", body: "This app will singlehandedly end global warming", customer_id: 1, assigned_date: '2015-11-01', developer_id: 3, cost: 400, is_completed: true, completed_date: '2015-11-02')
 
+
 Technology.create(name: "chat")
 Technology.create(name: "iOS")
 
@@ -60,4 +61,9 @@ ProjectTopic.create(project_id: 4, topic_id: 3)
 ProjectTopic.create(project_id: 4, topic_id: 4)
 ProjectTopic.create(project_id: 6, topic_id: 5)
 ProjectTopic.create(project_id: 4, topic_id: 5)
+
+Conversation.create(developer_id: 1, customer_id: 1, initiated_by: "Customer", body: "im customer talking to dev")
+Conversation.create(developer_id: 1, customer_id: 1, initiated_by: "Developer", body: "im dev talking to customer")
+Conversation.create(developer_id: 2, customer_id: 1, initiated_by: "Customer", body: "im customer talking to dev 222")
+
 
