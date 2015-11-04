@@ -1,6 +1,5 @@
 <% find_msg_customers.each do |customer| %>
   <% @conversations_with_one_customer = Customer.find(customer.id).conversations %>
-  <% p @conversations_with_one_customer %>
   <div>
     <h3>Your messaging History with <%= customer.first_name %></h3> <p><%= link_to "see history", developers_path, :class => "msg-history" %></p>
     <div class="message-thread">
