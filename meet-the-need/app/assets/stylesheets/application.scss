@@ -18,7 +18,7 @@ $red: #E1321d;
 $orange: #F85E28;
 $teal: #7DD1B9;
 $green: #3E6C61;
-$purple: #413151;
+$purple: #4C4351;
 
 body {
   padding: 2%;
@@ -97,7 +97,7 @@ nav li:last-child {
 }
 
 img {
-  width: 15.5%;
+  width: 23%;
   display: inline-block;
   float: left;
   margin-bottom: .4em;
@@ -105,7 +105,8 @@ img {
 
 .title {
   font-size: 2.5em;
-  width: 80%;
+  line-height: 1.2em;
+  width: 77%;
   float: right;
   display: inline;
   margin-bottom: .7em;
@@ -120,6 +121,7 @@ img {
 }
 
 .text p {
+  padding-right: 1em;
   margin-top: .3em;
   width: 80%;
   clear: both;
@@ -188,4 +190,8 @@ input[type=submit] {
 .name {
   color: $purple;
   text-decoration: underline;
+}
+
+.body {
+  font-size: 1.3em;
 }

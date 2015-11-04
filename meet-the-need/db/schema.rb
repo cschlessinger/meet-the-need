@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 20151102223100) do
     t.string   "first_name"
     t.string   "last_name"
     t.string   "zipcode"
+    t.string   "avatar_url"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
     t.string   "email",                  default: "", null: false
@@ -58,6 +59,7 @@ ActiveRecord::Schema.define(version: 20151102223100) do
     t.string   "zipcode"
     t.string   "tagline"
     t.text     "bio"
+    t.string   "avatar_url"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
     t.string   "email",                  default: "", null: false

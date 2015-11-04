@@ -3,7 +3,7 @@
   <div class='col-md-6 card flip'>
   <%= link_to profile_developer_path(developer) do %>
     <div class='front'>
-      <%= image_tag "default-avatar.png" %>
+      <%= image_tag developer.avatar_url %>
       <p class='title'><%= developer.first_name %> <%= developer.last_name %></p>
       <div class='text'>
         <p class='tagline'><%= developer.tagline %></p>
@@ -25,7 +25,7 @@
       </div>
     </div>
     <div class='back'>
-      <%= developer.bio %>
+      <p class='body'><%= developer.bio %></p>
     </div>
   <% end %>
   </div>
