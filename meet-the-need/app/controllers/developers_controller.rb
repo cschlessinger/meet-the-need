@@ -12,8 +12,8 @@ class DevelopersController < ApplicationController
   # GET /developers/1.json
   def show
     @conversation = Conversation.new
-    @current_projects = current_developer.projects.where(is_completed: false)
-    @completed_projects = current_developer.projects.where(is_completed: true)
+    @current_projects = @developer.projects.where(is_completed: [nil, false])
+    @completed_projects = @developer.projects.where(is_completed: true)
     @requests = Request.where(developer_id: @developer.id)
   end
 
