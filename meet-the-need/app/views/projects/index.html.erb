@@ -3,14 +3,14 @@
   <div class='col-md-3 card'>
     <%= link_to project_path(project) do %>
       <%= image_tag project.customer.avatar_url %>
-      <p class='title'><%= project.title %></h3>
+      <p class='title'><%= project.title %></p>
       <div class='text'>
         <p class='name'>By <%= project.customer.first_name %> <%= project.customer.last_name %></p>
         <p class='date'>Created at: <%= project.created_at.strftime("%m/%d/%Y") %></p>
         <% if project.technologies.any? %>
           <div class='tags'>
             <% project.technologies.each do |technology| %>
-              <figure class='technology tag'><%= technology.name %></figure>
+              <figure class='tech tag'><%= technology.name %></figure>
             <% end %>
           </div>
         <% end %>
