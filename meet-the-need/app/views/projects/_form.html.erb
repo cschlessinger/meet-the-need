@@ -13,15 +13,15 @@
  <% end %>
 
 <%= form_for @project, url: {action: "create"} do |f| %>
-  <div>
+  <div class='form-field'>
     <%= f.label :title %>
     <%= f.text_field :title %>
   </div>
-  <div>
+  <div class='form-field'>
     <%= f.label :description %>
     <%= f.text_area :body %>
   </div>
-  <div>
+  <div class='form-field'>
     <%= f.label :cost %>
     <%= f.text_field :cost %>
   </div>
@@ -38,7 +38,7 @@
     <% end %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Create project", class: "green-button" %>
   </div>
 <% end %>
 
