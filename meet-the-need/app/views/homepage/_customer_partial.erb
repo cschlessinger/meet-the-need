@@ -7,6 +7,7 @@
         <p class='title'><%= project.title %></p>
         <div class='text'>
           <p class='name'>By <%= project.customer.first_name %> <%= project.customer.last_name %></p>
+          <p class='date'>Created at: <%= project.created_at.strftime("%m/%d/%Y") %></p>
           <% if project.technologies.any? %>
             <div class='tags'>
               <% project.technologies.each do |technology| %>
@@ -21,7 +22,6 @@
               <% end %>
             </div>
           <% end %>
-          <p class='date'>Created at: <%= project.created_at.strftime("%m/%d/%Y") %></p>
         </div>
       </div>
       <div class='back'>
