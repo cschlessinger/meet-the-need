@@ -4,7 +4,4 @@ $(document).ready(function() {
     axis:'y',
     trigger: 'click'
     });
-  // $('.inbox').click(function() {
-  //   $("#tabs").tabs( "option", "active", 4);
-  // });
 });
