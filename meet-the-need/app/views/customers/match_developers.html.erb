@@ -2,7 +2,7 @@
         <% @top_unique_matching_three.each do |developer| %>
         <%= link_to profile_developer_path(developer) do %>
           <div class='card'>
-            <%= image_tag "default-avatar.png" %>
+            <%= image_tag developer.avatar_url %>
             <p class='title'><%=  developer.first_name %> <%=  developer.last_name %></p>
             <div class='text'>
               <p class='tagline'><%= developer.tagline %></p>
