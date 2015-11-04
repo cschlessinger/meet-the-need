@@ -2,15 +2,15 @@
 <div class='profile'>
   <%= image_tag @customer.avatar_url %>
 </div>
-  <div class="show-field"><strong><%= @customer.first_name %> <%= @customer.last_name %></strong>
-    <% if current_developer %>
-     <%= link_to "message me", new_conversation_path, class: "message-button", remote: true %>
-     <%= render "conversations/message_form" %>
-    <% end %>
-  </div>
-  <p class="profile-bio"><%= @customer.bio %></p>
-  <p class="profile-zipcode"><%= @customer.zipcode %></p>
-	<% if @customer == current_customer %>
-	  <%= button_to 'Edit profile', edit_customer_path(@customer), method: :get, class: "button-shape green-button" %>
-	<% end %>
+<div class="show-field"><strong><%= @customer.first_name %> <%= @customer.last_name %></strong>
+  <% if current_developer %>
+   <%= link_to "message me", new_conversation_path, class: "message-button", remote: true %>
+   <%= render "conversations/message_form" %>
+  <% end %>
 </div>
+<p class="profile-bio"><%= @customer.bio %></p>
+<p class="profile-zipcode"><%= @customer.zipcode %></p>
+<% if @customer == current_customer %>
+  <%= button_to 'Edit profile', edit_customer_path(@customer), method: :get, class: "button-shape green-button" %>
+<% end %>
+

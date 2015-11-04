@@ -1,33 +1,33 @@
-<div>
+<div class='welcome'>
   <h1>Welcome, <%= current_customer.first_name %></h1>
 </div>
-  <%= button_to "Create a project", new_project_path, method: :get, class: "green-button create-project" %>
-  <div id="tabs" class="<%= current_customer.id %>">
-    <ul>
-      <li><a href="#unassigned">Unassigned</a></li>
-      <li><a href="#current">Current Projects</a></li>
-      <li><a href="#completed">Completed</a></li>
-      <li><a href="#requests">Requests</a></li>
-      <li><a href="#profile">Profile</a></li>
-      <li><a href="#conversations">Inbox</a></li>
-    </ul>
-    <div id="unassigned">
-     <%= render "unassigned" %>
-    </div>
-    <div id="current">
-      <%= render 'current' %>
-    </div>
-    <div id="completed">
-      <%= render "completed" %>
-    </div>
-    <div id="requests">
-     <%= render "requests" %>
-    </div>
-    <div id="profile">
-     <%= render "profile" %>
-    </div>
-    <div id="conversations">
-      <%= render "conversations" %>
-    </div>
+<%= button_to "Create a project", new_project_path, method: :get, class: "green-button create-project" %>
+<div id="tabs" class="<%= current_customer.id %>">
+  <ul>
+    <li><a href="#unassigned">Unassigned</a></li>
+    <li><a href="#current">Current Projects</a></li>
+    <li><a href="#completed">Completed</a></li>
+    <li><a href="#requests">Requests</a></li>
+    <li><a href="#profile">Profile</a></li>
+    <li><a href="#conversations">Inbox</a></li>
+  </ul>
+  <div id="unassigned">
+   <%= render "unassigned" %>
+  </div>
+  <div id="current">
+    <%= render 'current' %>
+  </div>
+  <div id="completed">
+    <%= render "completed" %>
+  </div>
+  <div id="requests">
+   <%= render "requests" %>
+  </div>
+  <div id="profile">
+   <h1>My Profile</h1>
+   <%= render "profile" %>
+  </div>
+  <div id="conversations">
+    <%= render "conversations" %>
   </div>
 </div>
