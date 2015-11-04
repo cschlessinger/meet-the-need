@@ -19,6 +19,8 @@ class ProjectsController < ApplicationController
 
   # GET /projects/new
   def new
+    @technologies = Technology.all
+    @topics = Topic.all
     @project = Project.new
   end
 
