@@ -3,23 +3,15 @@
 	<div id='project-area'></div>
 	<% if @requests.any? %>
 		<% @requests.each do |request| %>
-
 			<div class='card col-md-6'>
         <div class='no-image-title'><%= request.project.title %></div>
         <div class='text'>
-
           <%= link_to profile_customer_path(request.project.customer_id) do %>
-
           <p class='project-customer'>Requested from <span class='name'><%= request.customer.first_name %> <%= request.customer.last_name %></span></p>
-
           <% end %>
-
         	<p>on <%= request.created_at.strftime("%m/%d/%Y") %> </p>
-
-        	<!-- do we need to add topics and technologies to the model so we can get tags for these?  Also, what about costs? -->
-
         </div>
       </div>
-     <% end %>
+    <% end %>
 	<% end %>
 </div>

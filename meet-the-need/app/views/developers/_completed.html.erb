@@ -3,7 +3,6 @@
 	<div id='project-area'></div>
 	<% if @completed_projects.any? %>
 		<% @completed_projects.each do |project| %>
-
 			<div class='card col-md-6'>
         <div class='no-image-title'><%= project.title %></div>
         <div class='text'>
@@ -12,10 +11,8 @@
           	<p class='project-date'>Completed on <%= project.completed_date.strftime("%m/%d/%Y") %></p>
           	<% end %>
           <%= link_to profile_customer_path(project.customer_id) do %>
-
             <p class='project-customer'>Requested by <span class='name'><%= project.customer.first_name %> <%= project.customer.last_name %></span></p>
           	<p class='cost'>Cost: $<%= project.cost %></p>
-
           	<% if project.technologies.any? %>
             	<div class='tags'>
               <% project.technologies.each do |technology| %>
@@ -23,7 +20,6 @@
               <% end %>
             	</div>
           	<% end %>
-
           	<% if project.topics.any? %>
             	<div class='tags'>
               <% project.topics.each do |topic| %>
@@ -34,7 +30,6 @@
           <% end %>
         </div>
       </div>
-
 		<% end %>
 	<% end %>
 </div>
