@@ -79,17 +79,16 @@ nav li:last-child {
   height: 2em;
 }
 
-
 #unassigned .card {
   width: 100%;
 }
 
 .card {
-  height: 20em;
+  height: 25em;
   width: 45%;
   border: 1px solid black;
   margin: 1em;
-  padding: 1.5em;
+  padding: .5em;
   box-sizing: border-box;
   overflow: hidden;
   font-size: .8em;
@@ -101,12 +100,14 @@ img {
   display: inline-block;
   float: left;
   margin-bottom: .4em;
+  margin-right: 1em;
+  image-rendering: crisp-edges;
 }
 
 .title {
   font-size: 2.5em;
   line-height: 1.2em;
-  width: 77%;
+  width: 72%;
   float: right;
   display: inline;
   margin-bottom: .7em;

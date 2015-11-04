@@ -1,13 +1,14 @@
 <section class='cards'>
 <% @latest_three_projects.each do |project| %>
   <article class='col-md-6 card flip'>
-    <%= link_to project_path(project) do %>
       <div class='front'>
         <%= image_tag project.customer.avatar_url %>
-        <p class='title'><%= project.title %></p>
+        <%= link_to project_path(project) do %>
+          <p class='title'><%= project.title %></p>
+        <% end %>
         <div class='text'>
           <p class='name'>By <%= project.customer.first_name %> <%= project.customer.last_name %></p>
-          <p class='date'>Created at: <%= project.created_at.strftime("%m/%d/%Y") %></p>
+          <p class='date'>Created on <%= project.created_at.strftime("%m/%d/%Y") %></p>
           <% if project.technologies.any? %>
             <div class='tags'>
               <% project.technologies.each do |technology| %>
@@ -27,7 +28,6 @@
       <div class='back'>
         <p class='body'><%= project.body %></p>
       </div>
-    <% end %>
   </article>
 <% end %>
 </section>
