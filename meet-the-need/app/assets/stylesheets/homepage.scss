@@ -3,6 +3,9 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 $orange: #F85E28;
+$green: #3E6C61;
+$teal: #7DD1B9;
+$purple: #4C4351;
 
 main {
   padding-bottom: 3em;
@@ -11,18 +14,19 @@ main {
   display: block;
 }
 
-.logo {
-  width: 2.2em;
-  height: 1em;
-}
-
 .search {
-  top: 2em;
+  top: -6em;
   right: 0em;
   display: inline-block;
   float: right;
   margin: auto 1em;
   position: relative;
+  width: 100%;
+  text-align: center;
+  background-color: #777;
+  width: 100%;
+  padding: 1.2em 0;
+  opacity: 0.5
 }
 
 #search {
@@ -45,6 +49,8 @@ input[type=submit] {
 
 input {
   vertical-align: top;
+  border-radius: 5px;
+
 }
 
 button {
@@ -73,4 +79,9 @@ button {
     background-position: center;
     margin-left: -50px;
     margin-right: -50px
+}
+
+#account a:hover {
+  color: $teal;
+  text-decoration: underline;
 }
