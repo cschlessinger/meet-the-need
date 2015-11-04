@@ -13,11 +13,12 @@
       </div>
     </div>
   <% end %>
-  <header>
-      <%= form_tag("homepage/search", method: "get", class: "search") do %>
+  <%= form_tag("homepage/search", method: "get", class: "search") do %>
         <%= text_field_tag(:search, nil, placeholder: "Enter your search" ) %>
         <%= image_submit_tag("magnifying_glass.svg") %>
       <% end %>
+  <header>
+
     <!-- <button id="advanced">Advanced Search</button> -->
 
   </header>
