@@ -85,6 +85,7 @@ ActiveRecord::Schema.define(version: 20151103190635) do
   add_index "developers", ["email"], name: "index_developers_on_email", unique: true, using: :btree
   add_index "developers", ["reset_password_token"], name: "index_developers_on_reset_password_token", unique: true, using: :btree
 
+
   create_table "project_technologies", force: :cascade do |t|
     t.integer  "project_id"
     t.integer  "technology_id"
