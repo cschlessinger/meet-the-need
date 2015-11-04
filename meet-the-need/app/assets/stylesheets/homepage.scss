@@ -21,18 +21,21 @@ main {
   right: 0em;
   display: inline-block;
   float: right;
-  margin-bottom: 1em;
+  margin: auto 1em;
   position: relative;
 }
-input[type=image] {
-  height: 1.57em;
-}
+
 #search {
-  width: 30em;
   font-size: 2em;
   padding-left: .5em;
-  margin-right: .5em;
   line-height: 1.57em;
+}
+
+input[type=image] {
+  height: 1.57em;
+  top: 1em;
+  right: 4em;
+  position: relative;
 }
 
 input[type=submit] {
