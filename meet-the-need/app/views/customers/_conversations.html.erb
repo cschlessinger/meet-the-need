@@ -1,9 +1,3 @@
-<!-- conv with a particular dev -->
-<!-- i am a customer -->
-<!-- I want to render thread per developer -->
-<!-- 1. find all developers you have existing conversation with -->
-<!-- 2. Developer.find(id).conversations -->
-
 <% find_msg_developers.each do |developer| %>
   <% @conversations_with_one_developer = Developer.find(developer.id).conversations %>
   <div>
