@@ -2,13 +2,15 @@
 
 	<!-- Profile Tab -->
 	<%= image_tag "default-avatar.png" %>
-	<div class="show-field"><strong><%= @developer.first_name %> <%= @developer.last_name %></strong>  <%= link_to "message me", new_conversation_path, remote: true %></div>
+	<div class="show-field"><strong><%= @developer.first_name %> <%= @developer.last_name %></strong> </div>
+	<% if current_customer %>
+		 <%= link_to "message me", new_conversation_path, class: "message-button", remote: true %>
+		 <%= render "conversations/message_form" %>
+	<% end %>
 	<div class="show-field"><%= @developer.tagline %></div>
 	<div class="show-field"><%= @developer.bio %></div>
 	<div class="show-field"><%= @developer.zipcode %></div>
-	<% if current_customer %>
-		 <%= render "conversations/message_form" %>
-	<% end %>
+
 	<!-- do we want to do this in addition to the native messaging? -->
 	<!-- <a href="mailto:<%@developer.email%>"><%= @developer.email %></a> -->
 

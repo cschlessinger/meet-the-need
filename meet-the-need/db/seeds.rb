@@ -8,6 +8,7 @@
 
 
 Customer.create(first_name: "Bob", last_name: "Smith", email: "bobsmith@example.com", zipcode: "90210", password: "password")
+Customer.create(first_name: "Jane", last_name: "Murphy", email: "janemurphy@example.com", zipcode: "10210", password: "password")
 
 Developer.create(first_name: "Sally", last_name: "Jones", email: "sallyjones@example.com", zipcode: "81239", password: "password")
 Developer.create(first_name: "Frannie", last_name: "Frankie", email: "franniefrankie@example.com", zipcode: "81239", password: "password")

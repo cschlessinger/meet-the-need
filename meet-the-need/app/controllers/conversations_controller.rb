@@ -18,11 +18,8 @@ class ConversationsController < ApplicationController
   end
 
   def create
-    p params
     @conversation = Conversation.new(set_conversation)
     if @conversation.save
-      p "w" * 80
-      p @conversation
       redirect_to :back
     else
       redirect_to :back
