@@ -5,6 +5,7 @@ $(function() {
 
 // Attempt to ajax message box
 $(document).ready(function() {
-  $(".message-box").hide();
-  $('#new_conversatoin').hide();
+  $('.message-button').click(function() {
+    $('.new-conversation').toggle("slow");
+  })
 })
