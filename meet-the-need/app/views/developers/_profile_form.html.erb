@@ -19,39 +19,43 @@
 					<h3>My technologies</h3>
 					<% @developer.technologies.each do |technology| %>
 						<p><figure class='tech tag'><%= technology.name %></figure>
-						<figure class='add-minus tag'>-</figure></p>
+						<%= link_to developer_technology_path(DeveloperTechnology.find_by(developer_id: @developer.id, technology_id: technology.id)), method: :delete do %>
+							<%= image_tag 'minus.ico', class: "plus-minus" %></p>
+						<% end %>
 					<% end %>
 				</section>
 			<% end %>
 
 			<% if @developer.topics.any? %>
-				<section class='selected-topics'>
+				<section class='selected-topics col-md-6'>
 					<h3>My topics</h3>
 					<% @developer.topics.each do |topic| %>
 						<p><figure class='topic tag'><%= topic.name %></figure>
-						<figure class='add-minus tag'>-</figure></p>
+						<%= link_to developer_topic_path(DeveloperTopic.find_by(developer_id: @developer.id, topic_id: topic.id)), method: :delete do %>
+							<%= image_tag 'minus.ico', class: "plus-minus" %></p>
+						<% end %>
 					<% end %>
 				</section>
 			<% end %>
 		</section>
 		<section class='col-md-12'>
 			<section class='col-md-6'>
-				<h3>Add more technologies</h3>
+				<h3>Add technologies</h3>
 				<% if @unselected_tech.any? %>
 					<% @unselected_tech.each do |tech| %>
-					<p><figure class='tech tag'><%= technology.name %></figure>
-					<figure class='add-minus tag'>+</figure></p>
+					<p><figure class='tech tag'><%= tech.name %></figure>
+					<%= image_tag 'plus.ico', class: "plus-minus", class: "plus-minus" %></p>
 					<% end %>
 				<% else %>
 					<p>Oops! All available technologies selected.</p>
 				<% end %>
 			</section>
 			<section class='col-md-6'>
-			<h3>Add more topics</h3>
+			<h3>Add topics</h3>
 			<% if @unselected_topics.any? %>
 				<% @unselected_topics.each do |topic| %>
 				<p><figure class='topic tag'><%= topic.name %></figure>
-				<figure class='add-minus tag'>+</figure></p>
+				<%= image_tag 'plus.ico', class: "plus-minus" %></p>
 				<% end %>
 			<% else %>
 				<p>Oops! All available technologies selected.</p>
@@ -59,36 +63,6 @@
 			</section>
 		</section>
 	</section>
-	<!-- @TODO: display all technologies/topics in own checkboxes; add ability to edit with them filled out with current selections -->
-	<!-- @TODO: fix routes for adding and deleting technologies -->
-
-	<div class="form_field"><%= label_tag(:technologies, "Technologies") %>
-		<% Technology.all.each do |technology| %>
-			<div><%= technology.name %> |
-			<% if current_developer.technologies.include?(Technology.find(technology.id)) %>
-				<%= link_to "Delete", 'developer_technologies#destroy' %>
-			<% else %>
-				<%= link_to "Add", new_developer_technology_path%>
-			<% end %>
-		<% end %>
-	</div>
-
-	<!-- @TODO: display all technologies/topics in own checkboxes; add ability to edit with them filled out with current selections -->
-	<!-- @TODO: fix routes for adding and deleting topics -->
-
-	<div class="form_field"><%= label_tag(:topics, "Topics") %>
-		<% Topic.all.each do |topic| %>
-		<div>
-			<%= topic.name %> |
-			<% if current_developer.topics.include?(Topic.find(topic.id)) %>
-				<%= link_to "Delete", 'developer_topics#destroy' %>
-			<% else %>
-				<%= link_to "Add", new_developer_topic_path%>
-			<% end %>
-		</div>
-
-		<% end %>
-	</div>
 
 	<%= f.submit %>
 <% end %>

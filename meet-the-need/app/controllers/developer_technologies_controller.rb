@@ -19,10 +19,10 @@ class DeveloperTechnologiesController < ApplicationController
 	end
 
 	def destroy
-	  set_developer_technology
+		@developer_technology = DeveloperTechnology.find(params[:id])	  
 	  @developer_technology.destroy
 	  respond_to do |format|
-	    format.html { redirect_to 'developers#show', notice: 'Developer was successfully destroyed.' }
+	    format.html { redirect_to edit_developer_path(current_developer.id), notice: 'Developer was successfully destroyed.' }
 	    format.json { head :no_content }
 	  end
 	end

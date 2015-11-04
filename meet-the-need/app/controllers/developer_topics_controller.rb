@@ -21,10 +21,10 @@ class DeveloperTopicsController < ApplicationController
 	end
 
 	def destroy
-	  set_developer_topic
+	  @developer_topic = DeveloperTopic.find(params[:id])
 	  @developer_topic.destroy
 	  respond_to do |format|
-	    format.html { redirect_to 'developers#show', notice: 'Developer was successfully destroyed.' }
+	    format.html { redirect_to edit_developer_path(current_developer.id), notice: 'Developer was successfully destroyed.' }
 	    format.json { head :no_content }
 	  end
 	end
