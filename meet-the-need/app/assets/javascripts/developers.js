@@ -1,6 +1,5 @@
 $(function() {
   $( "#tabs" ).tabs();
-  // $('.message-button').click();
 });
 
 // Attempt to ajax message box
@@ -15,3 +14,5 @@ $(document).ready(function() {
     // msg_thread.toggle("slow");
   });
 })
+
+
