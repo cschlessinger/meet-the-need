@@ -1,0 +1,7 @@
+<p>this is a chat room for developers</p>
+<% Conversation.where(developer_id: 1).each do |conversation| %>
+  <p>Sender</p>
+  <%= conversation.customer.first_name %>
+  <p>Message:</p>
+  <%= conversation.body %>
+<% end %>

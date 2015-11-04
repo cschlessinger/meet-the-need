@@ -59,3 +59,8 @@ ProjectTopic.create(project_id: 4, topic_id: 4)
 ProjectTopic.create(project_id: 6, topic_id: 5)
 ProjectTopic.create(project_id: 4, topic_id: 5)
 
+Conversation.create(developer_id: 1, customer_id: 1, initiated_by: "Customer", body: "im customer talking to dev")
+Conversation.create(developer_id: 1, customer_id: 1, initiated_by: "Developer", body: "im dev talking to customer")
+Conversation.create(developer_id: 2, customer_id: 1, initiated_by: "Customer", body: "im customer talking to dev 222")
+
+

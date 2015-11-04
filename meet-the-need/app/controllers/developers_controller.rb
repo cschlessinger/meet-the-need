@@ -19,6 +19,7 @@ class DevelopersController < ApplicationController
 
   # This is the view for customers to see a developer's profile
   def profile
+    @conversation = Conversation.new
     render 'profile'
   end
 
