@@ -53,6 +53,11 @@ h2 {
   display: inline-block;
 }
 
+.create-project {
+  position: relative;
+  bottom: 22px;
+}
+
 #advanced {
   position: relative;
   top: 2em;
@@ -101,7 +106,7 @@ nav li:last-child {
 }
 
 .selected-technologies {
-  
+
 }
 
 .plus-minus {
@@ -234,9 +239,18 @@ input[type=submit] {
   width: 95%;
 }
 
+.welcome {
+  top: -28px;
+  position: relative;
+}
+
 .ui-widget-header {
-  background-color: white;
-  border: 1px solid $red;
+  background: white;
+  border: none;
+}
+
+.ui-tabs .ui-tabs-nav li {
+  top: -40px;
 }
 
 .name {
