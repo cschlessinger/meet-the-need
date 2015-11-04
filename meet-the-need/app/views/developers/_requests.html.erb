@@ -5,39 +5,21 @@
 		<% @requests.each do |request| %>
 
 			<div class='card col-md-6'>
+        <div class='no-image-title'><%= request.project.title %></div>
         <div class='text'>
-          
-            <p class='project-customer'>Requested by <span class='name'><%= request.customer.first_name %> <%= request.customer.last_name %></span></p>
-         
-          	<% if request.technologies.any? %>
-            	<div class='tags'>
-              <% request.technologies.each do |technology| %>
-                <figure class='tech tag'><%= technology.name %></figure>
-              <% end %>
-            	</div>
-          	<% end %>
 
-          	<% if request.topics.any? %>
-            	<div class='tags'>
-              <% request.topics.each do |topic| %>
-                <figure class='topic tag'><%= topic.name %></figure>
-              <% end %>
-            	</div>
-          	<% end %>
+          <%= link_to profile_customer_path(request.project.customer_id) do %>
+
+          <p class='project-customer'>Requested from <span class='name'><%= request.customer.first_name %> <%= request.customer.last_name %></span></p>
+
+          <% end %>
+
+        	<p>on <%= request.created_at.strftime("%m/%d/%Y") %> </p>
+
+        	<!-- do we need to add topics and technologies to the model so we can get tags for these?  Also, what about costs? -->
 
         </div>
       </div>
      <% end %>
 	<% end %>
 </div>
-
-
-
-
-
-
-<% @requests.each do |request| %>
-	<div>
-		<div>You requested <%= Project.find(request.project_id).title %> from <%= Customer.find(request.customer_id).first_name%> <%= Customer.find(request.customer_id).last_name%> on <%= request.created_at.strftime("%m/%d/%Y") %></div>
-	</div>
-<% end %>
