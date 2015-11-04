@@ -6,11 +6,11 @@
       <div class='card col-md-6'>
         <div class='no-image-title'><%= project.title %></div>
         <div class='text'>
-          <div class='project-date'>Assigned on <%= project.assigned_date.strftime("%m/%d/%Y") %></div>
+          <p class='project-date'>Assigned on <%= project.assigned_date.strftime("%m/%d/%Y") %></p>
           <%= link_to profile_developer_path(project.developer) do %>
-            <div class='project-developer'>Assigned to <%= project.developer.first_name %> <%= project.developer.last_name %></div>
+            <p class='project-developer'>Assigned to <span class='name'><%= project.developer.first_name %> <%= project.developer.last_name %></span></p>
           <% end %>
-          <div class='cost'>Cost: $<%= project.cost %></div>
+          <p class='cost'>Cost: $<%= project.cost %></p>
           <% if project.technologies.any? %>
             <div class='tags'>
               <% project.technologies.each do |technology| %>

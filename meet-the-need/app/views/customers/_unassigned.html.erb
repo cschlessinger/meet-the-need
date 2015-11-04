@@ -7,6 +7,8 @@
         <div class="card">
           <p class='no-image-title'><%=  project.title %>
           <div class='text'>
+            <p class='date'>Created at: <%= project.created_at.strftime("%m/%d/%Y") %></p>
+            <p class='cost'>Cost: $<%= project.cost %></p>
             <% if project.technologies.any? %>
               <div class='tags'>
                 <% project.technologies.each do |technology| %>
@@ -21,8 +23,6 @@
                 <% end %>
               </div>
             <% end %>
-            <p class='date'>Created at: <%= project.created_at.strftime("%m/%d/%Y") %></p>
-            <p class='cost'>Cost: $ <%= project.cost %></p>
             <a href="#"><div class= "<%= i %> get-developers">Match developers</div></a>
           </div>
         </div>
@@ -43,6 +43,7 @@
             <p class='title'><%=  developer.first_name %> <%=  developer.last_name %></p>
             <div class='text'>
               <p class='tagline'><%= developer.tagline %></p>
+              <p class='date'>Created at: <%= developer.created_at.strftime("%m/%d/%Y") %></p>
               <% if developer.technologies.any? %>
                 <div class='tags'>
                   <% developer.technologies.each do |technology| %>
@@ -58,7 +59,6 @@
                   <% end %>
                 </div>
               <% end %>
-              <p class='date'>Created at: <%= developer.created_at.strftime("%m/%d/%Y") %></p>
             </div>
           </div>
         <% end %>

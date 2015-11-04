@@ -6,6 +6,7 @@
             <p class='title'><%=  developer.first_name %> <%=  developer.last_name %></p>
             <div class='text'>
               <p class='tagline'><%= developer.tagline %></p>
+              <p class='date'>Created at: <%= developer.created_at.strftime("%m/%d/%Y") %></p>
               <% if developer.technologies.any? %>
                 <div class='tags'>
                   <% developer.technologies.each do |technology| %>
@@ -22,7 +23,6 @@
                 </div>
               <% end %>
               <% end %>
-              <p class='date'>Created at: <%= developer.created_at.strftime("%m/%d/%Y") %></p>
             </div>
           </div>
         <% end %>

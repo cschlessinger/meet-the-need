@@ -16,9 +16,9 @@
 
 $red: #E1321d;
 $orange: #F85E28;
-$blue: #CDFBEE;
 $teal: #7DD1B9;
 $green: #3E6C61;
+$purple: #413151;
 
 body {
   padding: 2%;
@@ -64,7 +64,7 @@ nav li:last-child {
 .tag {
   display: inline-block;
   color: white;
-  padding: .2em;
+  padding: .1em .6em;
 }
 
 .topic {
@@ -76,8 +76,7 @@ nav li:last-child {
 }
 
 .tags {
-  height: 2.5em;
-
+  height: 2em;
 }
 
 
@@ -105,28 +104,26 @@ img {
 }
 
 .title {
-  font-size: 2em;
+  font-size: 2.5em;
   width: 80%;
   float: right;
   display: inline;
-}
-
-span {
-  font-size: 1.2em;
+  margin-bottom: .7em;
 }
 
 .no-image-title {
   width: 100%;
   float: none;
-  font-size: 2em;
+  font-size: 2.5em;
   display: inline;
+  margin-bottom: 10em;
 }
 
-.text {
+.text p {
   margin-top: .3em;
   width: 80%;
   clear: both;
-  font-size: 1.2em;
+  font-size: 1.4em;
 }
 
 .see-all {
@@ -167,4 +164,9 @@ span {
 .ui-widget-header {
   background-color: white;
   border: 1px solid $red;
+}
+
+.name {
+  color: $purple;
+  text-decoration: underline;
 }
