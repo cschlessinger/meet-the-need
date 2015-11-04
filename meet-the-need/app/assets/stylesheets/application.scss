@@ -24,9 +24,19 @@ body {
   padding: 2%;
 }
 
+.logo {
+  width: 3em;
+  height: 1.5em;
+}
+
 #page-title {
   font-size: 60px;
   display: inline-block;
+}
+
+#advanced {
+  position: relative;
+  bottom: 3em;
 }
 
 a:visited,

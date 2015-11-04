@@ -5,7 +5,7 @@
 $orange: #F85E28;
 
 main {
-  padding-top: 3em;
+  padding-top: 1em;
   padding-bottom: 3em;
   vertical-align: top;
   clear: both;
@@ -18,10 +18,12 @@ main {
 }
 
 .search {
-  right: 5em;
+  right: 0em;
   display: inline-block;
   float: right;
   margin-bottom: 1em;
+  position: relative;
+  bottom: 3em;
 }
 
 #search {
