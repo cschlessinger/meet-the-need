@@ -100,6 +100,15 @@ nav li:last-child {
   padding: .1em .6em;
 }
 
+.selected-technologies {
+  
+}
+
+.plus-minus {
+  width: 1.7em;
+  margin: 0 0 0 0;
+}
+
 .topic {
   background-color: $teal;
 }
@@ -241,5 +250,5 @@ input[type=submit] {
 
 .date {
   font-style: italic;
-  font-size: .7em;
+  font-size: .9em;
 }
