@@ -1,16 +1,19 @@
-<p>this is a chat room for customers</p>
+<!-- conv with a particular dev -->
+<!-- i am a customer -->
+<!-- I want to render thread per developer -->
+<!-- 1. find all developers you have existing conversation with -->
+<!-- 2. Developer.find(id).conversations -->
 
-
-<% Conversation.where(customer_id: current_customer.id).each do |conversation| %>
-  <div class="conversation">
-    <% if conversation.initiated_by == "Customer" %>
-      <h4><%= conversation.customer.first_name %> <%= conversation.customer.last_name %></h4>
-      <p><%= conversation.body %></p>
-      <p><%= conversation.created_at.strftime("%m/%d/%Y") %></p>
-    <% else %>
-      <h4><%= conversation.developer.first_name %> <%= conversation.developer.last_name %></h4>
-      <p><%= conversation.body %></p>
-      <p><%= conversation.created_at.strftime("%m/%d/%Y") %></p>
+<% find_msg_developers.each do |developer| %>
+  <% @conversations_with_one_developer = Developer.find(developer.id).conversations %>
+  <%= render partial: "conversation_thread", locals: { conversations_with_one_developer: @conversations_with_one_developer } %>
+  <div class="new-conversation">
+    <%= form_for @conversation, method: "create" do |f| %>
+      <%= f.text_area :body %>
+      <%= f.hidden_field :developer_id, value: developer.id %>
+      <%= f.hidden_field :initiated_by, value: "Customer" %>
+      <%= f.hidden_field :customer_id, value: current_customer.id %>
+      <%= f.submit "Create message"%>
     <% end %>
   </div>
 <% end %>

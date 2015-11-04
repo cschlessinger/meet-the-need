@@ -25,7 +25,7 @@ Rails.application.routes.draw do
   resources :review_requests
   resources :developer_technologies
   resources :developer_topics
-
+  resources :conversations
   root 'homepage#index'
 
   # delete '/delete_technology/:tech_id' => 'developers#delete_technology'

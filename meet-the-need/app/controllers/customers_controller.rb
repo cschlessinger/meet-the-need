@@ -1,5 +1,6 @@
 class CustomersController < ApplicationController
   include CustomerProjectMatcherHelper
+
   before_action :set_customer, only: [:show, :profile, :edit, :update, :destroy]
   before_action :authenticate_customer!, except: [:profile]
 
@@ -35,6 +36,9 @@ class CustomersController < ApplicationController
     else
       customer_project_matcher(0)
     end
+
+    @conversation = Conversation.new
+
   end
 
   def profile

@@ -8,6 +8,8 @@ class Customer < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :projects
+  has_many :conversations
+  has_many :developers, through: :conversations
 
   # validates :email, uniqueness: true
   # validates :first_name, :last_name, :zipcode, presence: true
