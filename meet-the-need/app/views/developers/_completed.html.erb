@@ -3,12 +3,33 @@
 	<div id='project-area'></div>
 	<% if @completed_projects.any? %>
 		<% @completed_projects.each do |project| %>
-			<div class='project'>
-				<div class='project-title'><%= project.title %></div>
-				<div class='project-date'><%= project.assigned_date.strftime("%m/%d/%Y") %></div>
-				<div class='project-customer'><%= project.customer.first_name %></div>
-				<div class='cost'>$<%= project.cost %></div>
-			</div>
+			<div class='card col-md-6'>
+        <div class='no-image-title'><%= project.title %></div>
+        <div class='text'>
+          <p class='project-date'>Assigned on <%= project.assigned_date.strftime("%m/%d/%Y") %></p>
+          <% if project.completed_date %>
+          	<p class='project-date'>Completed on <%= project.completed_date.strftime("%m/%d/%Y") %></p>
+          	<% end %>
+          <%= link_to profile_customer_path(project.customer_id) do %>
+            <p class='project-customer'>Requested by <span class='name'><%= project.customer.first_name %> <%= project.customer.last_name %></span></p>
+          	<p class='cost'>Cost: $<%= project.cost %></p>
+          	<% if project.technologies.any? %>
+            	<div class='tags'>
+              <% project.technologies.each do |technology| %>
+                <figure class='tech tag'><%= technology.name %></figure>
+              <% end %>
+            	</div>
+          	<% end %>
+          	<% if project.topics.any? %>
+            	<div class='tags'>
+              <% project.topics.each do |topic| %>
+                <figure class='topic tag'><%= topic.name %></figure>
+              <% end %>
+            	</div>
+          	<% end %>
+          <% end %>
+        </div>
+      </div>
 		<% end %>
 	<% end %>
 </div>
