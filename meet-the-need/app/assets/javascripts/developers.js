@@ -7,5 +7,10 @@ $(function() {
 $(document).ready(function() {
   $('.message-button').click(function() {
     $('.new-conversation').toggle("slow");
-  })
+  });
+  $('.msg-history').click(function(e) {
+    e.preventDefault();
+    $(this).parent().siblings('.message-thread')
+    // $('.conversation').toggle("slow");
+  });
 })
