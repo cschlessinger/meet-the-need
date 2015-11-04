@@ -23,3 +23,18 @@ $green: #3E6C61;
 .thingy {
 	display: block;
 }
+
+.create-project {
+	background-color: $green;
+	color: #FFFFFF;
+	border: none;
+	text-align: center;
+	width: 12em;
+	height: 3.1em;
+	margin: 2em auto;
+	line-height: 3em;
+	font-size: 1.2em;
+	vertical-align: middle;
+	margin: 0;
+	bottom: 1em;
+}

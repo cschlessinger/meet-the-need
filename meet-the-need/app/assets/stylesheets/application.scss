@@ -126,9 +126,23 @@ span {
   font-size: 1.2em;
 }
 
-.button_to input {
+.see-all {
   background-color: $green;
   color: #FFFFFF;
+  text-align: center;
+  width: 20%;
+  height: 3em;
+  margin: 2em auto;
+  line-height: 3em;
+}
+
+.see-all a {
+  color: white;
+}
+
+.get-developers {
+  background-color: $green;
+  color: #ffffff;
   border: none;
   text-align: center;
   width: 12em;
@@ -140,4 +154,14 @@ span {
   margin: 0;
   position: absolute;
   bottom: 1em;
+}
+
+#tabs {
+  position: absolute;
+  width: 95%;
+}
+
+.ui-widget-header {
+  background-color: white;
+  border: 1px solid $red;
 }
