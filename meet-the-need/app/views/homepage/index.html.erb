@@ -3,17 +3,20 @@
   <title>Meet The Need</title>
 </head>
 <body>
-  <!-- @TODO: add our avatars for devs and Julian + Masha for customers -->
+  <div class='col-md-12'>
+    <div id="messaging">
+      <p>Meet the Need connects junior developers and people with dreams. A mutually beneficial relationship, developers gain experience and customers see their projects realized at a more affordable cost.</p>
+    </div>
+  </div>
   <header>
-  <!-- @TODO: make this text line height/vertical align right -->
     <%= form_tag("homepage/search", method: "get", class: "search") do %>
       <%= text_field_tag(:search, nil, placeholder: "Enter your search" ) %>
-      <%= submit_tag("Search") %>
+      <%= image_submit_tag("magnifying_glass.svg") %>
     <% end %>
     <button id="advanced">Advanced Search</button>
   </header>
   <main>
-    <div class='col-md-12'>
+    <div class='col-md-12 latest'>
       <div class="col-md-6">
         <h2> Latest Projects </h2>
         <%= render "customer_partial" %>

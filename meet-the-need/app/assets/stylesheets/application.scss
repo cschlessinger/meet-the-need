@@ -29,6 +29,25 @@ body {
   height: 1.5em;
 }
 
+#messaging {
+  background-color: $purple;
+  padding: 2em;
+  width: 60%;
+  height: 12em;
+  margin: 0 auto;
+}
+
+h2 {
+  text-align: center;
+}
+
+#messaging p {
+  color: white;
+  font-size: 1.7em;
+  line-height: 1.2em;
+  text-align: center;
+}
+
 #page-title {
   font-size: 60px;
   display: inline-block;
@@ -36,7 +55,11 @@ body {
 
 #advanced {
   position: relative;
-  bottom: 3em;
+  top: 2em;
+}
+
+.latest {
+  top: 2em;
 }
 
 a:visited,
