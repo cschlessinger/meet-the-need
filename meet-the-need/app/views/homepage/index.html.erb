@@ -5,22 +5,17 @@
 <body>
   <% if current_customer == nil && current_developer == nil %>
     <div class='col-md-12'>
-      <!-- group image testing... -->
-      <div class="group-image">
-        <div id="messaging">
-          <p>Meet junior developers and people with dreams.</p>
-        </div>
+      <div id="messaging">
+        <p>Meet the Need connects junior developers and people with dreams. A mutually beneficial relationship, developers gain experience and customers see their projects realized at a more affordable cost.</p>
       </div>
     </div>
   <% end %>
-  <%= form_tag("homepage/search", method: "get", class: "search") do %>
-        <%= text_field_tag(:search, nil, placeholder: "Enter your search" ) %>
-        <%= image_submit_tag("magnifying_glass.svg") %>
-      <% end %>
   <header>
-
+    <%= form_tag("homepage/search", method: "get", class: "search") do %>
+      <%= text_field_tag(:search, nil, placeholder: "Enter your search" ) %>
+      <%= image_submit_tag("magnifying_glass.svg") %>
+    <% end %>
     <!-- <button id="advanced">Advanced Search</button> -->
-
   </header>
   <main>
     <div class='col-md-12 latest'>
@@ -39,7 +34,7 @@
       </div>
       <div class='col-md-6'>
         <p class='green-button see-all'><%= link_to "See all developers", developers_path %></p>
-      </div>
+      </div> 
     </div>
   </main>
 </body>

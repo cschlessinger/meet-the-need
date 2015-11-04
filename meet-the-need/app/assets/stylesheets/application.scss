@@ -20,15 +20,19 @@ $teal: #7DD1B9;
 $green: #3E6C61;
 $purple: #4C4351;
 
+body {
+  padding: 2%;
+}
+
 .logo {
-  width: 1em;
-  height: 1em;
-  margin-top: -20px
+  width: 3em;
+  height: 1.5em;
 }
 
 #messaging {
+  background-color: $purple;
   padding: 2em;
-  width: 50%;
+  width: 60%;
   height: 12em;
   margin: 0 auto;
 }
@@ -72,12 +76,9 @@ a:hover {
 }
 
 #account {
-  right: 10em;
+  right: 5em;
   display: inline-block;
   float: right;
-  font-size: 1.4em;
-  margin-top: 1.5em;
-  margin-right: 5em;
 }
 
 .notice,
@@ -105,7 +106,7 @@ nav li:last-child {
 }
 
 .selected-technologies {
-
+  
 }
 
 .plus-minus {

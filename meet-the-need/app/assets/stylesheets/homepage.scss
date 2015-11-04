@@ -3,30 +3,26 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 $orange: #F85E28;
-$green: #3E6C61;
-$teal: #7DD1B9;
-$purple: #883CB4;
 
 main {
   padding-bottom: 3em;
   vertical-align: top;
   clear: both;
   display: block;
-  padding: 2%;
+}
+
+.logo {
+  width: 2.2em;
+  height: 1em;
 }
 
 .search {
-  top: -6em;
+  top: 2em;
   right: 0em;
   display: inline-block;
   float: right;
   margin: auto 1em;
   position: relative;
-  text-align: center;
-  background-color: #777;
-  width: 100%;
-  padding: 1.2em 0;
-  opacity: 0.5
 }
 
 #search {
@@ -49,8 +45,6 @@ input[type=submit] {
 
 input {
   vertical-align: top;
-  border-radius: 5px;
-
 }
 
 button {
@@ -63,26 +57,4 @@ button {
   margin-bottom: 2em;
   display: block;
   width: 100%;
-}
-
-.group-image {
-  height: 40em;
-  background:
-    linear-gradient(
-      rgba(0, 0, 0, 0.5),
-      rgba(0, 0, 0, 0.5)
-    ),
-    url("group-pic.jpg");
-    background-repeat: no-repeat;
-    background-size: 100% auto;
-    position: relative;
-    background-position: center;
-    margin-left: -50px;
-    margin-right: -50px
-}
-
-#account a:hover {
-  color: $purple;
-  padding-bottom: 5px;
-  border-bottom: 1px solid $purple;
 }
