@@ -49,6 +49,11 @@ h2 {
   display: inline-block;
 }
 
+.create-project {
+  position: relative;
+  bottom: 22px;
+}
+
 #advanced {
   position: relative;
   top: 2em;
@@ -233,9 +238,22 @@ input[type=submit] {
   width: 95%;
 }
 
+.welcome {
+  top: -28px;
+  position: relative;
+}
+
 .ui-widget-header {
-  background-color: white;
-  border: 1px solid $red;
+  background: white;
+  border: none;
+}
+
+.ui-tabs .ui-tabs-nav li {
+  top: -40px;
+}
+
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default {
+  background: #D0D0D0;
 }
 
 .name {
