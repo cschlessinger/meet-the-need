@@ -54,7 +54,6 @@ GEM
       responders
       thread_safe (~> 0.1)
       warden (~> 1.2.3)
-    devise-bootstrap-views (0.0.6)
     erubis (2.7.0)
     execjs (2.6.0)
     globalid (0.3.6)
@@ -170,7 +169,6 @@ PLATFORMS
 DEPENDENCIES
   byebug
   devise
-  devise-bootstrap-views
   hirb
   jbuilder (~> 2.0)
   jquery-rails
