@@ -1,23 +1,18 @@
-<% if find_msg_customers.empty? %>
-  <h4>No message histroy</h4>
-<% else %>
-  <% find_msg_customers.each do |customer| %>
-    <% @conversations_with_one_customer = Customer.find(customer.id).conversations %>
-    <div>
-      <h3>Your messaging History with <%= customer.first_name %></h3>
-      <p><%= link_to "see history", developers_path, :class => "msg-history" %></p>
-      <div class="message-thread">
-        <%= render partial: "conversation_thread", locals: { conversations_with_one_customer: @conversations_with_one_customer } %>
-        <div class="new-conversation-inside-inbox">
-          <%= form_for @conversation, method: "create" do |f| %>
-            <%= f.text_area :body %>
-            <%= f.hidden_field :developer_id, value: current_developer.id %>
-            <%= f.hidden_field :initiated_by, value: "Customer" %>
-            <%= f.hidden_field :customer_id, value: customer.id %>
-            <%= f.submit "Create message"%>
-          <% end %>
-        </div>
-      </div>
+<% find_msg_customers.each_with_index do |customer, index| %>
+  <% @conversations_with_one_customer = Customer.find(customer.id).conversations %>
+  <h3 class='select-conversation col-md-6' id="<%= index %>"><%= customer.first_name %></h3>
+  <div class="message-content col-md-6"  id="<%= index %>">
+    <%= render partial: "conversation_thread", locals: { conversations_with_one_customer: @conversations_with_one_customer, index: index } %>
+    <div class="message-form">
+      <%= form_for @conversation, method: "create" do |f| %>
+      <!-- @TODO: make this text area bigger; align with button -->
+        <%= f.text_area :body %>
+        <%= f.hidden_field :developer_id, value: current_developer.id %>
+        <%= f.hidden_field :initiated_by, value: "Customer" %>
+        <%= f.hidden_field :customer_id, value: customer.id %>
+        <%= f.submit "Create message", class: "green-button button-shape"%>
+      <% end %>
     </div>
-  <% end %>
+  </div>
 <% end %>
+
