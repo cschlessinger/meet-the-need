@@ -76,6 +76,7 @@ a:focus,
 a:hover {
   background-color: inherit !important;
   color: #333;
+  color: $green;
   text-decoration: none;
 }
 
@@ -300,4 +301,5 @@ input[type=submit] {
 .ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active {
   background: #FFFFFF;
 }
+
 
