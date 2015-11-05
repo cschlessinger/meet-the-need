@@ -1,5 +1,5 @@
 <% find_msg_developers.each do |developer| %>
-  <% @conversations_with_one_developer = Developer.find(developer.id).conversations %>
+  <% @conversations_with_one_developer = Conversation.where(developer_id: developer.id, customer_id: current_customer.id) %>
   <div>
     <h3>Your messaging History with <%= developer.first_name %></h3>
     <p><%= link_to "see history", developers_path, :class => "msg-history" %></p>

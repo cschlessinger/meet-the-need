@@ -1,5 +1,6 @@
 <% find_msg_customers.each_with_index do |customer, index| %>
-  <% @conversations_with_one_customer = Customer.find(customer.id).conversations %>
+  <% p find_msg_customers %>
+  <% @conversations_with_one_customer = Conversation.where(developer_id: current_developer.id, customer_id: customer.id) %>
   <h3 class='select-conversation col-md-6' id="<%= index %>"><%= customer.first_name %></h3>
   <div class="message-content col-md-6"  id="<%= index %>">
     <%= render partial: "conversation_thread", locals: { conversations_with_one_customer: @conversations_with_one_customer, index: index } %>
