@@ -9,8 +9,9 @@
         <% end %>
         <div class='text'>
           <%= link_to profile_customer_path(project.customer_id) do %>
-          <p class='project-customer'>Requested by <%= link_to profile_customer_path(project.customer_id) do %><span class='name'><%= project.customer.first_name %> <%= project.customer.last_name %></span><% end %></p>
-          <p class='date'>Assigned on <%= project.assigned_date.strftime("%m/%d/%Y") %></p>
+            <p class='project-customer'>Requested by <span class='name'><%= project.customer.first_name %> <%= project.customer.last_name %></span></p>
+          <% end %>
+          <p class='date'>Assigned <%= project.assigned_date.strftime("%m/%d/%Y") %></p>
           <p class='cost'>Cost: $<%= project.cost %></p>
           <%= button_to 'Request Review', review_requests_path(project.id), class: "button-shape green-button" %>
         	<% if project.technologies.any? %>
@@ -27,7 +28,6 @@
             <% end %>
           	</div>
         	<% end %>
-        <% end %>
         </div>
       </div>
 		<% end %>
