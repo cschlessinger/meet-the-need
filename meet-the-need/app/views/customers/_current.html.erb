@@ -5,7 +5,7 @@
     <% @current_projects.each do |project| %>
       <div class='card col-md-6 interior'>
         <%= link_to project_path(project) do %>
-          <div class='no-image-title'><%= project.title %></div>
+          <div class='card-no-image-title'><%= project.title %></div>
         <% end %>
         <div class='text'>
           <%= link_to profile_developer_path(project.developer) do %>

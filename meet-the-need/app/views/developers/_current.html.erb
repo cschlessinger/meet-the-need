@@ -5,30 +5,28 @@
 		<% @current_projects.each do |project| %>
 			<div class='card col-md-6 interior'>
         <%= link_to project_path(project) do %>
-          <div class='no-image-title'><%= project.title %></div>
+          <div class='card-no-image-title'><%= project.title %></div>
         <% end %>
-        <div class='text'>
-          <%= link_to profile_customer_path(project.customer_id) do %>
-            <p class='project-customer'>Requested by <span class='name'><%= project.customer.first_name %> <%= project.customer.last_name %></span></p>
+        <%= link_to profile_customer_path(project.customer_id) do %>
+          <p class='project-customer'>Requested by <span class='name'><%= project.customer.first_name %> <%= project.customer.last_name %></span></p>
+        <% end %>
+        <p class='date'>Assigned <%= project.assigned_date.strftime("%m/%d/%Y") %></p>
+        <p class='cost'>Cost: $<%= project.cost %></p>
+        <% if project.technologies.any? %>
+          <div class='tags'>
+          <% project.technologies.each do |technology| %>
+            <figure class='tech tag'><%= technology.name %></figure>
           <% end %>
-          <p class='date'>Assigned <%= project.assigned_date.strftime("%m/%d/%Y") %></p>
-          <p class='cost'>Cost: $<%= project.cost %></p>
-          <%= button_to 'Request Review', review_requests_path(project.id), class: "button-shape green-button" %>
-        	<% if project.technologies.any? %>
-          	<div class='tags'>
-            <% project.technologies.each do |technology| %>
-              <figure class='tech tag'><%= technology.name %></figure>
-            <% end %>
-          	</div>
-        	<% end %>
-        	<% if project.topics.any? %>
-          	<div class='tags'>
-            <% project.topics.each do |topic| %>
-              <figure class='topic tag'><%= topic.name %></figure>
-            <% end %>
-          	</div>
-        	<% end %>
-        </div>
+          </div>
+        <% end %>
+        <% if project.topics.any? %>
+          <div class='tags'>
+          <% project.topics.each do |topic| %>
+            <figure class='topic tag'><%= topic.name %></figure>
+          <% end %>
+          </div>
+        <% end %>
+        <%= button_to 'Request Review', review_requests_path(project.id), class: "button-shape green-button" %>
       </div>
 		<% end %>
 	<% end %>

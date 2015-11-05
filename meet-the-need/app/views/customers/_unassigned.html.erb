@@ -6,7 +6,7 @@
       <% @unassigned_projects.each do |project| %>
         <div class="card interior">
           <%= link_to project_path(project) do %>
-            <p class='no-image-title'><%=  project.title %>
+            <p class='card-no-image-title'><%=  project.title %>
           <% end %>
           <div class='text'>
             <p class='date'>Created <%= project.created_at.strftime("%m/%d/%Y") %></p>

@@ -1,7 +1,7 @@
 <!-- Profile Tab -->
 <div class='profile'>
 	<%= image_tag @developer.avatar_url %>
-	<p class="profile-name"><%= @developer.first_name %> <%= @developer.last_name %></p>
+	<p class="no-card-title"><%= @developer.first_name %> <%= @developer.last_name %></p>
 	<% if current_customer %>
 		 <%= link_to "Message me", new_conversation_path, class: "message-button", remote: true %>
 		 <%= render "conversations/message_form" %>

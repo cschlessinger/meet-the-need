@@ -1,9 +1,9 @@
 <h1>All Projects</h1>
 <% @projects.each do |project| %>
-  <div class='col-md-3 card'>
-        <%= image_tag project.customer.avatar_url %>
+  <div class='col-md-3 card interior'>
+    <%= image_tag project.customer.avatar_url %>
     <%= link_to project_path(project) do %>
-      <p class='title'><%= project.title %></p>
+      <p class='card-image-title'><%= project.title %></p>
     <% end %>
     <div class='text'>
       <%= link_to profile_customer_path(project.customer) do %>

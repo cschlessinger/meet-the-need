@@ -2,7 +2,7 @@
 <div class='profile'>
   <%= image_tag @customer.avatar_url %>
 </div>
-<p class="profile-name"><%= @customer.first_name %> <%= @customer.last_name %></p>
+<p class="no-card-title"><%= @customer.first_name %> <%= @customer.last_name %></p>
 <% if current_developer %>
  <%= link_to "message me", new_conversation_path, class: "message-button", remote: true %>
  <%= render "conversations/message_form" %>
