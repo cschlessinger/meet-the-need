@@ -3,9 +3,23 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .msg-image {
+  clear: both;
   width: 5%;
   display: inline-block;
   float: left;
-  margin-bottom: em;
   margin-right: 1.2em;
 }
+
+.message-thread {
+  display: inline;
+  float: right;
+}
+
+.message-title {
+
+}
+
+.message-history {
+  display: inline;
+}
+

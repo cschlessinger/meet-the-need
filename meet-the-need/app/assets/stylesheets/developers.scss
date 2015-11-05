@@ -6,7 +6,15 @@
   display: none;
 }
 
-.conversation {
+.message-content {
   display: none;
+  float: right;
 }
 
+.active {
+	display: initial;
+}
+
+.active-indicator {
+	background-color: red;
+}
