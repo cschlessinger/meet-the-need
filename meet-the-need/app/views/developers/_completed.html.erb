@@ -7,7 +7,7 @@
         <div class='no-image-title'><%= project.title %></div>
         <div class='text'>
           <p class='project-date'>Assigned on <%= project.assigned_date.strftime("%m/%d/%Y") %></p>
-          <% if project.completed_date != nil %>
+          <% if project.completed_date %>
           	<p class='project-date'>Completed on <%= project.completed_date.strftime("%m/%d/%Y") %></p>
           <% end %>
           <%= link_to profile_customer_path(project.customer_id) do %>
