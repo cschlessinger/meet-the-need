@@ -271,3 +271,14 @@ input[type=submit] {
   font-style: italic;
   font-size: .9em;
 }
+
+.group-image {
+  margin: auto;
+  background-image: url("group-pic.jpg");
+  height: 40em;
+  width: 100%;
+  position: initial;
+  background-position: 0 -120px;
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+}

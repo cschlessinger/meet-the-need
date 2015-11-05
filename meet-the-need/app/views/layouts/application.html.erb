@@ -12,13 +12,13 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <div class="group-image">THIS IS GROUP IMAGE
   <div id="page-title">
      <%= link_to root_path do %>
       <%= image_tag "logo.png", class: "logo" %>
     <% end %>
   </div>
   <nav id="account">
-
     <% if developer_signed_in? %>
       <li><%= link_to "Dashboard", developer_path(current_developer.id) %> | </li>
       <li><%= link_to "Inbox", developer_path(current_developer.id), class: "inbox" %> | </li>
@@ -40,7 +40,7 @@
   </nav>
   <!-- <p class="notice"><%#= notice %></p> -->
   <p class="alert"><%= alert %></p>
-
+</div>
   <%= yield %>
 </body>
 </html>

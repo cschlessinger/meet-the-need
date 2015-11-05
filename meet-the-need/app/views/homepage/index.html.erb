@@ -10,13 +10,19 @@
       </div>
     </div>
   <% end %>
-  <header>
+
     <%= form_tag("homepage/search", method: "get", class: "search") do %>
-      <%= text_field_tag(:search, nil, placeholder: "Enter your search" ) %>
-      <%= image_submit_tag("magnifying_glass.svg") %>
-    <% end %>
+        <%= text_field_tag(:search, nil, placeholder: "Enter your search" ) %>
+        <%= image_submit_tag("magnifying_glass.svg") %>
+      <% end %>
+
+  <header>
+
+
+
     <!-- <button id="advanced">Advanced Search</button> -->
   </header>
+
   <main>
     <div class='col-md-12 latest'>
       <div class="col-md-6">
@@ -34,7 +40,7 @@
       </div>
       <div class='col-md-6'>
         <p class='green-button see-all'><%= link_to "See all developers", developers_path %></p>
-      </div> 
+      </div>
     </div>
   </main>
 </body>
