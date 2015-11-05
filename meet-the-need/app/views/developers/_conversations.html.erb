@@ -1,7 +1,6 @@
 <% find_msg_customers.each_with_index do |customer, index| %>
   <% @conversations_with_one_customer = Customer.find(customer.id).conversations %>
-  <h3 class='select-conversation col-md-6' id="<%= index %>">Your messaging History with <%= customer.first_name %></h3>
-    <!-- <p><%#= link_to "see history", developers_path, :class => "msg-history" %></p> -->
+  <h3 class='select-conversation col-md-6' id="<%= index %>">Conversation with <%= customer.first_name %></h3>
   <div class="message-content col-md-6"  id="<%= index %>">
     <%= render partial: "conversation_thread", locals: { conversations_with_one_customer: @conversations_with_one_customer, index: index } %>
     <div class="message-form">
@@ -10,7 +9,7 @@
         <%= f.hidden_field :developer_id, value: current_developer.id %>
         <%= f.hidden_field :initiated_by, value: "Customer" %>
         <%= f.hidden_field :customer_id, value: customer.id %>
-        <%= f.submit "Create message"%>
+        <%= f.submit "Create message", class: "green-button button-shape" %>
       <% end %>
     </div>
   </div>
