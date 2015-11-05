@@ -20,7 +20,8 @@ main {
 .search {
   display: inline-block;
   float: right;
-  margin: auto 1em;
+  margin-top: -1em;
+  margin-right: -1em;
   position: relative;
   width: 100%;
   text-align: center;

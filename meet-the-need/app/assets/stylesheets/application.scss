@@ -20,9 +20,12 @@ $teal: #7DD1B9;
 $green: #3E6C61;
 $purple: #5E35B1;
 
+html {
+  font-family: 'Nunito', sans-serif;
+}
+
 body {
   padding: 2%;
-  font-family: 'Nunito', sans-serif;
 }
 
 .checkboxes {
@@ -36,19 +39,20 @@ body {
 
 #messaging {
   padding: 2em;
-  width: 60%;
-  height: 12em;
-  margin: 0 auto;
-}
-
-h2 {
-  text-align: center;
+  width: 50%;
+  height: auto;
+  margin: 10em auto;
+  background-color: rgba(0, 0, 0, 0.5)
 }
 
 #messaging p {
-  color: #333;
-  font-size: 1.7em;
+  color: white;
+  font-size: 3em;
   line-height: 1.2em;
+  text-align: center;
+}
+
+h2 {
   text-align: center;
 }
 
@@ -112,10 +116,6 @@ nav li:last-child {
   display: inline-block;
   color: white;
   padding: .1em .6em;
-}
-
-.selected-technologies {
-
 }
 
 .plus-minus {
