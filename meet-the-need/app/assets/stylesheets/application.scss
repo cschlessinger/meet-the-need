@@ -171,16 +171,15 @@ img {
   image-rendering: crisp-edges;
 }
 
-.title {
+.no-card-title {
   font-size: 2.5em;
   line-height: 1.2em;
   width: 72%;
-  float: right;
   display: inline;
   margin-bottom: .7em;
 }
 
-.dev-title {
+.card-image-title {
   font-size: 2.5em;
   line-height: 1.2em;
   width: 72%;
@@ -189,7 +188,7 @@ img {
   margin-bottom: .7em;
 }
 
-.no-image-title {
+.card-no-image-title {
   width: 100%;
   float: none;
   font-size: 2.5em;
@@ -201,7 +200,7 @@ img {
   padding: 2em;
 }
 
-.text p {
+.text {
   padding-right: 1em;
   margin-top: .3em;
   width: 80%;

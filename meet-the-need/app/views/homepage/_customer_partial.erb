@@ -3,7 +3,7 @@
   <article class='col-md-6 card'>
     <%= image_tag project.customer.avatar_url %>
     <%= link_to project_path(project) do %>
-      <p class='title'><%= project.title %></p>
+      <p class='card-image-title'><%= project.title %></p>
     <% end %>
     <div class='text'>
       <%= link_to profile_customer_path(project.customer) do %>

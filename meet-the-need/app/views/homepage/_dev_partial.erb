@@ -3,7 +3,7 @@
   <div class='col-md-6 card'>
     <%= image_tag developer.avatar_url %>
     <%= link_to profile_developer_path(developer) do %>
-      <p class='dev-title'><%= developer.first_name %> <%= developer.last_name %></p>
+      <p class='card-image-title'><%= developer.first_name %> <%= developer.last_name %></p>
     <% end %>
     <div class='text'>
       <p class='tagline'><%= developer.tagline %></p>

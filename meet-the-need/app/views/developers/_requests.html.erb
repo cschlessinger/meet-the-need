@@ -4,7 +4,7 @@
 	<% if @requests.any? %>
 		<% @requests.each do |request| %>
 			<div class='card col-md-6'>
-        <div class='no-image-title'><%= request.project.title %></div>
+        <div class='card-no-image-title'><%= request.project.title %></div>
         <div class='text'>
           <%= link_to profile_customer_path(request.project.customer_id) do %>
           <p class='project-customer'>Requested from <span class='name'><%= request.customer.first_name %> <%= request.customer.last_name %></span></p>
