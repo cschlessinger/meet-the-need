@@ -224,6 +224,10 @@ img {
   vertical-align: middle;
 }
 
+.green-button:hover {
+  background-color: inherit;
+}
+
 .red-button {
   background-color: $red;
   display: inline-block;

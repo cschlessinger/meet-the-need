@@ -1,40 +1,37 @@
 <div>
-	<div class='card'>
-        <p class='no-image-title'><%= @project.title %></p>
-        <% if @project.completed_date %>
-          <p class='project-date'>Completed on <%= @project.completed_date.strftime("%m/%d/%Y") %></p>
-          <% end %>
-          <% if @project.developer%>
-  					<%= link_to profile_customer_path(@project.customer) do %>
-          	<p class='project-developer'>Developer: <span class='name'><%= @project.developer.first_name %> <%= @project.developer.last_name %></span></p>
-        	<% end %>
+	<div class='card interior'>
+    <p class='card-no-image-title'><%= @project.title %></p>
+    <% if @project.developer%>
+      <%= link_to profile_developer_path(@project.developer) do %>
+      <p class='name'>Developer: <%= @project.developer.first_name %> <%= @project.developer.last_name %></p>
+    <% end %>
+    <% end %>
+    <%= link_to profile_customer_path(@project.customer) do %>
+      <p class='name'> Customer: <%=@project.customer.first_name%> <%=@project.customer.last_name%></p>
+    <% end %>
+    <% if @project.technologies.any? %>
+      <div class='tags'>
+        <% @project.technologies.each do |technology| %>
+          <figure class='tech tag'><%= technology.name %></figure>
         <% end %>
-        <%= link_to profile_customer_path(@project.customer) do %>
-    			<div class='project-customer'> Customer: <span class='name'><%=@project.customer.first_name%> <%=@project.customer.last_name%></span></div>
-  			<% end %>
-        <div class="project-body"><%=@project.body%></div><br>
-        <p class='cost'>Cost: $<%= @project.cost %></p>
-        <% if @project.technologies.any? %>
-          <div class='tags'>
-            <% @project.technologies.each do |technology| %>
-              <figure class='tech tag'><%= technology.name %></figure>
-            <% end %>
-          </div>
-        <% end %>
-        <% if @project.topics.any? %>
-          <div class='tags'>
-            <% @project.topics.each do |topic| %>
-              <figure class='topic tag'><%= topic.name %></figure>
-            <% end %>
-          </div>
-        <% end %>
-        <% if @project.customer == current_customer %>
-  				<%= link_to 'Edit', edit_project_path(@project) %> |
-				<% end %>
-				<%= link_to 'Back', projects_path %>
-        <% if current_developer && @project.developer_id == nil %>
-          <%= button_to 'Request', requests_path(:method => :create, :project => @project), class: "green-button button-shape" %>
-        <% end %>
-
       </div>
+    <% end %>
+    <% if @project.topics.any? %>
+      <div class='tags'>
+        <% @project.topics.each do |topic| %>
+          <figure class='topic tag'><%= topic.name %></figure>
+        <% end %>
+      </div>
+    <% end %>
+    <% if @project.completed_date %>
+      <p class='date'>Completed on <%= @project.completed_date.strftime("%m/%d/%Y") %></p>
+    <% end %>
+		<%= link_to 'Back', projects_path, class: "green-button button-shape" %>
+    <% if @project.customer == current_customer %>
+          <%= link_to 'Edit', edit_project_path(@project), class: "green-button button-shape" %>
+    <% end %>
+    <% if current_developer && @project.developer_id == nil %>
+      <%= button_to 'Request', requests_path(:method => :create, :project => @project), class: "green-button button-shape" %>
+    <% end %>
+  </div>
 </div>

@@ -26,7 +26,7 @@
     <%= f.text_field :cost %>
   </div>
 
-  <label for="technology_names">Technologies:</label>
+  <div class='form-field'><label for="technology_names">Technologies:</label></div>
   <ul>
     <% @technologies.each do |technology| %>
       <li class='checkboxes'>
@@ -35,7 +35,7 @@
     <% end %>
   </ul>
 
-  <label for="topic_names">Topics:</label>
+  <div class='form-field'><label for="topic_names">Topics:</label></div>
   <ul>
     <% @topics.each do |topic| %>
       <li class='checkboxes'>

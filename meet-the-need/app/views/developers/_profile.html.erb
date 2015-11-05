@@ -2,10 +2,6 @@
 <div class='profile'>
 	<%= image_tag @developer.avatar_url %>
 	<p class="no-card-title"><%= @developer.first_name %> <%= @developer.last_name %></p>
-	<% if current_customer %>
-		 <%= link_to "Message me", new_conversation_path, class: "message-button", remote: true %>
-		 <%= render "conversations/message_form" %>
-	<% end %>
 	<p class="profile-tagline"><%= @developer.tagline %></p>
 	<p class="profile-bio"><%= @developer.bio %></p>
 
@@ -26,6 +22,10 @@
 		</div>
 	<% end %>
 </div>
+<% if current_customer %>
+	 <%= button_to "Message me", new_conversation_path, class: "green-button button-shape", remote: true %>
+	 <%= render "conversations/message_form" %>
+<% end %>
 <% if @developer == current_developer %>
 	<%= button_to'Edit profile', edit_developer_path(@developer), method: :get, class: "button-shape green-button" %>
 <% end %>
