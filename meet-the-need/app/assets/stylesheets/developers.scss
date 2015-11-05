@@ -7,5 +7,10 @@
 }
 
 .message-content {
-  display: none
+  display: none;
+  float: right;
+}
+
+.active {
+	display: initial;
 }
