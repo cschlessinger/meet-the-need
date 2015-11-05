@@ -1,3 +1,27 @@
 // Place all the styles related to the Registrations controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+$red: #E1321d;
+$orange: #F85E28;
+$teal: #7DD1B9;
+$green: #3E6C61;
+$purple: #5E35B1;
+
+.sign-up-header {
+  font-size: 24px;
+  text-align: none;
+  padding-bottom: 20px;
+}
+
+.log-in {
+  color: #FFFFFF;
+  position: relative;
+  bottom: 25px;
+}
+
+
+.green-button.button-shape.log-in {
+  color: #FFFFFF;
+  background-color: $green;
+}
