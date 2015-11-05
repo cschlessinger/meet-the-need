@@ -18,7 +18,7 @@ $red: #E1321d;
 $orange: #F85E28;
 $teal: #7DD1B9;
 $green: #3E6C61;
-$purple: #4C4351;
+$purple: #5E35B1;
 
 body {
   padding: 2%;
@@ -46,7 +46,7 @@ h2 {
 }
 
 #messaging p {
-  color: black;
+  color: #333;
   font-size: 1.7em;
   line-height: 1.2em;
   text-align: center;
@@ -87,7 +87,7 @@ a:hover {
 }
 
 #account a:hover {
-  color: $orange;
+  color: $purple;
 }
 
 .notice,
