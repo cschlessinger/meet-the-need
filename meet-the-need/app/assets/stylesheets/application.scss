@@ -36,7 +36,7 @@ body {
 
 #messaging {
   padding: 2em;
-  width: 60%;
+  width: 40%;
   height: 12em;
   margin: 0 auto;
 }
@@ -48,7 +48,7 @@ h2 {
 #messaging p {
   color: #333;
   font-size: 1.7em;
-  line-height: 1.2em;
+  line-height: 1.3em;
   text-align: center;
 }
 
@@ -76,7 +76,6 @@ a:focus,
 a:hover {
   background-color: inherit !important;
   color: #333;
-  color: $green;
   text-decoration: none;
 }
 

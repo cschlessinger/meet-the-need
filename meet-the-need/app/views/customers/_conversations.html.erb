@@ -1,8 +1,18 @@
-<% find_msg_developers.each_with_index do |developer, index| %>
-  <% @conversations_with_one_developer = Developer.find(developer.id).conversations %>
-    <h3 class='select-conversation col-md-6' id="<%= index %>">Conversation with <%= developer.first_name %></h3>
-    <div class="message-content col-md-6" id="<%= index %>">
-      <%= render partial: "conversation_thread", locals: { conversations_with_one_developer: @conversations_with_one_developer, index: index } %>
+
+<h3 class='col-md-6'>
+  <% i = 0 %>
+  <% find_msg_developers.each do |developer| %>
+     <% @conversations_with_one_developer = Conversation.where(developer_id: developer.id, customer_id: current_customer.id) %>
+    <div class='select-conversation' id="<%= i %>">Conversation with <%= developer.first_name %></div>
+    <% i += 1 %>
+  <% end %>
+</h3>
+<div class="col-md-6">
+  <% i = 0 %>
+  <% find_msg_developers.each do |developer| %>
+    <% @conversations_with_one_developer = Conversation.where(developer_id: developer.id, customer_id: current_customer.id) %>
+    <div class="message-content" id="<%= i %>">
+      <%= render partial: "conversation_thread", locals: { conversations_with_one_developer: @conversations_with_one_developer, index: i } %>
       <div class="message-form">
         <%= form_for @conversation, method: "create" do |f| %>
           <%= f.text_area :body %>
@@ -12,7 +22,9 @@
           <%= f.submit "Create message", class: "green-button button-shape" %>
         <% end %>
       </div>
+      <% i += 1 %>
     </div>
-<% end %>
+  <% end %>
+</div>
 
 
