@@ -150,7 +150,7 @@ img {
   width: 23%;
   display: inline-block;
   float: left;
-  margin-bottom: .4em;
+  margin-bottom: 1em;
   margin-right: 1em;
   image-rendering: crisp-edges;
 }
@@ -179,6 +179,10 @@ img {
   font-size: 2.5em;
   display: inline;
   margin-bottom: 10em;
+}
+
+.interior {
+  padding: 2em;
 }
 
 .text p {

@@ -4,12 +4,12 @@
     <% if @unassigned_projects.any? %>
       <% i = 0 %>
       <% @unassigned_projects.each do |project| %>
-        <div class="card">
+        <div class="card interior">
           <%= link_to project_path(project) do %>
             <p class='no-image-title'><%=  project.title %>
           <% end %>
           <div class='text'>
-            <p class='date'>Created on <%= project.created_at.strftime("%m/%d/%Y") %></p>
+            <p class='date'>Created <%= project.created_at.strftime("%m/%d/%Y") %></p>
             <p class='cost'>Cost: $<%= project.cost %></p>
             <% if project.technologies.any? %>
               <div class='tags'>
@@ -40,7 +40,7 @@
     <div class="developer_details">
       <% if @top_unique_matching_three.any? %>
         <% @top_unique_matching_three.each do |developer| %>
-          <div class='card'>
+          <div class='card interior'>
             <%= image_tag developer.avatar_url %>
             <p class='dev-title'><%=  developer.first_name %> <%=  developer.last_name %></p>
             <div class='text'>

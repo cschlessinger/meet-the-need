@@ -3,7 +3,7 @@
   <div id='project-area'></div>
   <% if @current_projects.any? %>
     <% @current_projects.each do |project| %>
-      <div class='card col-md-6'>
+      <div class='card col-md-6 interior'>
         <%= link_to project_path(project) do %>
           <div class='no-image-title'><%= project.title %></div>
         <% end %>
