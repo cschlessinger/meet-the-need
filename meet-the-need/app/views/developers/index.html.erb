@@ -1,30 +1,32 @@
 <h1>All Developers</h1>
-<% @developers.each do |developer| %>
-  <div class='col-md-6 card flip'>
-  <%= link_to profile_developer_path(developer) do %>
-    <div class='front'>
-      <%= image_tag developer.avatar_url %>
-      <p class='dev-title'><%= developer.first_name %> <%= developer.last_name %></p><br><br><br>
-        <p class='tagline'><%= developer.tagline %></p>
-        <% if developer.technologies.any? %>
-          <div class='tags'>
-            <% developer.technologies.each do |technology| %>
-              <figure class='tech tag'><%= technology.name %></figure>
-            <% end %>
-          </div>
-        <% end %>
-        <% if developer.topics.any? %>
-          <div class='tags'>
-            <% developer.topics.each do |topic| %>
-              <figure class='topic tag'><%= topic.name %></figure>
-            <% end %>
-          </div>
-        <% end %>
-        <p class='date'>Member since: <%= developer.created_at.strftime("%m/%d/%Y") %></p>
-    </div>
-    <div class='back'>
-      <p class='body'><%= developer.bio %></p>
+<div class='col-md-12 all-cards'>
+  <% @developers.each do |developer| %>
+    <div class='col-md-2 dev-card'>
+    <%= link_to profile_developer_path(developer) do %>
+      <div class='front'>
+        <%= image_tag developer.avatar_url %>
+        <p class='dev-title'><%= developer.first_name %> <%= developer.last_name %></p><br><br><br>
+          <p class='tagline'><%= developer.tagline %></p>
+          <% if developer.technologies.any? %>
+            <div class='tags'>
+              <% developer.technologies.each do |technology| %>
+                <figure class='tech tag'><%= technology.name %></figure>
+              <% end %>
+            </div>
+          <% end %>
+          <% if developer.topics.any? %>
+            <div class='tags'>
+              <% developer.topics.each do |topic| %>
+                <figure class='topic tag'><%= topic.name %></figure>
+              <% end %>
+            </div>
+          <% end %><br><br>
+          <p class='date'>Member since: <%= developer.created_at.strftime("%m/%d/%Y") %></p>
+      </div>
+      <div class='back'>
+        <p class='body'><%= developer.bio %></p>
+      </div>
+    <% end %>
     </div>
   <% end %>
-  </div>
-<% end %>
+</div>
