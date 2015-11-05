@@ -1,19 +1,17 @@
 <div>
 	<div class='card interior'>
-        <p class='no-image-title'><%= @project.title %></p>
+        <p class='card-no-image-title'><%= @project.title %></p>
         <% if @project.completed_date %>
           <p class='project-date'>Completed on <%= @project.completed_date.strftime("%m/%d/%Y") %></p>
           <% end %>
           <% if @project.developer%>
   					<%= link_to profile_customer_path(@project.customer) do %>
-          	<p class='project-developer'>Developer: <span class='name'><%= @project.developer.first_name %> <%= @project.developer.last_name %></span></p>
+          	<p class='name'>Developer: <%= @project.developer.first_name %> <%= @project.developer.last_name %></p>
         	<% end %>
         <% end %>
         <%= link_to profile_customer_path(@project.customer) do %>
-    			<div class='project-customer'> Customer: <span class='name'><%=@project.customer.first_name%> <%=@project.customer.last_name%></span></div>
+    			<div class='name'> Customer: <%=@project.customer.first_name%> <%=@project.customer.last_name%></div>
   			<% end %>
-        <div class="project-body"><%=@project.body%></div><br>
-        <p class='cost'>Cost: $<%= @project.cost %></p>
         <% if @project.technologies.any? %>
           <div class='tags'>
             <% @project.technologies.each do |technology| %>
