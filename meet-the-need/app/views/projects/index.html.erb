@@ -1,25 +1,29 @@
 <h1>All Projects</h1>
 <% @projects.each do |project| %>
   <div class='col-md-3 card'>
+        <%= image_tag project.customer.avatar_url %>
     <%= link_to project_path(project) do %>
-      <%= image_tag project.customer.avatar_url %>
       <p class='title'><%= project.title %></p>
-        <p class='name'><%= project.customer.first_name %> <%= project.customer.last_name %></p>
-        <p class='date'>Created at: <%= project.created_at.strftime("%m/%d/%Y") %></p>
-        <% if project.technologies.any? %>
-          <div class='tags'>
-            <% project.technologies.each do |technology| %>
-              <figure class='tech tag'><%= technology.name %></figure>
-            <% end %>
-          </div>
-        <% end %>
-        <% if project.topics.any? %>
-          <div class='tags'>
-            <% project.topics.each do |topic| %>
-              <figure class='topic tag'><%= topic.name %></figure>
-            <% end %>
-          </div>
-        <% end %>
     <% end %>
+    <div class='text'>
+      <%= link_to profile_customer_path(project.customer) do %>
+        <p class='name'>By <%= project.customer.first_name %> <%= project.customer.last_name %></p>
+      <% end %>
+      <p class='date'>Created on <%= project.created_at.strftime("%m/%d/%Y") %></p>
+      <% if project.technologies.any? %>
+        <div class='tags'>
+          <% project.technologies.each do |technology| %>
+            <figure class='tech tag'><%= technology.name %></figure>
+          <% end %>
+        </div>
+      <% end %>
+      <% if project.topics.any? %>
+        <div class='tags'>
+          <% project.topics.each do |topic| %>
+            <figure class='topic tag'><%= topic.name %></figure>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
   </div>
 <% end %>
