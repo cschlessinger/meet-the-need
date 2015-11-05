@@ -17,4 +17,8 @@ $(document).ready(function() {
     });
   });
 
+  $('.message-button').click(function(e) {
+    e.preventDefault();
+    $('#new_conversation').show();
+  });
 });

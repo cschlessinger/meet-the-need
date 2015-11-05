@@ -1,7 +1,8 @@
+
 <h3 class='col-md-6'>
   <% i = 0 %>
   <% find_msg_developers.each do |developer| %>
-    <% @conversations_with_one_developer = Developer.find(developer.id).conversations %>
+     <% @conversations_with_one_developer = Conversation.where(developer_id: developer.id, customer_id: current_customer.id) %>
     <div class='select-conversation' id="<%= i %>">Conversation with <%= developer.first_name %></div>
     <% i += 1 %>
   <% end %>
@@ -9,7 +10,7 @@
 <div class="col-md-6">
   <% i = 0 %>
   <% find_msg_developers.each do |developer| %>
-    <% @conversations_with_one_developer = Developer.find(developer.id).conversations %>
+    <% @conversations_with_one_developer = Conversation.where(developer_id: developer.id, customer_id: current_customer.id) %>
     <div class="message-content" id="<%= i %>">
       <%= render partial: "conversation_thread", locals: { conversations_with_one_developer: @conversations_with_one_developer, index: i } %>
       <div class="message-form">

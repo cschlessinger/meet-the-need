@@ -1,5 +1,6 @@
 <!-- conv with a particular dev -->
 <% conversations_with_one_customer.each do |conversation| %>
+  <% p conversation %>
   <div class='conversation'>
     <% if conversation.initiated_by == "Developer" %>
       <%= image_tag conversation.developer.avatar_url, class: "msg-image" %>
