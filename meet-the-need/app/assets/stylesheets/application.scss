@@ -110,7 +110,7 @@ nav li:last-child {
 }
 
 .selected-technologies {
-  
+
 }
 
 .plus-minus {
@@ -273,3 +273,12 @@ input[type=submit] {
   font-style: italic;
   font-size: 1em;
 }
+
+.ui-widget-header .ui-state-hover {
+  background: #FFFFFF;
+}
+
+.ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active {
+  background: #FFFFFF;
+}
+
