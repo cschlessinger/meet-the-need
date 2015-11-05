@@ -35,7 +35,6 @@ body {
 }
 
 #messaging {
-  background-color: $purple;
   padding: 2em;
   width: 60%;
   height: 12em;
@@ -47,7 +46,7 @@ h2 {
 }
 
 #messaging p {
-  color: white;
+  color: black;
   font-size: 1.7em;
   line-height: 1.2em;
   text-align: center;
@@ -84,10 +83,11 @@ a:hover {
   right: 5em;
   display: inline-block;
   float: right;
+  font-size: 1.2em;
 }
 
-#account a {
-
+#account a:hover {
+  color: $orange;
 }
 
 .notice,
