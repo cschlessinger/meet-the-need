@@ -17,12 +17,4 @@ $(document).ready(function() {
     });
   });
 
-  $('.message-button').click(function() {
-    $('.new-conversation').toggle("slow");
-  });
-  $('.msg-history').click(function(e) {
-    e.preventDefault();
-    var msg_thread = $(this).parent().siblings('.message-thread').children().not(':last');
-    msg_thread.toggle("slow");
-  });
 });

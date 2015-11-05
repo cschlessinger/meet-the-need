@@ -1,21 +1,18 @@
-<% find_msg_developers.each do |developer| %>
+<% find_msg_developers.each_with_index do |developer, index| %>
   <% @conversations_with_one_developer = Developer.find(developer.id).conversations %>
-  <div>
-    <h3>Your messaging History with <%= developer.first_name %></h3>
-    <p><%= link_to "see history", developers_path, :class => "msg-history" %></p>
-    <div class="message-thread">
-      <%= render partial: "conversation_thread", locals: { conversations_with_one_developer: @conversations_with_one_developer } %>
-      <div class="new-conversation-inside-inbox">
+    <h3 class='select-conversation col-md-6' id="<%= index %>">Conversation with <%= developer.first_name %></h3>
+    <div class="message-content col-md-6" id="<%= index %>">
+      <%= render partial: "conversation_thread", locals: { conversations_with_one_developer: @conversations_with_one_developer, index: index } %>
+      <div class="message-form">
         <%= form_for @conversation, method: "create" do |f| %>
           <%= f.text_area :body %>
           <%= f.hidden_field :developer_id, value: developer.id %>
           <%= f.hidden_field :initiated_by, value: "Customer" %>
           <%= f.hidden_field :customer_id, value: current_customer.id %>
-          <%= f.submit "Create message"%>
+          <%= f.submit "Create message", class: "green-button button-shape" %>
         <% end %>
       </div>
     </div>
-  </div>
 <% end %>
 
 

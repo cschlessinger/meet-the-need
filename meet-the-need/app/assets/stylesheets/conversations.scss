@@ -2,6 +2,8 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+$purple: #5E35B1;
+
 .msg-image {
   clear: both;
   width: 5%;
@@ -15,11 +17,23 @@
   float: right;
 }
 
-.message-title {
-
-}
-
 .message-history {
   display: inline;
 }
 
+.new-conversation {
+  display: none;
+}
+
+.message-content {
+  display: none;
+  float: right;
+}
+
+.active {
+	display: initial;
+}
+
+.active-selector {
+  color: $purple
+}
