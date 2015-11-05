@@ -2,6 +2,8 @@ $(document).ready(function() {
   // on click of unassigned projects, grab which project and customer id
   // send a ajax request to show route with order id
   // receive response on matching developers corresponding to the project selected
+  $('.get-developers:first').parents(".card").css("background-color", "#D0D0D0")
+
   $('.get-developers').click(function(e) {
     e.preventDefault();
     var order_id = $(this).attr('class');
