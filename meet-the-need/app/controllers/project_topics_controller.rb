@@ -1,7 +1,5 @@
 class ProjectTopicsController < ApplicationController
 
-	# @TODO: make this all work
-
 	def new
 	  @project_topic = ProjectTopic.new
 	end

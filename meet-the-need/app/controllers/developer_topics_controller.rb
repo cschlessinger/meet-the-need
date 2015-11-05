@@ -1,7 +1,5 @@
 class DeveloperTopicsController < ApplicationController
 
-	# @TODO: make this all work
-
 	def new
 	  @developer_topic = DeveloperTopic.new
 	end
