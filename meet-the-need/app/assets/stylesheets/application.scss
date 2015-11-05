@@ -82,6 +82,10 @@ a:hover {
   float: right;
 }
 
+#account a {
+
+}
+
 .notice,
 .alert {
   display: inline;
@@ -274,11 +278,17 @@ input[type=submit] {
 
 .group-image {
   margin: auto;
-  background-image: url("group-pic.jpg");
-  height: 40em;
-  width: 100%;
-  position: initial;
-  background-position: 0 -120px;
+  height: 50em;
+  width: 110%;
+  background:
+    linear-gradient(
+      white,
+      rgba(0, 0, 0, -0.5)
+    ),
+  url("group-pic.jpg");
   background-size: 100% auto;
   background-repeat: no-repeat;
+  margin-left: -50px;
+  margin-top: -200px;
+  background-position: 0 -10px;
 }
