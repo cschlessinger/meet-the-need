@@ -26,6 +26,8 @@ class ProjectsController < ApplicationController
 
   # GET /projects/1/edit
   def edit
+    @technologies = Technology.all
+    @topics = Topic.all
   end
 
   # POST /projects
