@@ -1,19 +1,16 @@
 <!-- Profile Tab -->
 <div class='profile'>
 	<%= image_tag @developer.avatar_url %>
-	<div class="show-field"><strong><%= @developer.first_name %> <%= @developer.last_name %></strong>
-		<% if current_customer %>
-			 <%= link_to "Message me", new_conversation_path, class: "message-button", remote: true %>
-			 <%= render "conversations/message_form" %>
-		<% end %>
-	</div>
-	<div class="profile-tagline"><%= @developer.tagline %></div>
-	<div class="profile-bio"><%= @developer.bio %></div>
+	<p class="profile-name"><%= @developer.first_name %> <%= @developer.last_name %></p>
+	<% if current_customer %>
+		 <%= link_to "Message me", new_conversation_path, class: "message-button", remote: true %>
+		 <%= render "conversations/message_form" %>
+	<% end %>
+	<p class="profile-tagline"><%= @developer.tagline %></p>
+	<p class="profile-bio"><%= @developer.bio %></p>
 
 	<!-- do we want to do this in addition to the native messaging? -->
 	<!-- <a href="mailto:<%@developer.email%>"><%= @developer.email %></a> -->
-
-	<!-- @TODO: Make UI nicer - group things into plus/minus sections with ajax -->
 	<% if @developer.technologies.any? %>
 		<div class="tags">
 				<% @developer.technologies.each do |technology| %>
