@@ -3,10 +3,11 @@
   <div class='col-md-6 card'>
     <%= image_tag developer.avatar_url %>
     <%= link_to profile_developer_path(developer) do %>
-      <p class='title'><%= developer.first_name %> <%= developer.last_name %></p>
+      <p class='dev-title'><%= developer.first_name %> <%= developer.last_name %></p>
     <% end %>
     <div class='text'>
       <p class='tagline'><%= developer.tagline %></p>
+      <p class='date'>Member since <%= developer.created_at.strftime("%m/%d/%Y") %></p>
       <% if developer.technologies.any? %>
         <div class='tags'>
           <% developer.technologies.each do |technology| %>
@@ -21,7 +22,6 @@
           <% end %>
         </div>
       <% end %>
-      <p class='date'>Member since <%= developer.created_at.strftime("%m/%d/%Y") %></p>
     </div>
   </div>
 <% end %>

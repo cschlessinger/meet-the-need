@@ -3,13 +3,15 @@
   <div id='project-area'></div>
   <% if @current_projects.any? %>
     <% @current_projects.each do |project| %>
-      <div class='card col-md-6'>
-        <div class='no-image-title'><%= project.title %></div>
+      <div class='card col-md-6 interior'>
+        <%= link_to project_path(project) do %>
+          <div class='no-image-title'><%= project.title %></div>
+        <% end %>
         <div class='text'>
-          <p class='project-date'>Assigned on <%= project.assigned_date.strftime("%m/%d/%Y") %></p>
           <%= link_to profile_developer_path(project.developer) do %>
             <p class='project-developer'>Assigned to <span class='name'><%= project.developer.first_name %> <%= project.developer.last_name %></span></p>
           <% end %>
+          <p class='date'>Assigned <%= project.assigned_date.strftime("%m/%d/%Y") %></p>
           <p class='cost'>Cost: $<%= project.cost %></p>
           <% if project.technologies.any? %>
             <div class='tags'>

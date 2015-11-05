@@ -1,4 +1,4 @@
-  <div class="project_details">
+  <div class="col-md-12 project_details">
     <h1>Project Search Results</h1>
     <% if @project_search_results.any? %>
         <% @project_search_results.each do |project| %>
@@ -25,34 +25,37 @@
             <% end %>
           </div>
         <% end %>
+  </div>
     <% else %>
       No results!
     <% end %>
-    <h1>Developer Search Results</h1>
-    <% if @developer_search_results.any? %>
-      <% @developer_search_results.each do |developer| %>
-        <div class='col-md-12 card'>
-        <%= link_to profile_developer_path(developer) do %>
-          <%= image_tag developer.avatar_url %>
-          <p class='dev-title'><%= developer.first_name %> <%= developer.last_name %></p><br><br><br>
-          <p class='tagline'><span><%= developer.tagline %></span></p>
-          <% if developer.technologies.any? %>
-            <div class='tags'>
-              <% developer.technologies.each do |technology| %>
-                <figure class='tech tag'><%= technology.name %></figure>
-              <% end %>
-            </div>
+    <div class="col-md-12">
+      <h1>Developer Search Results</h1>
+      <% if @developer_search_results.any? %>
+        <% @developer_search_results.each do |developer| %>
+          <div class='col-md-12 card'>
+          <%= link_to profile_developer_path(developer) do %>
+            <%= image_tag developer.avatar_url %>
+            <p class='dev-title'><%= developer.first_name %> <%= developer.last_name %></p><br><br><br>
+            <p class='tagline'><span><%= developer.tagline %></span></p>
+            <% if developer.technologies.any? %>
+              <div class='tags'>
+                <% developer.technologies.each do |technology| %>
+                  <figure class='tech tag'><%= technology.name %></figure>
+                <% end %>
+              </div>
+            <% end %>
+            <% if developer.topics.any? %>
+              <div class='tags'>
+                <% developer.topics.each do |topic| %>
+                  <figure class='topic tag'><%= topic.name %></figure>
+                <% end %>
+              </div>
+            <% end %>
+            <p class='date'>Member since: <%= developer.created_at.strftime("%m/%d/%Y") %></p>
           <% end %>
-          <% if developer.topics.any? %>
-            <div class='tags'>
-              <% developer.topics.each do |topic| %>
-                <figure class='topic tag'><%= topic.name %></figure>
-              <% end %>
-            </div>
-          <% end %>
-          <p class='date'>Member since: <%= developer.created_at.strftime("%m/%d/%Y") %></p>
+          </div>
         <% end %>
-        </div>
       <% end %>
-    <% end %>
-  </div>
+      </div>
+    </div>
