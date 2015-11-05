@@ -17,8 +17,6 @@ main {
 }
 
 .search {
-  top: 2em;
-  right: 0em;
   display: inline-block;
   float: right;
   margin: auto 1em;
@@ -57,4 +55,21 @@ button {
   margin-bottom: 2em;
   display: block;
   width: 100%;
+}
+
+.group-image {
+  margin: auto;
+  height: 50em;
+  width: 110%;
+  background:
+    linear-gradient(
+      white,
+      rgba(0, 0, 0, -0.5)
+    ),
+  url("group-pic.jpg");
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  margin-left: -50px;
+  margin-top: -200px;
+  background-position: 0 -10px;
 }

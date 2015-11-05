@@ -3,6 +3,7 @@
 <head>
   <title>Meet The Need</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+  <link href='https://fonts.googleapis.com/css?family=Muli:400,300|Nunito:400,700,300' rel='stylesheet' type='text/css'>
   <%= stylesheet_link_tag    "//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css" %>
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= javascript_include_tag 'application' %>
@@ -11,13 +12,13 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+
   <div id="page-title">
      <%= link_to root_path do %>
       <%= image_tag "logo.png", class: "logo" %>
     <% end %>
   </div>
   <nav id="account">
-
     <% if developer_signed_in? %>
       <li><%= link_to "Dashboard", developer_path(current_developer.id) %> | </li>
       <li><%= link_to "Inbox", "#{developer_path(current_developer.id)}#conversations", class: "inbox" %> | </li>
