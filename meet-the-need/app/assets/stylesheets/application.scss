@@ -106,7 +106,7 @@ nav li:last-child {
 }
 
 .selected-technologies {
-  
+
 }
 
 .plus-minus {
@@ -116,6 +116,7 @@ nav li:last-child {
 
 .topic {
   background-color: $teal;
+  margin-bottom: 5px;
 }
 
 .tech {
@@ -128,6 +129,21 @@ nav li:last-child {
 
 #unassigned .card {
   width: 100%;
+}
+
+.all-cards {
+  margin-left: 50px;
+}
+
+.project-card, .dev-card {
+  height: 25em;
+  border: 1px solid black;
+  margin: 5em;
+  padding: .5em;
+  box-sizing: border-box;
+  overflow: hidden;
+  font-size: .8em;
+  position: relative;
 }
 
 .card {
@@ -234,6 +250,10 @@ input[type=submit] {
   bottom: -1em;
 }
 
+
+.ui-state-active, .ui-tabs-active{
+  background: #FFFFFF
+}
 #tabs {
   position: absolute;
   width: 95%;
@@ -255,6 +275,14 @@ input[type=submit] {
 
 .ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default {
   background: #D0D0D0;
+}
+
+.ui-widget-header .ui-state-hover {
+  background: #FFFFFF;
+}
+
+.ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active {
+  background: #FFFFFF;
 }
 
 .name {
