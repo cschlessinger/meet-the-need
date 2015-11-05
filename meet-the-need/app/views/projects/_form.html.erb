@@ -13,32 +13,49 @@
  <% end %>
 
 <%= form_for @project, url: {action: "create"} do |f| %>
-  <div>
+  <div class='form-field'>
     <%= f.label :title %>
     <%= f.text_field :title %>
   </div>
-  <div>
-    <%= f.label :description %>
-    <%= f.text_area :body %>
+  <div class='form-field'>
+    <%= f.label :description %></div>
+    <div class='form-field'><%= f.text_area :body %>
   </div>
-  <div>
+  <div class='form-field'>
     <%= f.label :cost %>
     <%= f.text_field :cost %>
   </div>
-  <div>
-    <%= f.fields_for :topics do |topic_form| %>
-      <%= f.label :topics %>
-      <%= topic_form.text_field :name %>
+
+  <label for="technology_names">Technologies:</label>
+  <ul>
+    <% @technologies.each do |technology| %>
+      <li class='checkboxes'>
+        <input type="checkbox" name="project[technology_ids][]" value="<%= technology.id %>"> <%= technology.name %>
+      </li>
     <% end %>
-  </div>
-  <div>
-    <%= f.fields_for :technologies do |technology_form| %>
-      <%= f.label :technologies %>
-      <%= technology_form.text_field :name %>
+  </ul>
+
+  <label for="topic_names">Topics:</label>
+  <ul>
+    <% @topics.each do |topic| %>
+      <li class='checkboxes'>
+        <input type="checkbox" name="project[topic_ids][]" value="<%= topic.id %>"> <%= topic.name %>
+      </li>
     <% end %>
-  </div>
+  </ul>
+
+<!--     <div>
+      <%# @topics.each do |topic| %>
+        <p><figure class='topic tag'><%#= topic.name %></figure>
+        <%#= link_to project_topics_path(:project_id => @project.id, :topic_id => topic.id), method: :post do %>
+        <%# end %>
+        </p>
+      <%# end %>
+    </div> -->
+
+
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Submit", class: "green-button" %>
   </div>
 <% end %>
 

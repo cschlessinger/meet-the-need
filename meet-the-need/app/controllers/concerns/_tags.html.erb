@@ -1,0 +1,18 @@
+<div>
+  <% @topics.each do |topic| %>
+    <p><figure class='topic tag'><%= topic.name %></figure>
+    <%= link_to project_topics_path(:project_id => @project.id, :topic_id => topic.id), method: :post do %>
+      <%= image_tag 'plus.ico', class: "plus-minus" %>
+    <% end %>
+    </p>
+  <% end %>
+</div>
+<div>
+  <% @technologies.each do |technology| %>
+    <p><figure class='tech tag'><%= technology.name %></figure>
+    <%= link_to project_technologies_path(:project_id => @project.id, :technology_id => technology.id), method: :post do %>
+      <%= image_tag 'plus.ico', class: "plus-minus" %>
+    <% end %>
+    </p>
+  <% end %>
+</div>
