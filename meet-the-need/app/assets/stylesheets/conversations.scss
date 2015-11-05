@@ -28,6 +28,8 @@ $purple: #5E35B1;
 .message-content {
   display: none;
   float: right;
+  height: 100%;
+  position: relative;
 }
 
 .active {
@@ -35,5 +37,13 @@ $purple: #5E35B1;
 }
 
 .active-selector {
-  color: $purple
+  color: $purple;
+}
+
+.select-conversation {
+  float: left;
+}
+
+.block {
+  display: block;
 }
