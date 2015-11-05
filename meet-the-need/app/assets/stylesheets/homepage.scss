@@ -56,3 +56,20 @@ button {
   display: block;
   width: 100%;
 }
+
+.group-image {
+  margin: auto;
+  height: 50em;
+  width: 110%;
+  background:
+    linear-gradient(
+      white,
+      rgba(0, 0, 0, -0.5)
+    ),
+  url("group-pic.jpg");
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  margin-left: -50px;
+  margin-top: -200px;
+  background-position: 0 -10px;
+}

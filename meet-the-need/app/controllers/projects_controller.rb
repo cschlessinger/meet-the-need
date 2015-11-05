@@ -19,22 +19,28 @@ class ProjectsController < ApplicationController
 
   # GET /projects/new
   def new
+    @technologies = Technology.all
+    @topics = Topic.all
     @project = Project.new
   end
 
   # GET /projects/1/edit
   def edit
+    @technologies = Technology.all
+    @topics = Topic.all
   end
 
   # POST /projects
   # POST /projects.json
   def create
+    @technologies = Technology.all
+    @topics = Topic.all
     customer = Customer.find(current_customer.id)
     @project = customer.projects.new(project_params)
     respond_to do |format|
       if @project.save
-        @project.technologies.create(set_technologies)
-        @project.topics.create(set_topics)
+        @project.technologies.create(params[:technology_ids])
+        @project.topics.create(params[:topic_ids])
         format.html { redirect_to @project, notice: 'Project was successfully created.' }
         format.json { render :show, status: :created, location: @project }
       else
@@ -76,15 +82,8 @@ class ProjectsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def project_params
-      params.require(:project).permit(:title, :body, :cost)
+      params.require(:project).permit(:title, :body, :cost, :technology_ids => [], :topic_ids => [])
       # params[:project]
     end
 
-    def set_technologies
-      params.require(:project)["technologies"].permit(:name)
-    end
-
-    def set_topics
-      params.require(:project)["topics"].permit(:name)
-    end
 end

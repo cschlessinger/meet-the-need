@@ -25,6 +25,10 @@ body {
   font-family: 'Nunito', sans-serif;
 }
 
+.checkboxes {
+  list-style: none;
+}
+
 .logo {
   width: 3em;
   height: 1.5em;
@@ -187,7 +191,6 @@ img {
   margin-top: .3em;
   width: 80%;
   clear: both;
-  font-size: 1.4em;
 }
 
 .see-all a {
@@ -273,22 +276,14 @@ input[type=submit] {
 
 .date {
   font-style: italic;
-  font-size: .9em;
+  font-size: 1em;
 }
 
-.group-image {
-  margin: auto;
-  height: 50em;
-  width: 110%;
-  background:
-    linear-gradient(
-      white,
-      rgba(0, 0, 0, -0.5)
-    ),
-  url("group-pic.jpg");
-  background-size: 100% auto;
-  background-repeat: no-repeat;
-  margin-left: -50px;
-  margin-top: -200px;
-  background-position: 0 -10px;
+.ui-widget-header .ui-state-hover {
+  background: #FFFFFF;
 }
+
+.ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active {
+  background: #FFFFFF;
+}
+

@@ -5,7 +5,9 @@
     <% @completed_projects.each do |project| %>
       <div class='card'>
         <p class='no-image-title'><%= project.title %></p>
-        <p class='project-date'>Completed on <%= project.completed_date.strftime("%m/%d/%Y") %></p>
+        <% if project.completed_date %>
+          <p class='project-date'>Completed on <%= project.completed_date.strftime("%m/%d/%Y") %></p>
+          <% end %>
         <%= link_to profile_developer_path(project.developer) do %>
           <p class='project-developer'>Developer: <span class='name'><%= project.developer.first_name %> <%= project.developer.last_name %></span></p>
         <% end %>
