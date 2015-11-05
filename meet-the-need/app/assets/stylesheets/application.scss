@@ -74,8 +74,7 @@ h2 {
 a:visited,
 a:focus,
 a:hover {
-  background-color: inherit !important;
-  color: #333;
+  color: $green;
   text-decoration: none;
 }
 
@@ -299,5 +298,25 @@ input[type=submit] {
 
 .ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active {
   background: #FFFFFF;
+}
+
+.sign-up-header {
+  font-size: 24px;
+  text-align: none;
+  padding-bottom: 20px;
+}
+
+.log-in {
+  color: #FFFFFF;
+  position: relative;
+  bottom: 25px;
+}
+
+.log-in a:visited, a:focus, a:hover {
+  background-color: $green;
+}
+
+.green-button.button-shape.log-in {
+  color: #FFFFFF;
 }
 
