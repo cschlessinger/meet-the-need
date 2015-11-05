@@ -25,6 +25,8 @@ Rails.application.routes.draw do
   resources :review_requests
   resources :developer_technologies
   resources :developer_topics
+  resources :project_technologies
+  resources :project_topics
   resources :conversations
   root 'homepage#index'
 
