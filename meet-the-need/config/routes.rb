@@ -1,11 +1,11 @@
 Rails.application.routes.draw do
-  devise_for :developers
-  devise_for :customers
+  # devise_for :developers
+  # devise_for :customers
   get 'homepage/index'
   get 'homepage/search' => 'homepage#search'
 
-  # devise_for :developers, controllers: { registrations: "registrations" }
-  # devise_for :customers, controllers: { registrations: "registrations" }
+  devise_for :developers, controllers: { registrations: "registrations" }
+  devise_for :customers, controllers: { registrations: "registrations" }
 
 
   # get '/sign_up(.:format)' => 'devise/registrations#new'
