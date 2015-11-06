@@ -10,11 +10,6 @@ class ConversationsController < ApplicationController
 
   def new
     @customer = Customer.new
-    if request.xhr?
-      render 'message_form'
-    else
-      render 'message_form'
-    end
   end
 
   def create
