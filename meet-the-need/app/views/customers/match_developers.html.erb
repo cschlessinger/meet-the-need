@@ -1,9 +1,10 @@
       <% if @top_unique_matching_three.any? %>
         <% @top_unique_matching_three.each do |developer| %>
-        <%= link_to profile_developer_path(developer) do %>
           <div class='card interior'>
             <%= image_tag developer.avatar_url %>
-            <p class='card-image-title'><%=  developer.first_name %> <%=  developer.last_name %></p>
+            <%= link_to profile_developer_path(developer) do %>
+              <p class='card-image-title'><%=  developer.first_name %> <%=  developer.last_name %></p>
+            <% end %>
             <div class='text'>
               <p class='tagline'><%= developer.tagline %></p>
               <p class='date'>Member since <%= developer.created_at.strftime("%m/%d/%Y") %></p>
@@ -24,7 +25,6 @@
               <% end %>
             </div>
           </div>
-        <% end %>
       <% else %>
         <p>No matching developers. We are waiting for matching developers to sign up!</p>
       <% end %>

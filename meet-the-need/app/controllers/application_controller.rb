@@ -10,4 +10,14 @@ class ApplicationController < ActionController::Base
     resource
   end
 
+  # def after_sign_up_path_for(resource)
+		# if resource.class == Developer
+		# 	p "*" * 100
+		# 	edit_developer_path(resource)
+		# 	p "*" * 100
+	 #  else
+	 #  	edit_customer_path(resource)
+	 #  end
+  # end
+
 end
