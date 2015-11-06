@@ -5,7 +5,7 @@
       <%= f.hidden_field :developer_id, value: @developer.id %>
       <%= f.hidden_field :initiated_by, value: "Customer" %>
       <%= f.hidden_field :customer_id, value: current_customer.id %>
-      <%= f.submit "Create message"%>
+      <%= f.submit "Create message", class: "green-button button-shape" %>
     <% end %>
   </div>
 <% else %>
@@ -15,7 +15,7 @@
       <%= f.hidden_field :developer_id, value: current_developer.id %>
       <%= f.hidden_field :initiated_by, value: "Customer" %>
       <%= f.hidden_field :customer_id, value: @customer.id %>
-      <%= f.submit "Create message"%>
+      <%= f.submit "Create message", class: "green-button button-shape" %>
     <% end %>
   </div>
 <% end %>
