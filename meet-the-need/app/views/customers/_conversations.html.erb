@@ -1,21 +1,30 @@
-<% find_msg_developers.each do |developer| %>
-  <% @conversations_with_one_developer = Developer.find(developer.id).conversations %>
-  <div>
-    <h3>Your messaging History with <%= developer.first_name %></h3>
-    <p><%= link_to "see history", developers_path, :class => "msg-history" %></p>
-    <div class="message-thread">
-      <%= render partial: "conversation_thread", locals: { conversations_with_one_developer: @conversations_with_one_developer } %>
-      <div class="new-conversation-inside-inbox">
+
+<h3 class='col-md-6'>
+  <% i = 0 %>
+  <% find_msg_developers.each do |developer| %>
+     <% @conversations_with_one_developer = Conversation.where(developer_id: developer.id, customer_id: current_customer.id) %>
+    <div class='select-conversation' id="<%= i %>">Conversation with <%= developer.first_name %></div>
+    <% i += 1 %>
+  <% end %>
+</h3>
+<div class="col-md-6">
+  <% i = 0 %>
+  <% find_msg_developers.each do |developer| %>
+    <% @conversations_with_one_developer = Conversation.where(developer_id: developer.id, customer_id: current_customer.id) %>
+    <div class="message-content" id="<%= i %>">
+      <%= render partial: "conversation_thread", locals: { conversations_with_one_developer: @conversations_with_one_developer, index: i } %>
+      <div class="message-form">
         <%= form_for @conversation, method: "create" do |f| %>
           <%= f.text_area :body %>
           <%= f.hidden_field :developer_id, value: developer.id %>
           <%= f.hidden_field :initiated_by, value: "Customer" %>
           <%= f.hidden_field :customer_id, value: current_customer.id %>
-          <%= f.submit "Create message"%>
+          <%= f.submit "Create message", class: "green-button button-shape" %>
         <% end %>
       </div>
+      <% i += 1 %>
     </div>
-  </div>
-<% end %>
+  <% end %>
+</div>
 
 
