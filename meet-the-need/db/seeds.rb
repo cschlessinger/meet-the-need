@@ -7,19 +7,20 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 
+
 Customer.create(first_name: "Masha", last_name: "Lifshin", email: "masha@example.com", password: "password", bio: "I do art and wear cool leggings. Yeah technology!", avatar_url: "masha.jpg")
 Customer.create(first_name: "Julian", last_name: "Bouma", email: "julian@example.com", password: "password", bio: "That's Mr. Bouma to you.", avatar_url: "julian.jpg")
 
-Developer.create(first_name: "Sasha", last_name: "Goldenson", email: "sasha@example.com", password: "password", tagline: "Everything I learned, I learned at DBC", bio: "Developer for hire.", avatar_url: "sasha.jpg")
 Developer.create(first_name: "Claire", last_name: "Schlessinger", email: "claire@example.com", password: "password", tagline: "Out to make the world a better place with technology", bio: "I like pugs and chocolate.", avatar_url: "claire.jpg")
 Developer.create(first_name: "Katie", last_name: "Ok", email: "katie@example.com", password: "password", tagline: "Animal lover", bio: "I want to travel the world!", avatar_url: "katie.jpg")
-Developer.create(first_name: "Andrew", last_name: "Dowd", email: "andrew@example.com", password: "password", tagline: "I eat bugs", bio: "That's all.", avatar_url: "andrew.jpg")
+Developer.create(first_name: "Andrew", last_name: "Dowd", email: "andrew@example.com", password: "password", tagline: "I like playing bass and riding motorcycles.", bio: "I develop web applications. Please send me a message about your project.", avatar_url: "andrew.jpg")
+Developer.create(first_name: "Sasha", last_name: "Goldenson", email: "sasha@example.com", password: "password", tagline: "Developer for hire.", bio: "I learned web development at DBC and have 7 years of software testing and development experience.  I enjoy playing piano, doing yoga, and connecting with friends.  Message me!", avatar_url: "sasha.jpg")
 
 Project.create(title: "My Neighborhood", body: "Track happenings in local politics and get involved in your community.", customer_id: 2, cost: 350)
 Project.create(title: "Simple Budget Tracker", body: "Empower users to simply manage their finances.", customer_id: 1, cost: 350)
 Project.create(title: "Virtual Bowling League", body: "Play games with your friends on your phone.", customer_id: 2, cost: 950)
-Project.create(title: "Tennis Tracker", body: "This robot will analyze your games and suggest technique improvements.", customer_id: 2, cost: 525, assigned_date: '2015-11-01', developer_id: 3, is_completed: false)
-Project.create(title: "What's for Dinner?", body: "This app allows you to store your recipes and suggest which ones to make based on what food you already have.", customer_id: 1, assigned_date: '2015-11-01', developer_id: 3, cost: 400, is_completed: true, completed_date: '2015-11-02')
+Project.create(title: "Tennis Tracker", body: "This robot will analyze your games and suggest technique improvements.", customer_id: 2, cost: 525, assigned_date: '2015-11-01', developer_id: 4, is_completed: false)
+Project.create(title: "What's for Dinner?", body: "This app allows you to store your recipes and suggest which ones to make based on what food you already have.", customer_id: 1, assigned_date: '2015-11-01', developer_id: 4, cost: 400, is_completed: true, completed_date: '2015-11-02')
 
 Technology.create(name: "Android") #1
 Technology.create(name: "Blog") #2
@@ -99,10 +100,13 @@ DeveloperTopic.create(developer_id: 4, topic_id: 1)
 DeveloperTopic.create(developer_id: 4, topic_id: 3)
 
 
-Conversation.create(developer_id: 1, customer_id: 1, initiated_by: "Customer", body: "Masha to Sasha")
-Conversation.create(developer_id: 1, customer_id: 1, initiated_by: "Developer", body: "Sasha to Masha")
+Conversation.create(developer_id: 4, customer_id: 1, initiated_by: "Customer", body: "Masha to Sasha")
+Conversation.create(developer_id: 4, customer_id: 1, initiated_by: "Developer", body: "Sasha to Masha")
 Conversation.create(developer_id: 3, customer_id: 1, initiated_by: "Developer", body: "Katie to Masha")
 Conversation.create(developer_id: 2, customer_id: 1, initiated_by: "Customer", body: "Masha to Claire")
 Conversation.create(developer_id: 2, customer_id: 2, initiated_by: "Customer", body: "Claire to Julian")
 
+Request.create(developer_id: 4, project_id: 4, customer_id: 2)
+Request.create(developer_id: 4, project_id: 3, customer_id: 2)
 
+ReviewRequest.create(developer_id: 4, project_id: 4, customer_id: 2)
